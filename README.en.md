@@ -34,6 +34,9 @@ go build -ldflags "-s -w" -o ./out .
 
 Then you can run the service using the command `./out`.
 
+## Reference
+[Pusat Pembinaan dan Pengembangan Bahasa, Departemen Pendidikan dan Kebudayaan. 1977. _Kamus Banjar-Indonesia_. Jakarta.](https://repositori.kemdikbud.go.id/2888/1/Kamus%20Banjar%20-%20Indonesia%20%20%20%20%20-%20%20%20189h.pdf)
+
 ## License
 
 __Kamus Banjar API__ is open-sourced software licensed under the [MIT license](https://github.com/iqbaleff214/kamus-banjar-api/blob/main/LICENSE).

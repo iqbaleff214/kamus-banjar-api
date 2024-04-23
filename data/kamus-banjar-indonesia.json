@@ -1,0 +1,57 @@
+[
+    {
+        "word": "abadan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "terbiasa, pembawaan, kebiasaan",
+                        "example": {
+                            "bjn": "jangan bajajumput bat urang, jadi abadan kena",
+                            "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
+                        }
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "abah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ayah, bapak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "abat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tahan, kunci, piting"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "diabat",
+                "definitions": [
+                    {
+                        "definition": "ditahan, dikunci (dalam permainan catur), sehingga lawan tidak dapat bergerak"
+                    }
+                ]
+            }
+        ]
+    }
+]

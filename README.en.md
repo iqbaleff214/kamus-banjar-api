@@ -92,10 +92,12 @@ The response will be returned an JSON. For example:
                 "definition": "terbiasa, pembawaan, kebiasaan",
                 "refer": "",
                 "levelOfPoliteness": 0,
-                "example": {
-                  "bjn": "jangan bajajumput bat urang, jadi abadan kena",
-                  "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
-                }
+                "examples": [
+                  {
+                    "bjn": "jangan bajajumput bat urang, jadi abadan kena",
+                    "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
+                  }
+                ]
               }
             ]
           }
@@ -111,8 +113,7 @@ The response will be returned an JSON. For example:
               {
                 "definition": "ayah, bapak",
                 "refer": "",
-                "levelOfPoliteness": 0,
-                "example": {}
+                "levelOfPoliteness": 0
               }
             ]
           }
@@ -164,8 +165,7 @@ The response will be returned an JSON. For example:
           {
             "definition": "ayah, bapak",
             "refer": "",
-            "levelOfPoliteness": 0,
-            "example": {}
+            "levelOfPoliteness": 0
           }
         ]
       }

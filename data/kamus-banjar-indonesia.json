@@ -7,10 +7,12 @@
                 "definitions": [
                     {
                         "definition": "terbiasa, pembawaan, kebiasaan",
-                        "example": {
-                            "bjn": "jangan bajajumput bat urang, jadi abadan kena",
-                            "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
-                        }
+                        "examples": [
+                            {
+                                "bjn": "jangan bajajumput bat urang, jadi abadan kena",
+                                "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
+                            }
+                        ]
                     }
                 ]
             }
@@ -53,5 +55,71 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "abdol",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "afdol, baik"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "abuh",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "abuh (penyakit bengkak, kembung, dan seperti berair)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "abun",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tempat alat jahitan, perhiasan dsb terbuat dari kayu atau kuningan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "abut",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ribut, sibuk",
+                        "examples": [
+                            {
+                                "bjn": "jangan abut",
+                                "id": "jangan ribut"
+                            },
+                            {
+                                "bjn": "hingga pina abut",
+                                "id": "selalu seperti sibuk"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
     }
 ]

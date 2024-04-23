@@ -34,6 +34,165 @@ go build -ldflags "-s -w" -o ./out .
 
 Kemudian jalankan menggunakan perintah `./out`.
 
+## Penggunaan
+
+### [GET] /api/v1/alphabets
+Mengembalikan semua daftar alfabet.
+
+#### Respon sukses
+Respon akan dikembalikan dalam bentuk JSON. Contohnya:
+```json
+{
+  "code": 200,
+  "data": [
+    {
+      "letter": "a",
+      "total": 3
+    }
+  ],
+  "message": "All alphabets successfully retrieved.",
+  "status": "success"
+}
+```
+
+#### Error response
+Respon akan dikembalikan dalam bentuk JSON juga jika terdapat eror. Contohnya:
+```json
+{
+    "code": 500,
+    "message": "Internal Server Error",
+    "status": "error"
+}
+```
+
+### [GET] /api/v1/alphabets/{letter}
+Mengembalikan daftar kosakata bahasa Banjar berdasarkan alfabet yang diberikan.
+
+#### Parameters
+| Name | Keberadaan | Tipe | Deskripsi |
+| ----:|:--------:|:----:| ----------- |
+| `letter` | wajib | param  | Huruf alfabet |
+
+#### Respon sukses
+Respon akan dikembalikan dalam bentuk JSON. Contohnya:
+```json
+{
+  "code": 200,
+  "data": {
+    "letter": "a",
+    "total": 3,
+    "words": [
+      {
+        "word": "abadan",
+        "letterGroup": "a",
+        "meanings": [
+          {
+            "definitions": [
+              {
+                "definition": "terbiasa, pembawaan, kebiasaan",
+                "refer": "",
+                "levelOfPoliteness": 0,
+                "example": {
+                  "bjn": "jangan bajajumput bat urang, jadi abadan kena",
+                  "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
+                }
+              }
+            ]
+          }
+        ],
+        "derivatives": []
+      },
+      {
+        "word": "abah",
+        "letterGroup": "a",
+        "meanings": [
+          {
+            "definitions": [
+              {
+                "definition": "ayah, bapak",
+                "refer": "",
+                "levelOfPoliteness": 0,
+                "example": {}
+              }
+            ]
+          }
+        ],
+        "derivatives": []
+      }
+    ]
+  },
+  "message": "All words with letter 'a' successfully retrieved.",
+  "status": "success"
+}
+```
+
+#### Kolom respon sukses
+| Kolom JSON | Tipe | Deskripsi |
+| :---|:----:| ----------- |
+| `data.meanings[i].definitions[i].refer` | string  | Kata yang bersangkutan |
+| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | Tingkat kesopanan sebuah kata. Mengembalikan nilai `0` jika kata tersebut bersifat __netral__, bernilai `1` jika kata tersebut termasuk bahasa __halus__, dan akan bernilai `-1` jika kata tersebut termasuk kategori __kasar__. |
+
+#### Error response
+Respon akan dikembalikan dalam bentuk JSON juga jika terdapat eror. Contohnya:
+```json
+{
+  "code": 400,
+  "message": "alphabet only has one character",
+  "status": "error"
+}
+```
+
+### [GET] /api/v1/entries/{word}
+Mengembalikan definisi dan arti dari kosakata bahasa Banjar yang diberikan.
+
+#### Parameters
+| Name | Keberadaan | Tipe | Deskripsi |
+| ----:|:--------:|:----:| ----------- |
+| `word` | wajib | param  | kosakata bahasa Banjar. |
+
+#### Respon sukses
+Respon akan dikembalikan dalam bentuk JSON. Contohnya:
+```json
+{
+  "code": 200,
+  "data": {
+    "word": "abah",
+    "letterGroup": "a",
+    "meanings": [
+      {
+        "definitions": [
+          {
+            "definition": "ayah, bapak",
+            "refer": "",
+            "levelOfPoliteness": 0,
+            "example": {}
+          }
+        ]
+      }
+    ],
+    "derivatives": []
+  },
+  "message": "Definition of word 'abah' successfully retrieved.",
+  "status": "success"
+}
+```
+
+#### Kolom respon sukses
+| Kolom JSON | Tipe | Deskripsi |
+| :---|:----:| ----------- |
+| `data.meanings[i].definitions[i].refer` | string  | Kata yang bersangkutan |
+| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | Tingkat kesopanan sebuah kata. Mengembalikan nilai `0` jika kata tersebut bersifat __netral__, bernilai `1` jika kata tersebut termasuk bahasa __halus__, dan akan bernilai `-1` jika kata tersebut termasuk kategori __kasar__. |
+
+#### Error response
+Respon akan dikembalikan dalam bentuk JSON juga jika terdapat eror. Contohnya:
+```json
+{
+  "code": 404,
+  "message": "the word is not found",
+  "status": "error"
+}
+```
+
 ## Daftar Pustaka
 [Pusat Pembinaan dan Pengembangan Bahasa, Departemen Pendidikan dan Kebudayaan. 1977. _Kamus Banjar-Indonesia_. Jakarta.](https://repositori.kemdikbud.go.id/2888/1/Kamus%20Banjar%20-%20Indonesia%20%20%20%20%20-%20%20%20189h.pdf)
 

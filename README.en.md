@@ -14,6 +14,8 @@
 
 The goal of this project is to create an API for a Banjar-Indonesian dictionary, providing users with the ability to translate words from Banjar to Indonesian.
 
+*Read this in other languages: [Bahasa Indonesia](README.md).*
+
 ## Prerequisite
 
 This project is built using [**Go version 1.22.2**](https://go.dev/dl/), and it is expected to be developed using this specific version of Golang to ensure the desired outcome.

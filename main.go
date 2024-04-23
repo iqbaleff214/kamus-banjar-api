@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"log"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -14,7 +15,13 @@ var data embed.FS
 
 func main() {
 	app := setup()
-	log.Fatal(app.Listen(":8000"))
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":8001"
+	}
+
+	log.Fatal(app.Listen(port))
 }
 
 func setup() *fiber.App {

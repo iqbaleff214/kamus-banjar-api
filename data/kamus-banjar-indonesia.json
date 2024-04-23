@@ -121,5 +121,392 @@
             }
         ],
         "derivatives": []
+    },
+    {
+        "word": "abuya",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pak haji"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "acan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "terasi"
+                    },
+                    {
+                        "definition": "sambal (terasi)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "acar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "acar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aci",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "selalu, melulu",
+                        "examples": [
+                            {
+                                "bjn": "aci bat ikam aja nang dikajal",
+                                "id": "selalu kepunyaanmu saja yang dipaksakan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baaci",
+                "definitions": [
+                    {
+                        "definition": "berhati-hati",
+                        "examples": [
+                            {
+                                "bjn": "lakasi pang tatak, jangan baaci",
+                                "id": "lekaslah potong, jangan berhati-hati benar"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maaci",
+                "definitions": [
+                    {
+                        "definition": "menonjolkan",
+                        "examples": [
+                            {
+                                "bjn": "maaci kahandaknya ja",
+                                "id": "menonjolkan kehendaknya saja"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "acung",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "acung"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baacungan",
+                "definitions": [
+                    {
+                        "definition": "dalam keadaan teracung",
+                        "examples": [
+                            {
+                                "bjn": "mana wani, mun lading baacungan",
+                                "id": "mana berani kalau belati dalam keadaan teracung"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maacungakan",
+                "definitions": [
+                    {
+                        "definition": "mengacungkan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ada",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ada"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baada",
+                "definitions": [
+                    {
+                        "definition": "berada, kaya"
+                    }
+                ]
+            },
+            {
+                "word": "maada-ada",
+                "definitions": [
+                    {
+                        "definition": "mengada-ada, memfitnah",
+                        "examples": [
+                            {
+                                "bjn": "jangan maada-ada",
+                                "id": "jangan mengada-ada"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "kadada",
+                "definitions": [
+                    {
+                        "definition": "tidak ada"
+                    },
+                    {
+                        "definition": "tidak berada; miskin",
+                        "examples": [
+                            {
+                                "bjn": "kadada duit",
+                                "id": "tidak ada uang"
+                            },
+                            {
+                                "bjn": "aku ni urang kadada",
+                                "id": "saya ini orang miskin"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "adab",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adab, sopan santun"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adam",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(nabi) Adam"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adangan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kerbau"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adap",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adab",
+                        "refer": "adab"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": ""
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "adas manis",
+                "definitions": [
+                    {
+                        "definition": "nama sejenis rempah-rempah"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "adat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adat"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adha",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(idul) adha"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adi",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maadi-adi",
+                "definitions": [
+                    {
+                        "definition": "malas, bertingkah",
+                        "examples": [
+                            {
+                                "bjn": "lakasi mandi, jangan maadi-adi",
+                                "id": "cepat mandi, jangan bertingkah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "adil",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adil"
+                    },
+                    {
+                        "definition": "pintar, tidak nakal",
+                        "examples": [
+                            {
+                                "bjn": "adil nya anak ikam nih, kada tadangar tangis",
+                                "id": "pintar anakmu ini, tidak terdengar tangis"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ading",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adik, adinda"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baading",
+                "definitions": [
+                    {
+                        "definition": "beradik (mempunyai adik)"
+                    }
+                ]
+            },
+            {
+                "word": "maadingakan",
+                "definitions": [
+                    {
+                        "definition": "menjadikan sebagai adik (dalam hal usia)",
+                        "examples": [
+                            {
+                                "bnj": "tuhanya bini, kawa maadingakan",
+                                "id": "tua sekali isteri, dapat menjadika(nya) sebagai adik"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]

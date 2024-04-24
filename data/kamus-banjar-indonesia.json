@@ -1398,7 +1398,7 @@
                         "definition": "setuju, cocok",
                         "examples": [
                             {
-                                "bnj": "macam apa, akur jakah harganya",
+                                "bjn": "macam apa, akur jakah harganya",
                                 "id": "bagaimana, setuju sajakah harganya"
                             }
                         ]
@@ -1407,7 +1407,7 @@
                         "definition": "selesai",
                         "examples": [
                             {
-                                "bnj": "satumat lagi akur gawian",
+                                "bjn": "satumat lagi akur gawian",
                                 "id": "sebentar lagi selesai pekerjaan"
                             }
                         ]
@@ -1614,5 +1614,1059 @@
             }
         ],
         "derivatives": []
+    },
+    {
+        "word": "aler",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maaler",
+                "definitions": [
+                    {
+                        "definition": "mengail (buaya), menangkap buaya dengan mantera"
+                    }
+                ]
+            },
+            {
+                "word": "paaleran",
+                "definitions": [
+                    {
+                        "definition": "pawang buaya"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alguju",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "algojo",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alih",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alih, pindah",
+                        "examples": [
+                            {
+                                "bjn": "ba alih rumah",
+                                "id": "pindah rumah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alili",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kembang api",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aliling",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nama sejenis siput sawah"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alim",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "berilmu agama (islam), santri"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baalim",
+                "definitions": [
+                    {
+                        "definition": "menjadi alim",
+                        "examples": [
+                            {
+                                "bjn": "salawas datang haji, pina alim sidin",
+                                "id":"sesudah datang dari tanah suci kelihatannya menjadi alim beliau"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "aaliman",
+                "definitions": [
+                    {
+                        "definition": "agak santri"
+                    }
+                ]
+            },
+            {
+                "word": "urang alim",
+                "definitions":[
+                    {
+                        "definition": "kiyai, orang berilmu agama (islam)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alip",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "huruf pertama abjad Arab"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "alip-alipan",
+                "definitions": [
+                    {
+                        "definition": "nama buku pelajaran membaca bahasa Arab"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alis",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alis"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alir",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aler",
+                        "refer": "aler",
+                        "levelOfPoliteness": 1
+                    },
+                    {
+                        "definition": "alir",
+                        "examples": [
+                            {
+                                "bjn": "banyu ni takurung, di alir akan pang",
+                                "id": "air ini terkurung, coba dialirkan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alkah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tempat penguburan (orang islam)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "allah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "Allah"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alon",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "perlahan",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "alon-alon",
+                "definitions": [
+                    {
+                        "definition": "perlahan-lahan"
+                    },
+                    {
+                        "definition": "tanah lapang",
+                        "examples": [
+                            {
+                                "bjn": "kita maliat keresmin di alon-alon",
+                                "id": "kita melihat keramaian di tanah lapang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alpa",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "absen, alpa"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aluh",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "panggilan untuk anak perempuan atau wanita pada umumnya",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alun",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alon",
+                        "refer": "alon",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "alun-alun",
+                "definitions": [
+                    {
+                        "definition": "tanah lapang"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alung",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(dari daun) pembungkus, kantong (dari kertas)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maalung",
+                "definitions": [
+                    {
+                        "definition": "membuat pembungkus"
+                    },
+                    {
+                        "definition": "membungkus"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alur",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "garis memanjang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "amal"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baamal",
+                "definitions": [
+                    {
+                        "definition": "beramal"
+                    }
+                ]
+            },
+            {
+                "word": "maamalakan",
+                "definitions": [
+                    {
+                        "definition": "mengamalkan"
+                    }
+                ]
+            },
+            {
+                "word": "taamal",
+                "definitions": [
+                    {
+                        "definition": "terbiasa"
+                    }
+                ]
+            },
+            {
+                "word": "amalan",
+                "definitions": [
+                    {
+                        "definition": "kebiasaan, ilmu"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "aman",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aman"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amanah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "amanat, pesan, titipan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amandal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "amandel",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "paman (panggilan pada laki-laki yang berumur)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "mar (dalam permainan catur, mengingatkan bahwa menteri dikenai)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "emas"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "mat (dalam permainan catur bahwa raja telah dikalahkan)"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "terobos, jelajah"
+                    },
+                    {
+                        "definition": "ampah",
+                        "refer": "ampah",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maambah",
+                "definitions": [
+                    {
+                        "definition": "menjelajah, menerobos",
+                        "examples": [
+                            {
+                                "bjn": "jangan maambah ke padang jaruju, durinya banyak",
+                                "id": "jangan menerobos hutan jeruju, durinya banyak"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambai",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [{}]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "ambai-ambai",
+                "definitions": [
+                    {
+                        "definition": "nama sejenis rumput menjalar yang buahnya enak untuk asinan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambak",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pendiam, tidak banyak bicara"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "selimut"
+                    },
+                    {
+                        "definition": "permadani"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amban",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "salut, ikat (dengan emas, perak dsb)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baamban",
+                "definitions": [
+                    {
+                        "definition": "bersalut"
+                    }
+                ]
+            },
+            {
+                "word": "maamban",
+                "definitions": [
+                    {
+                        "definition": "menyalut, mengikat"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nama senjata orang Banjar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "milik, kepunyaan",
+                        "examples": [
+                            {
+                                "bjn": "ambat siapa ni",
+                                "id": "milik siapa ini"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambawang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nama sejenis buah"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambayang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bayang-bayang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambil",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ambil"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maambil",
+                "definitions": [
+                    {
+                        "definition": "mengambil"
+                    }
+                ]
+            },
+            {
+                "word": "maambili",
+                "definitions": [
+                    {
+                        "definition": "menjemput"
+                    }
+                ]
+            },
+            {
+                "word": "ambilan",
+                "definitions": [
+                    {
+                        "definition": "rampasan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambin",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "ambin sayup",
+                "definitions": [
+                    {
+                        "definition": "bagian dalam dinding dari ruangan muka pada rumah Banjar"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambul",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tanah timbul yang dapat berpindah-pindah tempat"
+                    },
+                    {
+                        "definition": "kepul",
+                        "examples": [
+                            {
+                                "bjn": "kukus ba ambul",
+                                "id": "asap berkepul"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambun",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "embun"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ambung",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ambung, melempar ke atas"
+                    },
+                    {
+                        "definition": "puji, sanjung"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maambung",
+                "definitions": [
+                    {
+                        "definition": "melempar ke atas",
+                        "examples": [
+                            {
+                                "bjn": "maambung bola",
+                                "id": "melemparkan bola ke atas"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "memuji-muji",
+                        "examples": [
+                            {
+                                "bjn": "jangan talalu maambung ja pender",
+                                "id": "jangan terlampau memuji-muji bicara"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambut",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maambut",
+                "definitions": [
+                    {
+                        "definition": "melepaskan sabut (kelapa)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambuntut",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baambutut",
+                "definitions": [
+                    {
+                        "definition": "tidur dengan kelambu yang tergantung pada keempat sudutnya"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "amin",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "amin"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "arah, tujuan",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "hidin te bajalan ampah kasia",
+                                "id": "beliau tadi berjalan ke arah kemari"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "empal, perkedel"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampalan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "mempelam"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampalas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ampelas"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "empang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "hampar, gelar",
+                        "examples": [
+                            {
+                                "bjn": "ma ampar tikar",
+                                "id": "menggelar tikar"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "empas"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "empat"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampih",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "berhentilah"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baampih",
+                "definitions": [
+                    {
+                        "definition": "berhenti"
+                    }
+                ]
+            },
+            {
+                "word": "maampihi",
+                "definitions": [
+                    {
+                        "definition": "memberhentikan; menghentikan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ampik",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tepuk tangan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baampik",
+                "definitions": [
+                    {
+                        "definition": "bertepuk tangan"
+                    }
+                ]
+            },
+            {
+                "word": "maampiki",
+                "definitions": [
+                    {
+                        "definition": "menyoraki, menepukkan tangan"
+                    }
+                ]
+            }
+        ]
     }
 ]

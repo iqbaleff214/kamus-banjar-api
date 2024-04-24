@@ -504,14 +504,9 @@
                         ]
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "word": "sapaadingan",
-        "letterGroup": "a",
-        "meanings": [
+            },
             {
+                "word": "sapaadingan",
                 "definitions": [
                     {
                         "definition": "sepersaudaraan",
@@ -524,8 +519,7 @@
                     }
                 ]
             }
-        ],
-        "derivatives": []
+        ]
     },
     {
         "word": "adon",

@@ -500,7 +500,7 @@
                         "definition": "menjadikan sebagai adik (dalam hal usia)",
                         "examples": [
                             {
-                                "bnj": "tuhanya bini, kawa maadingakan",
+                                "bjn": "tuhanya bini, kawa maadingakan",
                                 "id": "tua sekali isteri, dapat menjadika(nya) sebagai adik"
                             }
                         ]
@@ -508,5 +508,1122 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "sapaadingan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sepersaudaraan",
+                        "examples": [
+                            {
+                                "bjn": "kalahai aku mun aku dikarubuti sapaadingan",
+                                "id": "tentu saja saya kalah, kalau saya dikeroyoknya sepersaudaraan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adon",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adon",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "adonan",
+                "definitions": [
+                    {
+                        "definition": "adonan (adukan tepung dengan air gula dsb untuk membuat kue)"
+                    }
+                ]
+            },
+            {
+                "word": "maadon",
+                "definitions": [
+                    {
+                        "definition": "membuat adonan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "adu",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "adu"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baadu",
+                "definitions": [
+                    {
+                        "definition": "bertanding"
+                    }
+                ]
+            },
+            {
+                "word": "maadu",
+                "definitions": [
+                    {
+                        "definition": "mengadu domba"
+                    }
+                ]
+            },
+            {
+                "word": "paraduan",
+                "definitions": [
+                    {
+                        "definition": "pertandingan"
+                    }
+                ]
+            },
+            {
+                "word": "baadu-adu",
+                "definitions": [
+                    {
+                        "definition": "mengadu (sambil memburukkan orang lain)"
+                    }
+                ]
+            },
+            {
+                "word": "adu asah",
+                "definitions": [
+                    {
+                        "definition": "penghasut, pengadu domba"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "aduh",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aduh"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aduk",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tali ijuk"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adungan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nama sejenis ikan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "adupan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "anjing",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aga",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "gagap"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "agak",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "gagah",
+                        "examples": [
+                            {
+                                "bjn": "umailah agak nya sidin tu",
+                                "id": "aduh gagahnya beliau itu"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "sombong",
+                        "examples": [
+                            {
+                                "bjn": "pina agak nyawalah",
+                                "id": "sombong kau ya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baagak",
+                "definitions": [
+                    {
+                        "definition": "berlagak, menyombongkan diri"
+                    }
+                ]
+            },
+            {
+                "word": "maagaki",
+                "definitions": [
+                    {
+                        "definition": "memperlihatkan sikap atau sesuatu untuk memanaskan hati orang"
+                    }
+                ]
+            },
+            {
+                "word": "paagakan",
+                "definitions": [
+                    {
+                        "definition": "(sifat) sombong, suka berlagak"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "agama",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "agama"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "agar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": ""
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "agar-agar",
+                "definitions": [
+                    {
+                        "definition": "agar-agar"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "agas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tikus kecil-kecil (hama padi)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maagas",
+                "definitions": [
+                    {
+                        "definition": "buas, ganas seperti agas",
+                        "examples": [
+                            {
+                                "bjn": "inya kelaparan laluai makan maagas",
+                                "id": "karena terlalu lapar lalu makan buas seperti agas"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "agung",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "gong"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(kata seru)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ahad",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ahad"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ahas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sejenis rotan besar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aherat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akhirat",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ahlak",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akhlak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ahli",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ahli, pandai"
+                    },
+                    {
+                        "definition": "keluarga"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ahui",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": ""
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baahui",
+                "definitions": [
+                    {
+                        "definition": "bergotong-royong melepaskan butir padi dari tangkainya dengan cara menginjak-injak"
+                    }
+                ]
+            },
+            {
+                "word": "kapala ahui",
+                "definitions": [
+                    {
+                        "definition": "pemimpin, pelopor",
+                        "examples": [
+                            {
+                                "bjn": "siapa kapala ahui nya sini",
+                                "id": "siapa pemimpinnya di sini"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ai",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(kata seru)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "airguci",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kepingan logam kecil yang berkilauan, untuk menghiasi tabir, pakaian dsb"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aja",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "saja"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajab",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "azab, siksa"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajak",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kalah (dalam permainan anak-anak)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baajakan",
+                "definitions": [
+                    {
+                        "definition": "(selalu) menggoda (terhadap anak-anak)",
+                        "examples": [
+                            {
+                                "bjn": "jangan baajakan ja, mauk kupala",
+                                "id": "jangan menggoda (anak-anak), pusing kepala"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maajak",
+                "definitions": [
+                    {
+                        "definition": "menggoda, mengolok-olok"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ajakan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lumpur tebal yang terapung",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nasib, takdir",
+                        "examples": [
+                            {
+                                "bjn": "halin ai sudah ajal",
+                                "id": "apa boleh buat, sudah nasib"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "mati",
+                        "examples": [
+                            {
+                                "bjn": "parak ajal jua sidin tu",
+                                "id": "hampir mati juga beliau itu"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajap",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ajab",
+                        "refer": "ajab"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ajar"
+                    },
+                    {
+                        "definition": "hajar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maajar",
+                "definitions": [
+                    {
+                        "definition": "mengajar",
+                        "examples": [
+                            {
+                                "bjn": "gawiannya maajar di SD",
+                                "id": "pekerjaannya mengajar di SD"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "menghajar",
+                        "examples": [
+                            {
+                                "bjn": "mun sudah aku nang maajar hanyar tahu",
+                                "id": "kalau sudah saya yang menghajar baru tahu"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "aji",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "haji"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajin",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "jangan-jangan",
+                        "examples": [
+                            {
+                                "bjn": "ajin sidin sudah datang",
+                                "id": "jangan-jangan beliau sudah datang"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "kata-kata ancaman",
+                        "examples": [
+                            {
+                                "bjn": "ajin ai kuhambat neh",
+                                "id": "bisa ku pukul nih"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "kira, hitung",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "hidin lagi ma ajin buah di rapunnya",
+                                "id": "beliau sedang mengira buah di pohonnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ajung",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ajung, pembantu (nama kepangkatan)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akai",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aduh (kata seru)",
+                        "examples": [
+                            {
+                                "bjn": "akai sakitnya",
+                                "id": "aduh sakitnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akaiah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akai",
+                        "refer": "akai"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akal",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akal"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maakal",
+                "definitions": [
+                    {
+                        "definition": "curang, mengecoh"
+                    }
+                ]
+            },
+            {
+                "word": "maakali",
+                "definitions": [
+                    {
+                        "definition": "mencurangi"
+                    },
+                    {
+                        "definition": "mengakali, mencari akal"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "akar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "akar tatau",
+                "definitions": [
+                    {
+                        "definition": "akar gantung",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "akat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akad, perjanjian",
+                        "examples": [
+                            {
+                                "bjn": "batatukar harus ba akad lah",
+                                "id": "berjual beli harus berakad"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aki",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aki"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akik",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akik"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akil",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": ""
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "akil balik",
+                "definitions": [
+                    {
+                        "definition": "dewasa, sampai umur"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "akta",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "akte",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "aku",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "aku, saya"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "akur",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "setuju, cocok",
+                        "examples": [
+                            {
+                                "bnj": "macam apa, akur jakah harganya",
+                                "id": "bagaimana, setuju sajakah harganya"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "selesai",
+                        "examples": [
+                            {
+                                "bnj": "satumat lagi akur gawian",
+                                "id": "sebentar lagi selesai pekerjaan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baakur",
+                "definitions": [
+                    {
+                        "definition": "berdamai"
+                    }
+                ]
+            },
+            {
+                "word": "maakuri",
+                "definitions": [
+                    {
+                        "definition": "menyetujui"
+                    }
+                ]
+            },
+            {
+                "word": "maakurakan",
+                "definitions": [
+                    {
+                        "definition": "menyelesaikan"
+                    },
+                    {
+                        "definition": "mendamaikan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alah",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kalah"
+                    },
+                    {
+                        "definition": "(kata seru)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baalah",
+                "definitions": [
+                    {
+                        "definition": "mengalah"
+                    }
+                ]
+            },
+            {
+                "word": "mangalahakan",
+                "definitions": [
+                    {
+                        "definition": "mengalahkan"
+                    }
+                ]
+            },
+            {
+                "word": "alahan",
+                "definitions": [
+                    {
+                        "definition": "lebih-lebih, tambahan",
+                        "examples": [
+                            {
+                                "bjn": "mun inya tu alahan lagi culasnya",
+                                "id": "kalau dia itu lebih-lebih lagi curangnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alalang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lalang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alam",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alam"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(burung) elang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "alang-alang",
+                "definitions": [
+                    {
+                        "definition": "kepalang, tanggung"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "alangan",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "halangan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alar",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sayap"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alas",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "hutan",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alat",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alat, perkakas"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "alawit",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sejenis alat penangkap ikan, terbuat dari rajut benang, berbingkai bentuk oval atau bundar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
     }
 ]

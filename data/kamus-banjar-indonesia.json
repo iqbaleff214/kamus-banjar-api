@@ -2668,5 +2668,166 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "ampinak",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "hampinak",
+                        "refer": "hampinak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amping",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "emping"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amplang",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nama sejenis kerupuk"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amplok",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "amplop, sampul surat",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampuh",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "mujarab"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ampul",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "ati ampul",
+                "definitions": [
+                    {
+                        "definition": "paru-paru ayam"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ampun",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ampun",
+                        "examples": [
+                            {
+                                "bjn": "kada ampun",
+                                "id": "tidak ampun"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "milik",
+                        "examples": [
+                            {
+                                "bjn": "ampun ku",
+                                "id": "milikku"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baampunan",
+                "definitions": [
+                    {
+                        "definition": "saling mengampuni"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "amput",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dusta",
+                        "refer": "karamput"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "amu",
+        "letterGroup": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "berita, alamat, tanda hidup",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
     }
 ]

@@ -6,7 +6,7 @@ import "errors"
 type Service interface {
 	GetAlphabets() ([]Alphabet, error)
 	GetWord(word string) (Word, error)
-	GetWordsByAlphabet(alphabet string) (Alphabet, []Word, error)
+	GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 }
 
 // service as a class
@@ -37,7 +37,7 @@ func (s service) GetWord(word string) (Word, error) {
 	return Word{}, errors.New("the word is not found")
 }
 
-func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []Word, error) {
+func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error) {
 	if len(alphabet) != 1 {
 		return Alphabet{}, nil, errors.New("alphabet only has one character")
 	}
@@ -50,7 +50,10 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []Word, error) {
 
 	alphabetIndex := int(letter - 'a')
 
-	words := s.repository.GetWordsByAlphabet(alphabet)
+	words := []string{}
+	for _, w := range s.repository.GetWordsByAlphabet(alphabet) {
+		words = append(words, w.Word)
+	}
 
 	return alphabets[alphabetIndex], words, nil
 }

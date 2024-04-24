@@ -82,42 +82,8 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
     "letter": "a",
     "total": 3,
     "words": [
-      {
-        "word": "abadan",
-        "letterGroup": "a",
-        "meanings": [
-          {
-            "definitions": [
-              {
-                "definition": "terbiasa, pembawaan, kebiasaan",
-                "levelOfPoliteness": 0,
-                "examples": [
-                  {
-                    "bjn": "jangan bajajumput bat urang, jadi abadan kena",
-                    "id": "jangan mengambil kepunyaan orang, jadi terbiasa nanti"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "derivatives": []
-      },
-      {
-        "word": "abah",
-        "letterGroup": "a",
-        "meanings": [
-          {
-            "definitions": [
-              {
-                "definition": "ayah, bapak",
-                "levelOfPoliteness": 0
-              }
-            ]
-          }
-        ],
-        "derivatives": []
-      }
+      "abadan",
+      "abah"
     ]
   },
   "message": "All words with letter 'a' successfully retrieved.",

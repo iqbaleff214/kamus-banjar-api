@@ -1,7 +1,7 @@
 [
     {
         "word": "abadan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -21,7 +21,7 @@
     },
     {
         "word": "abah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -35,7 +35,7 @@
     },
     {
         "word": "abat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -58,7 +58,7 @@
     },
     {
         "word": "abdol",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -72,7 +72,7 @@
     },
     {
         "word": "abuh",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -86,7 +86,7 @@
     },
     {
         "word": "abun",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -100,7 +100,7 @@
     },
     {
         "word": "abut",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -124,7 +124,7 @@
     },
     {
         "word": "abuya",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -138,7 +138,7 @@
     },
     {
         "word": "acan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -155,7 +155,7 @@
     },
     {
         "word": "acar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -169,7 +169,7 @@
     },
     {
         "word": "aci",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -218,7 +218,7 @@
     },
     {
         "word": "acung",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -255,7 +255,7 @@
     },
     {
         "word": "ada",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -313,7 +313,7 @@
     },
     {
         "word": "adab",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -327,7 +327,7 @@
     },
     {
         "word": "adam",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -341,7 +341,7 @@
     },
     {
         "word": "adangan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -355,7 +355,7 @@
     },
     {
         "word": "adap",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -370,7 +370,7 @@
     },
     {
         "word": "adas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -392,7 +392,7 @@
     },
     {
         "word": "adat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -406,7 +406,7 @@
     },
     {
         "word": "adha",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -420,7 +420,7 @@
     },
     {
         "word": "adi",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -449,7 +449,7 @@
     },
     {
         "word": "adil",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -472,7 +472,7 @@
     },
     {
         "word": "ading",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -523,7 +523,7 @@
     },
     {
         "word": "adon",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -555,7 +555,7 @@
     },
     {
         "word": "adu",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -610,7 +610,7 @@
     },
     {
         "word": "aduh",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -624,7 +624,7 @@
     },
     {
         "word": "aduk",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -638,7 +638,7 @@
     },
     {
         "word": "adungan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -652,7 +652,7 @@
     },
     {
         "word": "adupan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -667,7 +667,7 @@
     },
     {
         "word": "aga",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -681,7 +681,7 @@
     },
     {
         "word": "agak",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -735,7 +735,7 @@
     },
     {
         "word": "agama",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -749,7 +749,7 @@
     },
     {
         "word": "agar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -771,7 +771,7 @@
     },
     {
         "word": "agas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -800,7 +800,7 @@
     },
     {
         "word": "agung",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -814,7 +814,7 @@
     },
     {
         "word": "ah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -828,7 +828,7 @@
     },
     {
         "word": "ahad",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -842,7 +842,7 @@
     },
     {
         "word": "ahas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -856,7 +856,7 @@
     },
     {
         "word": "aherat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -871,7 +871,7 @@
     },
     {
         "word": "ahlak",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -885,7 +885,7 @@
     },
     {
         "word": "ahli",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -902,7 +902,7 @@
     },
     {
         "word": "ahui",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -938,7 +938,7 @@
     },
     {
         "word": "ai",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -952,7 +952,7 @@
     },
     {
         "word": "airguci",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -966,7 +966,7 @@
     },
     {
         "word": "aja",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -980,7 +980,7 @@
     },
     {
         "word": "ajab",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -994,7 +994,7 @@
     },
     {
         "word": "ajak",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1031,7 +1031,7 @@
     },
     {
         "word": "ajakan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1046,7 +1046,7 @@
     },
     {
         "word": "ajal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1075,7 +1075,7 @@
     },
     {
         "word": "ajap",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1090,7 +1090,7 @@
     },
     {
         "word": "ajar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1131,7 +1131,7 @@
     },
     {
         "word": "aji",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1145,7 +1145,7 @@
     },
     {
         "word": "ajin",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1184,7 +1184,7 @@
     },
     {
         "word": "ajung",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1198,7 +1198,7 @@
     },
     {
         "word": "akai",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1218,7 +1218,7 @@
     },
     {
         "word": "akaiah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1233,7 +1233,7 @@
     },
     {
         "word": "akal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1267,7 +1267,7 @@
     },
     {
         "word": "akar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1291,7 +1291,7 @@
     },
     {
         "word": "akat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1311,7 +1311,7 @@
     },
     {
         "word": "aki",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1325,7 +1325,7 @@
     },
     {
         "word": "akik",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1339,7 +1339,7 @@
     },
     {
         "word": "akil",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1361,7 +1361,7 @@
     },
     {
         "word": "akta",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1376,7 +1376,7 @@
     },
     {
         "word": "aku",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1390,7 +1390,7 @@
     },
     {
         "word": "akur",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1447,7 +1447,7 @@
     },
     {
         "word": "alah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1495,7 +1495,7 @@
     },
     {
         "word": "alalang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1509,7 +1509,7 @@
     },
     {
         "word": "alam",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1523,7 +1523,7 @@
     },
     {
         "word": "alang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1546,7 +1546,7 @@
     },
     {
         "word": "alangan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1560,7 +1560,7 @@
     },
     {
         "word": "alar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1574,7 +1574,7 @@
     },
     {
         "word": "alas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1589,7 +1589,7 @@
     },
     {
         "word": "alat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1603,7 +1603,7 @@
     },
     {
         "word": "alawit",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1617,7 +1617,7 @@
     },
     {
         "word": "aler",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1648,7 +1648,7 @@
     },
     {
         "word": "alguju",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1663,7 +1663,7 @@
     },
     {
         "word": "alih",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1683,7 +1683,7 @@
     },
     {
         "word": "alili",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1698,7 +1698,7 @@
     },
     {
         "word": "aliling",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1712,7 +1712,7 @@
     },
     {
         "word": "alim",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1757,7 +1757,7 @@
     },
     {
         "word": "alip",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1780,7 +1780,7 @@
     },
     {
         "word": "alis",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1794,7 +1794,7 @@
     },
     {
         "word": "alir",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1819,7 +1819,7 @@
     },
     {
         "word": "alkah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1833,7 +1833,7 @@
     },
     {
         "word": "allah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1847,7 +1847,7 @@
     },
     {
         "word": "alon",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1880,7 +1880,7 @@
     },
     {
         "word": "alpa",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1894,7 +1894,7 @@
     },
     {
         "word": "aluh",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1909,7 +1909,7 @@
     },
     {
         "word": "alun",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1934,7 +1934,7 @@
     },
     {
         "word": "alung",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1960,7 +1960,7 @@
     },
     {
         "word": "alur",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -1974,7 +1974,7 @@
     },
     {
         "word": "amal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2021,7 +2021,7 @@
     },
     {
         "word": "aman",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2035,7 +2035,7 @@
     },
     {
         "word": "amanah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2049,7 +2049,7 @@
     },
     {
         "word": "amandal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2064,7 +2064,7 @@
     },
     {
         "word": "amang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2078,7 +2078,7 @@
     },
     {
         "word": "amar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2092,7 +2092,7 @@
     },
     {
         "word": "amas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2106,7 +2106,7 @@
     },
     {
         "word": "amat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2147,7 +2147,7 @@
     },
     {
         "word": "ambai",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [{}]
@@ -2166,7 +2166,7 @@
     },
     {
         "word": "ambak",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2180,7 +2180,7 @@
     },
     {
         "word": "ambal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2197,7 +2197,7 @@
     },
     {
         "word": "amban",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2228,7 +2228,7 @@
     },
     {
         "word": "ambang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2242,7 +2242,7 @@
     },
     {
         "word": "ambat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2262,7 +2262,7 @@
     },
     {
         "word": "ambawang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2276,7 +2276,7 @@
     },
     {
         "word": "ambayang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2290,7 +2290,7 @@
     },
     {
         "word": "ambil",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2329,7 +2329,7 @@
     },
     {
         "word": "ambin",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2350,7 +2350,7 @@
     },
     {
         "word": "ambul",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2373,7 +2373,7 @@
     },
     {
         "word": "ambun",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2387,7 +2387,7 @@
     },
     {
         "word": "ambung",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2428,7 +2428,7 @@
     },
     {
         "word": "ambut",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2449,7 +2449,7 @@
     },
     {
         "word": "ambuntut",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2470,7 +2470,7 @@
     },
     {
         "word": "amin",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2484,7 +2484,7 @@
     },
     {
         "word": "ampah",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2505,7 +2505,7 @@
     },
     {
         "word": "ampal",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2519,7 +2519,7 @@
     },
     {
         "word": "ampalan",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2533,7 +2533,7 @@
     },
     {
         "word": "ampalas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2547,7 +2547,7 @@
     },
     {
         "word": "ampang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2561,7 +2561,7 @@
     },
     {
         "word": "ampar",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2581,7 +2581,7 @@
     },
     {
         "word": "ampas",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2595,7 +2595,7 @@
     },
     {
         "word": "ampat",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2609,7 +2609,7 @@
     },
     {
         "word": "ampih",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2640,7 +2640,7 @@
     },
     {
         "word": "ampik",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2671,7 +2671,7 @@
     },
     {
         "word": "ampinak",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2686,7 +2686,7 @@
     },
     {
         "word": "amping",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2700,7 +2700,7 @@
     },
     {
         "word": "amplang",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2714,7 +2714,7 @@
     },
     {
         "word": "amplok",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2729,7 +2729,7 @@
     },
     {
         "word": "ampuh",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2743,7 +2743,7 @@
     },
     {
         "word": "ampul",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2764,7 +2764,7 @@
     },
     {
         "word": "ampun",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2802,7 +2802,7 @@
     },
     {
         "word": "amput",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
@@ -2817,7 +2817,7 @@
     },
     {
         "word": "amu",
-        "letterGroup": "a",
+        "alphabet": "a",
         "meanings": [
             {
                 "definitions": [

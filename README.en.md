@@ -123,7 +123,7 @@ The response will be returned an JSON. For example:
   "code": 200,
   "data": {
     "word": "abah",
-    "letterGroup": "a",
+    "alphabet": "a",
     "meanings": [
       {
         "definitions": [

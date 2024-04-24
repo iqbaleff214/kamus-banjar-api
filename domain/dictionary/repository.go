@@ -50,7 +50,7 @@ func NewRepository(data embed.FS) Repository {
 		}
 
 		for _, w := range allWords {
-			alphabet := w.LetterGroup
+			alphabet := w.Alphabet
 			words[alphabet] = append(words[alphabet], w)
 
 			index := int([]rune(alphabet)[0] - 'a')

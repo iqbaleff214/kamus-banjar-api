@@ -15,7 +15,7 @@ func rootV1Handler(c *fiber.Ctx) error {
 		"version": "1",
 		"endpoints": []map[string]string{
 			{
-				"path":        "/api/v1/alphabes",
+				"path":        "/api/v1/alphabets",
 				"method":      "GET",
 				"description": "Returning a list of alphabet information.",
 			},

@@ -123,7 +123,7 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
   "code": 200,
   "data": {
     "word": "abah",
-    "letterGroup": "a",
+    "alphabet": "a",
     "meanings": [
       {
         "definitions": [

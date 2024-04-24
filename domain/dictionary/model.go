@@ -9,7 +9,7 @@ type Alphabet struct {
 // Word model to contain word definition
 type Word struct {
 	Word        string           `json:"word"`
-	LetterGroup string           `json:"letterGroup"`
+	Alphabet    string           `json:"alphabet"`
 	Meanings    []WordMeaning    `json:"meanings"`
 	Derivatives []WordDerivative `json:"derivatives"`
 }

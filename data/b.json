@@ -1,0 +1,643 @@
+[
+    {
+        "word": "ba",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "huruf kedua abjad Arab"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ba'ah",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "banjir, bah"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },{
+        "word": "ba'al",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "belum kering benar",
+                        "examples": [
+                            {
+                                "bjn": "tatapasan ni masih ba'al",
+                                "id": "jemuran ini masih belum kering benar"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "ba'at",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "saba'at",
+                "definitions": [
+                    {
+                        "definition": "sekongkol",
+                        "examples": [
+                            {
+                                "bjn": "mangulimakan maling saba'at hukumnya",
+                                "id": "melindungi pencuri sekongkol hukumnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "babah",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tauke, orang China tua"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babak",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "rombak, bongkar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bababak",
+                "definitions": [
+                    {
+                        "definition": "dalam keadaan terbongkar"
+                    }
+                ]
+            },
+            {
+                "word": "mambabak",
+                "definitions": [
+                    {
+                        "definition": "membongkar"
+                    }
+                ]
+            },
+            {
+                "word": "tababak",
+                "definitions": [
+                    {
+                        "definition": "terbongkar"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "babal",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bodoh, bebal"
+                    },
+                    {
+                        "definition": "kembang nangka"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "pambabal",
+                "definitions": [
+                    {
+                        "definition": "sukar mengerti, pelupa (terhadap pelajaran)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "babas",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bongkar (khusus untuk bangunan)",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babat",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "setagen"
+                    },
+                    {
+                        "definition": "kebat, ikat, balut",
+                        "examples": [
+                            {
+                                "bjn": "kayu sa babat",
+                                "id": "kayu sekebat"
+                            },
+                            {
+                                "bjn": "luka tu lakasi di babat",
+                                "id": "luka itu cepat-cepat dibalut"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "usus sapi",
+                        "examples": [
+                            {
+                                "bjn": "soto babat",
+                                "id": "soto usus sapi"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "babatsal",
+                "definitions": [
+                    {
+                        "definition": "sabuk berazimat (dari kain kuning, hitam, atau putih)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "babau",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "luka besar (kena parang)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babaya",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tepat sewaktu",
+                        "examples": [
+                            {
+                                "bjn": "babaya handak turun matan rumahnya, urang datang",
+                                "id": "tepat sewaktu hendak turun dari rumahnya, orang datang"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "pas",
+                        "examples": [
+                            {
+                                "bjn": "bagawi babaya cukup makan",
+                                "id": "bekerja pas cukup makan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babi",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "babi"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babu",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "babu"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babun",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "gendang",
+                        "examples": [
+                            {
+                                "bjn": "baluncat-luncat inya kasana ka mari sambil mairingi babun",
+                                "id": "melompat-lompat dia ke sana kemari sambil mengikuti (suara) gendang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "babungku",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "refer": "babongko",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "baca",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "baca"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "babacaan",
+                "definitions": [
+                    {
+                        "definition": "berceramah (tentang agama Islam), membaca ayat-ayat Al-Qur'an"
+                    }
+                ]
+            },
+            {
+                "word": "pambacaan",
+                "definitions": [
+                    {
+                        "definition": "pengajian, penerangan (agama Islam)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "bada",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {}
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "limbah bada",
+                "definitions": [
+                    {
+                        "definition": "sesudah lohor atau zuhur"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "badak",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(binatang) badak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "kulit badak",
+                "definitions": [
+                    {
+                        "definition": "tebal muka"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "badal",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "wakil"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "babadal",
+                "definitions": [
+                    {
+                        "definition": "mewakilkan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "badau",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "luka berat",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "badik",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "badik",
+                        "refer": "bedek"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "badil",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bedil",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "Palui handak baminantu nang ba badil",
+                                "id": "Palui hendak bermenantu yang berbedil"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "badimapa",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bagaimana"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "badung",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "barut (untuk bayi)",
+                        "refer": "bedong"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "badut",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "badut, pelawak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "baer",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "seret, tarik",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "babaeran",
+                "definitions": [
+                    {
+                        "definition": "berserakan, tidak terpelihara"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "baga",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {}
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baga-baga",
+                "definitions": [
+                    {
+                        "definition": "nama sejenis ikan laut"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "bagah",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "begah, perasaan perut yang terlalu banyak minum air",
+                        "examples": [
+                            {
+                                "bjn": "lima gelas nginum banyu nyiur bagah parut",
+                                "id": "lima gelas minum air kelapa, begah perut"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "bagawan",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "roh halus yang bertualang; hantu"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "bagi",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bagi"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "babagi",
+                "definitions": [
+                    {
+                        "definition": "berbagi",
+                        "examples": [
+                            {
+                                "bjn": "nih duit babagi lah badua",
+                                "id": "ini uang berbagi berdua ya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "babagi-bagi",
+                "definitions": [
+                    {
+                        "definition": "membagi-bagi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "bagung",
+        "alphabet": "b",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bagong"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    }
+]

@@ -1080,7 +1080,7 @@
             {
                 "definitions": [
                     {
-                        "definition": "ajab",
+                        "definition": "azab, siksa",
                         "refer": "ajab"
                     }
                 ]
@@ -1223,7 +1223,7 @@
             {
                 "definitions": [
                     {
-                        "definition": "akai",
+                        "definition": "aduh (kata seru)",
                         "refer": "akai"
                     }
                 ]
@@ -1799,7 +1799,6 @@
             {
                 "definitions": [
                     {
-                        "definition": "aler",
                         "refer": "aler",
                         "levelOfPoliteness": 1
                     },
@@ -1914,7 +1913,7 @@
             {
                 "definitions": [
                     {
-                        "definition": "alon",
+                        "definition": "perlahan",
                         "refer": "alon",
                         "levelOfPoliteness": 1
                     }
@@ -2121,7 +2120,7 @@
                         "definition": "terobos, jelajah"
                     },
                     {
-                        "definition": "ampah",
+                        "definition": "arah, tujuan",
                         "refer": "ampah",
                         "levelOfPoliteness": 1
                     }
@@ -2676,7 +2675,7 @@
             {
                 "definitions": [
                     {
-                        "definition": "hampinak",
+                        "definition": "pelihara",
                         "refer": "hampinak"
                     }
                 ]

@@ -83,7 +83,8 @@ The response will be returned an JSON. For example:
     "total": 3,
     "words": [
       "abadan",
-      "abah"
+      "abah",
+      "abat"
     ]
   },
   "message": "All words with letter 'a' successfully retrieved.",

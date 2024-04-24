@@ -90,7 +90,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
             "definitions": [
               {
                 "definition": "terbiasa, pembawaan, kebiasaan",
-                "refer": "",
                 "levelOfPoliteness": 0,
                 "examples": [
                   {
@@ -112,7 +111,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
             "definitions": [
               {
                 "definition": "ayah, bapak",
-                "refer": "",
                 "levelOfPoliteness": 0
               }
             ]
@@ -164,7 +162,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
         "definitions": [
           {
             "definition": "ayah, bapak",
-            "refer": "",
             "levelOfPoliteness": 0
           }
         ]

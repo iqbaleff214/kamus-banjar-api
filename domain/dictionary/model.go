@@ -19,8 +19,8 @@ type WordMeaning struct {
 }
 
 type WordDefinition struct {
-	Definition        string        `json:"definition"`
-	Refer             string        `json:"refer"`
+	Definition        string        `json:"definition,omitempty"`
+	Refer             string        `json:"refer,omitempty"`
 	LevelOfPoliteness int           `json:"levelOfPoliteness"`
 	Examples          []WordExample `json:"examples,omitempty"`
 }

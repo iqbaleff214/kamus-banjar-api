@@ -1,0 +1,461 @@
+[
+    {
+        "word": "cahaya",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cahaya, sinar"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cair",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cair",
+                        "refer": "caer"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cakada",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tidak",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "cakada hakun aku",
+                                "id": "tidak mau saya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cakah",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sombong",
+                        "refer": "cekah",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bacacakah",
+                "definitions": [
+                    {
+                        "definition": "bersombong-sombong"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakang",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ranting, cabang (pada pohon)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cakap",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sanggup"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "cakapan",
+                "definitions": [
+                    {
+                        "definition": "serba sanggup"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakasi",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cepat",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "cakasi pang",
+                                "id": "cepatlah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cakatan",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cekatan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "caki",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ceki",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bacaki",
+                "definitions": [
+                    {
+                        "definition": "bermain ceki"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakik",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cekik",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mancakik",
+                "definitions": [
+                    {
+                        "definition": "mencekik",
+                        "examples": [
+                            {
+                                "bjn": "rasa mancakik rakungan kahausan",
+                                "id": "rasa mencekik kerongkongan kehausan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakuk",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "obat (dari bahasa tradisional untuk anak-anak)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mancakuk",
+                "definitions": [
+                    {
+                        "definition": "meminumkan, memasukkan obat (dengan paksa)",
+                        "examples": [
+                            {
+                                "bjn": "uma mancakakuk ading",
+                                "id": "ibu meminumkan obat (kepada) adik"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakung",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cekung",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "cakup",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    { }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bacakup",
+                "definitions": [
+                    {
+                        "definition": "berbunyi kup-kup (bunyi membuka menutup waktu makan)",
+                        "examples": [
+                            {
+                                "bjn": "makan bacakup",
+                                "id": "makan berbunyi"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cakut",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pegang",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mancakut",
+                "definitions": [
+                    {
+                        "definition": "menangkap, memegang",
+                        "examples": [
+                            {
+                                "bjn": "mancakut ayam",
+                                "id": "menangkap ayam"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "bacakut",
+                "definitions": [
+                    {
+                        "definition": "berkelahi, bertengkar",
+                        "examples": [
+                            {
+                                "bjn": "hingga bacakut gawian",
+                                "id": "selalu bertengkar kerjaan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "cala",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cela",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "kadada cala nya",
+                                "id": "tidak ada celanya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mancala",
+                "definitions": [
+                    {
+                        "definition": "mencela"
+                    }
+                ]
+            },
+            {
+                "word": "pancalaan",
+                "definitions":[
+                    {
+                        "definition": "suka mencela"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "calak",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "celak",
+                        "refer": "celak"
+                    },
+                    {
+                        "definition": "bekas luka terbakar, berwarna putih",
+                        "examples": [
+                            {
+                                "bjn": "batisnya ba calak",
+                                "id": "kakinya bertelau putih (bekas luka bakar)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "calampita",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lancar (berbicara)",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "bah, pina calampita",
+                                "id": "wah, seperti lancar benar bicara"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "calap",
+        "alphabet": "c",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "celup",
+                        "examples": [
+                            {
+                                "bjn": "calap akan tangan ikam",
+                                "id": "celupkan tanganmu"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "tergenang air",
+                        "examples": [
+                            {
+                                "bjn": "tiap pasang labung rumahku calap",
+                                "id": "tiap pasang besar rumahku tergenang air"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bacalap",
+                "definitions": [
+                    {
+                        "definition": "bergenang air, berendam"
+                    }
+                ]
+            },
+            {
+                "word": "mancalap",
+                "definitions": [
+                    {
+                        "definition": "mencelupkan"
+                    }
+                ]
+            },
+            {
+                "word": "tacalap",
+                "definitions": [
+                    {
+                        "definition": "tercelup",
+                        "examples": [
+                            {
+                                "bjn": "awas, tapih tacalap",
+                                "id": "awas, sarung tercelup"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

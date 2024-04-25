@@ -1,0 +1,451 @@
+[
+    {
+        "word": "daai",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "habis",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "daai dah",
+                                "id": "habis sudah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "daas",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "numpang (tinggal)",
+                        "levelOfPoliteness": -1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "badaas",
+                "definitions": [
+                    {
+                        "definition": "menumpang, bermalam, tinggal, menumpang (sementara)",
+                        "examples": [
+                            {
+                                "bjn": "limbah rumah gusang badaas di sini ai kami",
+                                "id": "sesudah rumah terbakar menumpang di sini saja kami"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dabar",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lembar",
+                        "levelOfPoliteness": 1,
+                        "examples": [
+                            {
+                                "bjn": "kartas sa dabar",
+                                "id": "kertas selembar"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabat",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "debat",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "badabat",
+                "definitions": [
+                    {
+                        "definition": "berdebat",
+                        "examples": [
+                            {
+                                "bjn": "saban hari badabat jadi baraskah?",
+                                "id": "tiap hari berdebat, menghasilkan beraskah?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dabau",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pukul",
+                        "examples": [
+                            {
+                                "bjn": "ku pukul lah ikam",
+                                "id": "ku pukul kau"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "bunyi benda jatuh"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mandabau",
+                "definitions": [
+                    {
+                        "definition": "memukul"
+                    },
+                    {
+                        "definition": "berdebam (bunyi)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dabik",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dabik, tepuk (dada)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "badabik",
+                "definitions": [
+                    {
+                        "definition": "berdabik, bertepuk",
+                        "examples": [
+                            {
+                                "bjn": "wani banar badabik dada",
+                                "id": "berani benar bertepuk dada"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dabil",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lembar (tanah); kaveling (perwatasan)"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabit",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "depa",
+                        "examples": [
+                            {
+                                "bjn": "sa dabit",
+                                "id": "sedepa"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabu",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "debu",
+                        "levelOfPoliteness": 1
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "badabu",
+                "definitions": [
+                    {
+                        "definition": "berdebu"
+                    },
+                    {
+                        "definition": "asyik, enak sekali",
+                        "examples": [
+                            {
+                                "bjn": "badabu makan dapatnya sambal awan taruk waluh",
+                                "id": "asyik makan karena sambal dengan pucuk waluh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dabuk",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bunyi benda jatuh"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabung",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pukul",
+                        "levelOfPoliteness": 1
+                    },
+                    {
+                        "definition": "meratakan gigi dengan mengikir"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabus",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bunyi benda jatuh"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dabut",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "yang paling jelek",
+                        "levelOfPoliteness": 1
+                    },
+                    {
+                        "definition": "tidak memperoleh bagian, luput"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dacing",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "timbangan"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dada",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dada"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dadah",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {}
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "badadah",
+                "definitions": [
+                    {
+                        "definition": "mempercepat mengeluarkan air susu seorang ibu yang baru melahirkan dengan cara memijat belikat si ibu"
+                    }
+                ]
+            },
+            {
+                "word": "mandadah",
+                "definitions": [
+                    {
+                        "definition": "memijat untuk mengeluarkan air susu"
+                    }
+                ]
+            },
+            {
+                "word": "dadai",
+                "definitions": [
+                    {
+                        "definition": "bentang, gelar (pada tali atau galah dsb)"
+                    }
+                ]
+            },
+            {
+                "word": "badadai",
+                "definitions": [
+                    {
+                        "definition": "berbentang, bergelar",
+                        "examples": [
+                            {
+                                "bjn": "tapihku tadi badadai di sini",
+                                "id": "sarungku tadi bergelar di sini"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mandadai",
+                "definitions": [
+                    {
+                        "definition": "membentang, menggelar",
+                        "examples": [
+                            {
+                                "bjn": "mandadai tapasan",
+                                "id": "membentang cucian"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "dadaian",
+                "definitions": [
+                    {
+                        "definition": "tempat membentang pakaian",
+                        "examples": [
+                            {
+                                "bjn": "nukar kawat pakai baulah dadaian",
+                                "id": "membeli tali untuk membuat tempat membentang pakaian"
+                            }
+                        ]
+                    },
+                    {
+                        "definition": "pakaian yang digelar"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "dadak",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dedak"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dadalang",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dalang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    },
+    {
+        "word": "dadampar",
+        "alphabet": "d",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "papan atau kayu sebagai alas atau tempat memotong ikan, daging, sayuran, dan sebagainya"
+                    }
+                ]
+            }
+        ],
+        "derivatives": []
+    }
+]

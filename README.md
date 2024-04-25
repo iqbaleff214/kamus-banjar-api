@@ -15,6 +15,9 @@
 Tujuan dari proyek ini adalah membuat API untuk kamus Bahasa Banjar-Indonesia, yang memberikan pengguna kemampuan untuk menerjemahkan kata dari Bahasa Banjar ke Bahasa Indonesia.
 
 
+*Baca dengan bahasa lain: [English](README.en.md).*
+
+
 ## Tentang Bahasa Banjar
 
 Salah satu provinsi di pulau Kalimantan adalah Kalimantan Selatan (Kalsel). Hampir seluruh wilayah Kalsel dihuni oleh orang Banjar. Bahasa Banjar (BB) bagi masyarakat Banjar merupakan bahasa pengantar yang berfungsi sebagai alat komunikasi sehari-hari.
@@ -86,7 +89,7 @@ Penulisan entri dalam kamus ini disusun secara alfabetis, berurutan dari kata da
 
 ### Fonem Bahasa Banjar
 
-<table border="1">
+<table>
   <thead>
     <tr>
       <th rowspan="2"> Jenis <br /> Nomor </th>
@@ -207,7 +210,7 @@ Penulisan entri dalam kamus ini disusun secara alfabetis, berurutan dari kata da
       <td>[c]</td>
       <td>c</td>
       <td><b>c</b>aluk `rogoh`</td>
-      <td>pa<b>c</b>ang `bakal</td>
+      <td>pa<b>c</b>ang `bakal`</td>
       <td>-</td>
     </tr>
     <tr>
@@ -408,9 +411,6 @@ Maksud bentuk persukuan di sini adalah struktur suku kata (silabel) dalam BBDH. 
   | ---------- | ----------- |
   | umpat 'ikut' | uumpatan 'ikut-ikutan' |
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
-
-
-*Baca dengan bahasa lain: [English](README.en.md).*
 
 ## Prasyarat
 

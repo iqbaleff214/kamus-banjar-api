@@ -15,6 +15,9 @@
 The goal of this project is to create an API for a Banjar-Indonesian dictionary, providing users with the ability to translate words from Banjar to Indonesian.
 
 
+*Read this in other languages: [Bahasa Indonesia](README.md).*
+
+
 ## About the Banjar Language
 
 One of the provinces on the island of Kalimantan is South Kalimantan (Kalsel). Almost the entire area of South Kalimantan is inhabited by Banjar people. The Banjar language (BB) serves as the lingua franca for the Banjar community and functions as their everyday communication tool.
@@ -207,7 +210,7 @@ Entries in this dictionary are arranged alphabetically, starting from base words
       <td>[c]</td>
       <td>c</td>
       <td><b>c</b>aluk `rogoh`</td>
-      <td>pa<b>c</b>ang `bakal</td>
+      <td>pa<b>c</b>ang `bakal`</td>
       <td>-</td>
     </tr>
     <tr>
@@ -408,9 +411,6 @@ The term 'possessive form' here refers to the syllable structure in BBDH. The po
   | ---------- | ----------- |
   | umpat 'ikut' | uumpatan 'ikut-ikutan' |
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
-
-
-*Read this in other languages: [Bahasa Indonesia](README.md).*
 
 ## Prerequisite
 

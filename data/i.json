@@ -1,0 +1,78 @@
+[
+    {
+        "word": "ibadat",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ibadah, sembahyang"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baibadat",
+                "definitions": [
+                    {
+                        "definition": "beribadah, bersembahyang"
+                    }
+                ]
+            },
+            {
+                "word": "paibadat",
+                "definitions": [
+                    {
+                        "definition": "pengibadah, rajin ibadah, rajin sembahyang"
+                    }
+                ]
+            },
+            {
+                "word": "paibadatan",
+                "definitions": [
+                    {
+                        "definition": "tempat sembahyang"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ibarat",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ibarat, tamsil"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baibarat",
+                "definitions": [
+                    {
+                        "definition": "berpepatah"
+                    }
+                ]
+            },
+            {
+                "word": "maibaratakan",
+                "definitions": [
+                    {
+                        "definition": "mentamsilkan",
+                        "examples": [
+                            {
+                                "bjn": "aku maibaratakan lawan diriku sorang",
+                                "id": "saya mentamsilkan dengan diri saya sendiri"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

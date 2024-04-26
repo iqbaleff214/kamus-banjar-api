@@ -412,6 +412,18 @@ Maksud bentuk persukuan di sini adalah struktur suku kata (silabel) dalam BBDH. 
   | umpat 'ikut' | uumpatan 'ikut-ikutan' |
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
 
+
+### Singkatan
+
+| Singkatan | Kepanjangan  |
+| --------- | ------------ |
+| a         | adjektiva    |
+| n         | nomina       |
+| pro       | pronomina    |
+| adv       | adverbia     |
+| v         | verba        |
+
+
 ## Prasyarat
 
 Proyek ini dibangun menggunakan [**Go version 1.22.2**](https://go.dev/dl/), dan diharapkan untuk dikembangkan menggunakan versi Golang yang serupa untuk mendapatkan hasil sesuai harapan.
@@ -524,13 +536,34 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
       {
         "definitions": [
           {
-            "definition": "ayah, bapak",
-            "levelOfPoliteness": 0
+            "definition": "ayah",
+            "partOfSpeech": "n"
+          },
+          {
+            "definition": "mertua laki-laki",
+            "partOfSpeech": "n"
           }
         ]
       }
     ],
-    "derivatives": []
+    "derivatives": [
+      {
+        "word": "baabah",
+        "syllables": "ba.a.bah",
+        "definitions": [
+          {
+            "definition": "berayah; menyebut ayah",
+            "partOfSpeech": "v",
+            "examples": [
+              {
+                "bjn": "inya kada baabah",
+                "id": "dia tidak berayah"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "message": "Definition of word 'abah' successfully retrieved.",
   "status": "success"

@@ -9,9 +9,10 @@ type Alphabet struct {
 // Word model to contain word definition
 type Word struct {
 	Word        string           `json:"word"`
+	Syllable    string           `json:"syllables,omitempty"`
 	Alphabet    string           `json:"alphabet"`
 	Meanings    []WordMeaning    `json:"meanings"`
-	Derivatives []WordDerivative `json:"derivatives"`
+	Derivatives []WordDerivative `json:"derivatives,omitempty"`
 }
 
 type WordMeaning struct {
@@ -19,10 +20,10 @@ type WordMeaning struct {
 }
 
 type WordDefinition struct {
-	Definition        string        `json:"definition,omitempty"`
-	Refer             string        `json:"refer,omitempty"`
-	LevelOfPoliteness int           `json:"levelOfPoliteness"`
-	Examples          []WordExample `json:"examples,omitempty"`
+	Definition   string        `json:"definition,omitempty"`
+	Refer        string        `json:"refer,omitempty"`
+	PartOfSpeech string        `json:"partOfSpeech"`
+	Examples     []WordExample `json:"examples,omitempty"`
 }
 
 type WordExample struct {
@@ -32,6 +33,7 @@ type WordExample struct {
 
 type WordDerivative struct {
 	Word        string           `json:"word"`
+	Syllable    string           `json:"syllables,omitempty"`
 	Definitions []WordDefinition `json:"definitions"`
 }
 

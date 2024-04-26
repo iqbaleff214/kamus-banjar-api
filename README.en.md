@@ -412,6 +412,16 @@ The term 'possessive form' here refers to the syllable structure in BBDH. The po
   | umpat 'ikut' | uumpatan 'ikut-ikutan' |
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
 
+### Abbreviation
+
+| Abbreviation | Expansion    |
+| ------------ | ------------ |
+| a            | adjektiva    |
+| n            | nomina       |
+| pro          | pronomina    |
+| adv          | adverbia     |
+| v            | verba        |
+
 ## Prerequisite
 
 This project is built using [**Go version 1.22.2**](https://go.dev/dl/), and it is expected to be developed using this specific version of Golang to ensure the desired outcome.
@@ -524,13 +534,34 @@ The response will be returned an JSON. For example:
       {
         "definitions": [
           {
-            "definition": "ayah, bapak",
-            "levelOfPoliteness": 0
+            "definition": "ayah",
+            "partOfSpeech": "n"
+          },
+          {
+            "definition": "mertua laki-laki",
+            "partOfSpeech": "n"
           }
         ]
       }
     ],
-    "derivatives": []
+    "derivatives": [
+      {
+        "word": "baabah",
+        "syllables": "ba.a.bah",
+        "definitions": [
+          {
+            "definition": "berayah; menyebut ayah",
+            "partOfSpeech": "v",
+            "examples": [
+              {
+                "bjn": "inya kada baabah",
+                "id": "dia tidak berayah"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "message": "Definition of word 'abah' successfully retrieved.",
   "status": "success"

@@ -500,12 +500,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
 }
 ```
 
-#### Kolom respon sukses
-| Kolom JSON | Tipe | Deskripsi |
-| :---|:----:| ----------- |
-| `data.meanings[i].definitions[i].refer` | string  | Kata yang bersangkutan |
-| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | Tingkat kesopanan sebuah kata. Mengembalikan nilai `0` jika kata tersebut bersifat __netral__, bernilai `1` jika kata tersebut termasuk bahasa __halus__, dan akan bernilai `-1` jika kata tersebut termasuk kategori __kasar__. |
-
 #### Error response
 Respon akan dikembalikan dalam bentuk JSON juga jika terdapat eror. Contohnya:
 ```json
@@ -569,12 +563,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
   "status": "success"
 }
 ```
-
-#### Kolom respon sukses
-| Kolom JSON | Tipe | Deskripsi |
-| :---|:----:| ----------- |
-| `data.meanings[i].definitions[i].refer` | string  | Kata yang bersangkutan |
-| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | Tingkat kesopanan sebuah kata. Mengembalikan nilai `0` jika kata tersebut bersifat __netral__, bernilai `1` jika kata tersebut termasuk bahasa __halus__, dan akan bernilai `-1` jika kata tersebut termasuk kategori __kasar__. |
 
 #### Error response
 Respon akan dikembalikan dalam bentuk JSON juga jika terdapat eror. Contohnya:

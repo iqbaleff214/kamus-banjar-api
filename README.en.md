@@ -498,12 +498,6 @@ The response will be returned an JSON. For example:
 }
 ```
 
-#### Success Response Field
-| JSON Field | Type | Description |
-| :---|:----:| ----------- |
-| `data.meanings[i].definitions[i].refer` | string  | Related words |
-| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | The level of politeness of a word. Returns a value of `0` if the word is __neutral__, `1` if the word is __polite__, and will return `-1` if the word is categorized as __rude__. |
-
 #### Error response
 The response will be returned as JSON in case of an error. For example:
 ```json
@@ -567,12 +561,6 @@ The response will be returned an JSON. For example:
   "status": "success"
 }
 ```
-
-#### Success Response Field
-| JSON Field | Type | Description |
-| :---|:----:| ----------- |
-| `data.meanings[i].definitions[i].refer` | string  | Related words |
-| `data.meanings[i].definitions[i].levelOfPoliteness` | string  | The level of politeness of a word. Returns a value of `0` if the word is __neutral__, `1` if the word is __polite__, and will return `-1` if the word is categorized as __rude__. |
 
 #### Error response
 The response will be returned as JSON in case of an error. For example:

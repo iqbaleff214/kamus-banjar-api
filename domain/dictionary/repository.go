@@ -3,13 +3,15 @@ package dictionary
 import (
 	"embed"
 	"encoding/json"
+	"errors"
 	"io/fs"
+	"path"
 )
 
 // Repository contains method to interact with data source
 type Repository interface {
 	GetAlphabets() []Alphabet
-	GetWordsByAlphabet(alphabet string) []Word
+	GetWordsByAlphabet(alphabet string) ([]Word, error)
 }
 
 // repository as a class
@@ -23,12 +25,17 @@ type repository struct {
 //	this function also retrieve all content of json file that containing Banjar word dictinories.
 //	retrieved contents stored to repository object properties and used as the data source.
 func NewRepository(data embed.FS) Repository {
-	alphabets := make([]Alphabet, 26)
+	availables := []string{
+		"a", "b", "c", "d", "g", "h",
+		"i", "j", "k", "l", "m", "n",
+		"p", "r", "s", "t", "u", "w",
+		"y",
+	}
+
+	alphabets := make([]Alphabet, len(availables))
 	words := make(AlphabeticWord)
 
-	for i := 0; i < 26; i++ {
-		letter := string('a' + rune(i))
-
+	for i, letter := range availables {
 		alphabets[i].Letter = letter
 		words[letter] = []Word{}
 	}
@@ -43,18 +50,22 @@ func NewRepository(data embed.FS) Repository {
 			return err
 		}
 
+		filename = path.Base(filename)
+		alphabet := filename[:len(filename)-5]
+
 		allWords := []Word{}
 
 		if err := json.Unmarshal(b, &allWords); err != nil {
 			return err
 		}
 
-		for _, w := range allWords {
-			alphabet := w.Alphabet
-			words[alphabet] = append(words[alphabet], w)
+		words[alphabet] = allWords
 
-			index := int([]rune(alphabet)[0] - 'a')
-			alphabets[index].Total++
+		for i, letter := range availables {
+			if letter == alphabet {
+				alphabets[i].Total = len(allWords)
+				return nil
+			}
 		}
 
 		return nil
@@ -74,6 +85,11 @@ func (r repository) GetAlphabets() []Alphabet {
 }
 
 // GetWordsByAlphabet to retrieve all words that associate with certain alphabet
-func (r repository) GetWordsByAlphabet(alphabet string) []Word {
-	return r.words[alphabet]
+func (r repository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
+	words, ok := r.words[alphabet]
+	if ok {
+		return words, nil
+	}
+
+	return words, errors.New("the alphabet is not available")
 }

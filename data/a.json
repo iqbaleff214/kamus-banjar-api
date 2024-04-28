@@ -2731,12 +2731,22 @@
     },
     {
         "word": "amban",
+        "syllables": "am.ban",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "salut, ikat (dengan emas, perak dsb)"
+                        "definition": "ikat",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "emban; inang pengasuh",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2744,17 +2754,42 @@
         "derivatives": [
             {
                 "word": "baamban",
+                "syllables": "ba.am.ban",
                 "definitions": [
                     {
-                        "definition": "bersalut"
+                        "definition": "berikat",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "intan baamban amas",
+                                "id": "intan berikat emas"
+                            }
+                        ]
+                    },
+                    {
+                        "partOfSpeech": "v (kiasan)",
+                        "examples": [
+                            {
+                                "bjn": "barlian baamban luyang",
+                                "id": "perkawinan yang tidak sederajat"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "word": "maamban",
+                "syllables": "ma.am.ban",
                 "definitions": [
                     {
-                        "definition": "menyalut, mengikat"
+                        "definition": "mengikat",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maamban marjan lawan amas",
+                                "id": "mengikat merjan dengan emas"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2762,12 +2797,14 @@
     },
     {
         "word": "ambang",
+        "syllables": "am.bang",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "nama senjata orang Banjar"
+                        "definition": "sejenis mandau yang digunakan untuk membabat rumput dan pohon kecil yang tumbuh di lahan yang akan dijadikan ladang",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2775,12 +2812,14 @@
     },
     {
         "word": "ambat",
+        "syllables": "am.bat",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "milik, kepunyaan",
+                        "definition": "milik",
+                        "partOfSpeech": "n",
                         "examples": [
                             {
                                 "bjn": "ambat siapa ni",
@@ -2793,26 +2832,27 @@
         ]
     },
     {
-        "word": "ambawang",
+        "word": "ambai",
+        "syllables": "am.bai",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "nama sejenis buah"
+                        "definition": "nama sejenis tumbuhan merambat, buahnya enak sebagai asinan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
-        ]
-    },
-    {
-        "word": "ambayang",
-        "alphabet": "a",
-        "meanings": [
+        ],
+        "derivatives": [
             {
+                "word": "aambai",
+                "syllables": "aam.bai",
                 "definitions": [
                     {
-                        "definition": "bayang-bayang"
+                        "definition": "nama sejenis tumbuhan merambat, buahnya enak sebagai asinan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2820,38 +2860,90 @@
     },
     {
         "word": "ambil",
+        "syllables": "am.bil",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "ambil"
+                        "definition": "ambil",
+                        "partOfSpeech": "v"
                     }
                 ]
             }
         ],
         "derivatives": [
             {
-                "word": "maambil",
+                "word": "baambilan",
+                "syllables": "ba.am.bil.an",
                 "definitions": [
                     {
-                        "definition": "mengambil"
+                        "definition": "saling menjemput",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "aku lawan kawalku tulak sakulah baganti baambilan",
+                                "id": "aku dengan temanku berganti-ganti saling menjemput"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maambil",
+                "syllables": "ma.am.bil",
+                "definitions": [
+                    {
+                        "definition": "mengambil",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya maambil ampunku",
+                                "id": "dia mengambil milikku"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "word": "maambili",
+                "syllables": "ma.am.bili",
                 "definitions": [
                     {
-                        "definition": "menjemput"
+                        "definition": "menjemput",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "abah maambili ading",
+                                "id": "ayah menjemput adik"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "taambil",
+                "syllables": "ta.am.bil",
+                "definitions": [
+                    {
+                        "definition": "terambil; terbawa",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kai taambil sandal urang",
+                                "id": "kakek terbawa sandal orang"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "word": "ambilan",
+                "syllables": "am.bil.an",
                 "definitions": [
                     {
-                        "definition": "rampasan"
+                        "definition": "rampasan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2859,329 +2951,14 @@
     },
     {
         "word": "ambin",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    { }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "ambin sayup",
-                "definitions": [
-                    {
-                        "definition": "bagian dalam dinding dari ruangan muka pada rumah Banjar"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambul",
+        "syllables": "am.bin",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "tanah timbul yang dapat berpindah-pindah tempat"
-                    },
-                    {
-                        "definition": "kepul",
-                        "examples": [
-                            {
-                                "bjn": "kukus ba ambul",
-                                "id": "asap berkepul"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambun",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "embun"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambung",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "ambung, melempar ke atas"
-                    },
-                    {
-                        "definition": "puji, sanjung"
-                    }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "maambung",
-                "definitions": [
-                    {
-                        "definition": "melempar ke atas",
-                        "examples": [
-                            {
-                                "bjn": "maambung bola",
-                                "id": "melemparkan bola ke atas"
-                            }
-                        ]
-                    },
-                    {
-                        "definition": "memuji-muji",
-                        "examples": [
-                            {
-                                "bjn": "jangan talalu maambung ja pender",
-                                "id": "jangan terlampau memuji-muji bicara"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambut",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    { }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "maambut",
-                "definitions": [
-                    {
-                        "definition": "melepaskan sabut (kelapa)"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambuntut",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    { }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "baambutut",
-                "definitions": [
-                    {
-                        "definition": "tidur dengan kelambu yang tergantung pada keempat sudutnya"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "amin",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "amin"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampah",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "arah, tujuan",
-                        "examples": [
-                            {
-                                "bjn": "hidin te bajalan ampah kasia",
-                                "id": "beliau tadi berjalan ke arah kemari"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampal",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "empal, perkedel"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampalan",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "mempelam"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampalas",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "ampelas"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampang",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "empang"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampar",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "hampar, gelar",
-                        "examples": [
-                            {
-                                "bjn": "ma ampar tikar",
-                                "id": "menggelar tikar"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampas",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "empas"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampat",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "empat"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampih",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "berhentilah"
-                    }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "baampih",
-                "definitions": [
-                    {
-                        "definition": "berhenti"
-                    }
-                ]
-            },
-            {
-                "word": "maampihi",
-                "definitions": [
-                    {
-                        "definition": "memberhentikan; menghentikan"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ampik",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "tepuk tangan"
-                    }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "baampik",
-                "definitions": [
-                    {
-                        "definition": "bertepuk tangan"
-                    }
-                ]
-            },
-            {
-                "word": "maampiki",
-                "definitions": [
-                    {
-                        "definition": "menyoraki, menepukkan tangan"
+                        "definition": "teras; tanah atau lantai yang agak tinggi di depan atau di belakang rumah",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -3189,13 +2966,32 @@
     },
     {
         "word": "ampinak",
+        "syllables": "am.pi.nak",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
                         "definition": "pelihara",
-                        "refer": "hampinak"
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maampinak",
+                "syllables": "ma.am.pi.nak",
+                "definitions": [
+                    {
+                        "definition": "memelihara",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sudah lawas inya maampinak hayam",
+                                "id": "sudah lama dia memelihara ayam"
+                            }
+                        ]
                     }
                 ]
             }
@@ -3203,12 +2999,32 @@
     },
     {
         "word": "amping",
+        "syllables": "am.ping",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "emping"
+                        "definition": "sejenis kerupuk seperti emping dari ubi kayu",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maamping",
+                "syllables": "ma.am.ping",
+                "definitions": [
+                    {
+                        "definition": "membuat emping",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "uma maamping jagung",
+                                "id": "mama membuat emping"
+                            }
+                        ]
                     }
                 ]
             }
@@ -3216,25 +3032,14 @@
     },
     {
         "word": "amplang",
+        "syllables": "am.plang",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "nama sejenis kerupuk"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "amplok",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "amplop, sampul surat"
+                        "definition": "panganan sejenis kerupuk yang bentuknya sebesar jari, berbahan dasar ikan dan tapioka",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -3242,12 +3047,20 @@
     },
     {
         "word": "ampuh",
+        "syllables": "am.puh",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "mujarab"
+                        "definition": "mujarab",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "ubatnya ampuh",
+                                "id": "obatnya mujarab"
+                            }
+                        ]
                     }
                 ]
             }
@@ -3255,20 +3068,26 @@
     },
     {
         "word": "ampul",
+        "syllables": "am.pul",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
-                    { }
+                    {
+                        "definition": "paru-paru ayam",
+                        "partOfSpeech": "n"
+                    }
                 ]
             }
         ],
         "derivatives": [
             {
                 "word": "ati ampul",
+                "syllables": "ati am.pul",
                 "definitions": [
                     {
-                        "definition": "paru-paru ayam"
+                        "definition": "paru-paru ayam",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -3276,27 +3095,22 @@
     },
     {
         "word": "ampun",
+        "syllables": "am.pun",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
                         "definition": "ampun",
-                        "examples": [
-                            {
-                                "bjn": "kada ampun",
-                                "id": "tidak ampun"
-                            }
-                        ]
-                    },
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
                     {
-                        "definition": "milik",
-                        "examples": [
-                            {
-                                "bjn": "ampun ku",
-                                "id": "milikku"
-                            }
-                        ]
+                        "definition": "kepunyaan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -3304,9 +3118,43 @@
         "derivatives": [
             {
                 "word": "baampunan",
+                "syllables": "ba.am.pun.an",
                 "definitions": [
                     {
-                        "definition": "saling mengampuni"
+                        "definition": "saling mengampuni",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "ayu kita baampunan",
+                                "id": "ayo kita saling mengampuni"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maampuni",
+                "syllables": "ma.am.puni",
+                "definitions": [
+                    {
+                        "definition": "mengampuni",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kuitan salalu maampuni kasalahan anaknya",
+                                "id": "orang tua selalu mengampuni kesalahan anaknya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "ampunku",
+                "syllables": "am.pun.ku",
+                "definitions": [
+                    {
+                        "definition": "milik saya",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -3314,13 +3162,20 @@
     },
     {
         "word": "amput",
+        "syllables": "am.put",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "dusta",
-                        "refer": "karamput"
+                        "definition": "bohong; dusta",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "amput ah ikam masih bujang",
+                                "id": "bohong kalau kamu masih jejaka/gadis"
+                            }
+                        ]
                     }
                 ]
             }
@@ -3333,7 +3188,8 @@
             {
                 "definitions": [
                     {
-                        "definition": "berita, alamat, tanda hidup"
+                        "definition": "firasat",
+                        "partOfSpeech": "n"
                     }
                 ]
             }

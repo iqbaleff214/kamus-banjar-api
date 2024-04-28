@@ -422,6 +422,7 @@ Maksud bentuk persukuan di sini adalah struktur suku kata (silabel) dalam BBDH. 
 | pro       | pronomina    |
 | adv       | adverbia     |
 | v         | verba        |
+| p         | partikel     |
 
 
 ## Prasyarat

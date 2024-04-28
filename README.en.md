@@ -421,6 +421,7 @@ The term 'possessive form' here refers to the syllable structure in BBDH. The po
 | pro          | pronomina    |
 | adv          | adverbia     |
 | v            | verba        |
+| p            | partikel     |
 
 ## Prerequisite
 

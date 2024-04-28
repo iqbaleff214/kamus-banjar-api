@@ -1,0 +1,22 @@
+[
+    {
+        "word": "ja",
+        "alphabet": "j",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "saja; -kan",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "biar ja",
+                                "id": "biarkan saja"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

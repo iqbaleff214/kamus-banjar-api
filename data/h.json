@@ -1,0 +1,26 @@
+[
+    {
+        "word": "ha",
+        "alphabet": "h",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "saja",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "ayu ha",
+                                "id": "boleh saja"
+                            },
+                            {
+                                "bjn": "gawi ha saurang",
+                                "id": "kerjakan saja sendiri"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

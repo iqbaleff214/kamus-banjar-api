@@ -1,0 +1,62 @@
+[
+    {
+        "word": "gaak",
+        "syllables": "ga.ak",
+        "alphabet": "g",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lahap",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "ading makannya gaak banar",
+                                "id": "adik makan nasi lahap sekali"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bagaak",
+                "syllables": "ba.ga.ak",
+                "definitions": [
+                    {
+                        "definition": "tambah lahap",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "bagaak makannya imbah sambal acan",
+                                "id": "tambah lahap makannya setelah dengan sambal terasi"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "gaap",
+        "syllables": "ga.ap",
+        "alphabet": "g",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lahap",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "gaap ikam ni makan",
+                                "id": "kamu ini makan lahap sekali"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,75 +1,83 @@
 [
     {
-        "word": "ibadat",
+        "word": "iih",
         "alphabet": "i",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "ibadah, sembahyang"
+                        "definition": "ya, setuju",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "iih ayu ja",
+                                "id": "ya silakan"
+                            }
+                        ]
                     }
                 ]
             }
         ],
         "derivatives": [
             {
-                "word": "baibadat",
+                "word": "baiih",
+                "syllables": "ba.i.ih",
                 "definitions": [
                     {
-                        "definition": "beribadah, bersembahyang"
+                        "definition": "berkata",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya baiih haja",
+                                "id": "dia berkata saja"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "word": "paibadat",
+                "word": "maiihakan",
+                "syllables": "ma.i.ih.akan",
                 "definitions": [
                     {
-                        "definition": "pengibadah, rajin ibadah, rajin sembahyang"
+                        "definition": "menyatakan menyutujui",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "jangan maiihakan haja",
+                                "id": "jangan menyatakan menyetujui saja"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "word": "paibadatan",
+                "word": "taiihakan",
+                "syllables": "ta.i.ih.akan",
                 "definitions": [
                     {
-                        "definition": "tempat sembahyang"
+                        "definition": "terlanjut menyetujui",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "aku sudah taiihakan pang",
+                                "id": "saya sudah terlanjut menyetujui"
+                            }
+                        ]
                     }
                 ]
             }
         ]
     },
     {
-        "word": "ibarat",
+        "word": "ibik",
         "alphabet": "i",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "ibarat, tamsil"
-                    }
-                ]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "baibarat",
-                "definitions": [
-                    {
-                        "definition": "berpepatah"
-                    }
-                ]
-            },
-            {
-                "word": "maibaratakan",
-                "definitions": [
-                    {
-                        "definition": "mentamsilkan",
-                        "examples": [
-                            {
-                                "bjn": "aku maibaratakan lawan diriku sorang",
-                                "id": "saya mentamsilkan dengan diri saya sendiri"
-                            }
-                        ]
+                        "definition": "kerai perahu",
+                        "partOfSpeech": "n"
                     }
                 ]
             }

@@ -2156,13 +2156,135 @@
         ]
     },
     {
+        "word": "alua",
+        "alphabet": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "manisan; halwa",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "alua carmi",
+                "definitions": [
+                    {
+                        "definition": "manisan buah cermai",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "alua kundur",
+                "definitions": [
+                    {
+                        "definition": "manisan buah beligo matang",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "alua kastela",
+                "definitions": [
+                    {
+                        "definition": "manisan buah pepaya matang",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "alua kanas",
+                "definitions": [
+                    {
+                        "definition": "manisan buah nanas matang",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "alua limau bali",
+                "definitions": [
+                    {
+                        "definition": "manisan kulit jeruk bali",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "word": "aluh",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "panggilan untuk anak perempuan atau wanita pada umumnya"
+                        "definition": "panggilan kepada anak perempuan di Kalimantan Selatan",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maaluh",
+                "syllables": "ma.a.luh",
+                "definitions": [
+                    {
+                        "definition": "saudara perempuan dari ayah/ibu yang paling kecil",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "aluk",
+        "alphabet": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sorak; teriak (tanda gembira atau senang)",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baaluk",
+                "syllables": "ba.a.luk",
+                "definitions": [
+                    {
+                        "definition": "bersorak (kegirangan)",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "rami kakanakan baaluk",
+                                "id": "ramai anak-anak bersorak"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maaluk",
+                "syllables": "ma.a.luk",
+                "definitions": [
+                    {
+                        "definition": "menyoraki; meneriakkan kegembiraan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "buhannya maaluki",
+                                "id": "mereka menyoraki"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2176,7 +2298,13 @@
                 "definitions": [
                     {
                         "definition": "perlahan",
-                        "refer": "alon"
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "alun banar bajalan",
+                                "id": "perlahan sekali berjalan"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2199,7 +2327,8 @@
             {
                 "definitions": [
                     {
-                        "definition": "(dari daun) pembungkus, kantong (dari kertas)"
+                        "definition": "daun/kertas yang dibentuk kerucut untuk pembungkus makanan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2207,12 +2336,27 @@
         "derivatives": [
             {
                 "word": "maalung",
+                "syllables": "ma.a.lung",
                 "definitions": [
                     {
-                        "definition": "membuat pembungkus"
+                        "definition": "membuat kertas berbentuk kerucut untuk membungkus makanan alung",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "abut nini maalung gasan bajualan kacang",
+                                "id": "ribut nenek membuat kertas berbentuk kerucut untuk berjualan kacang"
+                            }
+                        ]
                     },
                     {
-                        "definition": "membungkus"
+                        "definition": "membungkus makanan dengan kertas berbentuk kerucut",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maalung nasi",
+                                "id": "membungkus nasi"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2225,7 +2369,26 @@
             {
                 "definitions": [
                     {
-                        "definition": "garis memanjang"
+                        "definition": "garis memanjang",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baalur",
+                "syllables": "ba.a.lur",
+                "definitions": [
+                    {
+                        "definition": "bergaris memanjang",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mamakai baju baalur",
+                                "id": "memakai baju bergaris memanjang"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2238,7 +2401,8 @@
             {
                 "definitions": [
                     {
-                        "definition": "amal"
+                        "definition": "amal",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2246,33 +2410,47 @@
         "derivatives": [
             {
                 "word": "baamal",
+                "syllables": "ba.a.mal",
                 "definitions": [
                     {
-                        "definition": "beramal"
+                        "definition": "beramal",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "rajin baamal gasan sangu di akhirat",
+                                "id": "rajin beramal untuk bekal di akhirat"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "word": "maamalakan",
+                "syllables": "ma.a.mal.akan",
                 "definitions": [
                     {
-                        "definition": "mengamalkan"
-                    }
-                ]
-            },
-            {
-                "word": "taamal",
-                "definitions": [
-                    {
-                        "definition": "terbiasa"
+                        "definition": "mengamalkan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maamalakan ilmu nang dilajarakan guru-gurunya",
+                                "id": "mengamalkan ilmu yang diajarkan guru-gurunya"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "word": "amalan",
+                "syllables": "amal.an",
                 "definitions": [
                     {
-                        "definition": "kebiasaan, ilmu"
+                        "definition": "ilmu yang diamalkan",
+                        "partOfSpeech": "n"
+                    },
+                    {
+                        "definition": "kebiasaan",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2285,33 +2463,64 @@
             {
                 "definitions": [
                     {
-                        "definition": "aman"
+                        "definition": "aman",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "aman rumah kadada nang bakalahian",
+                                "id": "aman rumah tidak ada yang berkelahi"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baaman",
+                "syllables": "ba.a.man",
+                "definitions": [
+                    {
+                        "definition": "tambah aman",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "baaman kampung limbah ada jaga malam",
+                                "id": "tambah aman kampung setelah ada meronda"
+                            }
+                        ]
                     }
                 ]
             }
         ]
     },
     {
-        "word": "amanah",
+        "word": "amanat",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "amanat, pesan, titipan"
+                        "definition": "amanah",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
-        ]
-    },
-    {
-        "word": "amandal",
-        "alphabet": "a",
-        "meanings": [
+        ],
+        "derivatives": [
             {
+                "word": "baamanat",
+                "syllables": "ba.a.ma.nat",
                 "definitions": [
                     {
-                        "definition": "amandel"
+                        "definition": "beramanah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "wayah kai ada baamanat supaya kami rakat",
+                                "id": "saat kakek masih ada beramanah supaya kami rukun"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2324,7 +2533,8 @@
             {
                 "definitions": [
                     {
-                        "definition": "paman (panggilan pada laki-laki yang berumur)"
+                        "definition": "paman; om",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2337,7 +2547,35 @@
             {
                 "definitions": [
                     {
-                        "definition": "mar (dalam permainan catur, mengingatkan bahwa menteri dikenai)"
+                        "definition": "mahkota",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "mahkota pengantin",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "mar; awas wazir pada dalam permainan catur untuk memperingatkan bahwa wazir akan dimakan",
+                        "partOfSpeech": "p"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "amar galung",
+                "definitions": [
+                    {
+                        "definition": "sanggul pengantin yang berhiaskan mahkota",
+                        "partOfSpeech": "n"
                     }
                 ]
             }
@@ -2350,7 +2588,26 @@
             {
                 "definitions": [
                     {
-                        "definition": "emas"
+                        "definition": "emas",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baamas",
+                "syllables": "ba.a.mas",
+                "definitions": [
+                    {
+                        "definition": "memakai emas",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sasadangnya haja baamas, bahaya",
+                                "id": "sedang-sedang saja memakai emas, bahaya"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2363,32 +2620,87 @@
             {
                 "definitions": [
                     {
-                        "definition": "mat (dalam permainan catur bahwa raja telah dikalahkan)"
-                    }
-                ]
-            },
-            {
-                "definitions": [
-                    {
-                        "definition": "terobos, jelajah"
-                    },
-                    {
-                        "definition": "arah, tujuan",
-                        "refer": "ampah"
+                        "definition": "kata seru untuk menyatakan bahwa raja atau perdana meteri dalam permainan catur terancam bahaya",
+                        "partOfSpeech": "p"
                     }
                 ]
             }
         ],
         "derivatives": [
             {
-                "word": "maambah",
+                "word": "maamat",
+                "syllables": "ma.a.mat",
                 "definitions": [
                     {
-                        "definition": "menjelajah, menerobos",
+                        "definition": "membuat raja atau perdana menteri dalam bahaya (dalam permainan catur)",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ambak",
+        "syllables": "am.bak",
+        "alphabet": "a",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pendiam",
+                        "partOfSpeech": "a",
                         "examples": [
                             {
-                                "bjn": "jangan maambah ke padang jaruju, durinya banyak",
-                                "id": "jangan menerobos hutan jeruju, durinya banyak"
+                                "bjn": "urang ambak jangan diajaki",
+                                "id": "orang pendiam jangan diolok-olok"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "ambak",
+                "definitions": [
+                    {
+                        "partOfSpeech": "a (pribahasa)",
+                        "examples": [
+                            {
+                                "bjn": "ambak bakut sakali maluncat limpua liampang",
+                                "id": "orang yang pendiam tetapi sekai berbuat bisa di luar perkiraan (mengagetkan)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "baambak",
+                "syllables": "ba.am.bak",
+                "definitions": [
+                    {
+                        "definition": "menjadi pendiam; tambah pendiam",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "salawas umanya maninggal baambak",
+                                "id": "selama mamamnya meninggal menjadi pendiam"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "taambak",
+                "syllables": "ta.am.bak",
+                "definitions": [
+                    {
+                        "definition": "lebih pendiam",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "nang ading taambak pada nang kaka",
+                                "id": "yang adik lebih pendiam dibanding kakak"
                             }
                         ]
                     }
@@ -2397,48 +2709,21 @@
         ]
     },
     {
-        "word": "ambai",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [{}]
-            }
-        ],
-        "derivatives": [
-            {
-                "word": "ambai-ambai",
-                "definitions": [
-                    {
-                        "definition": "nama sejenis rumput menjalar yang buahnya enak untuk asinan"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambak",
+        "word": "ambalar",
+        "syllables": "am.ba.lar",
         "alphabet": "a",
         "meanings": [
             {
                 "definitions": [
                     {
-                        "definition": "pendiam, tidak banyak bicara"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "word": "ambal",
-        "alphabet": "a",
-        "meanings": [
-            {
-                "definitions": [
-                    {
-                        "definition": "selimut"
-                    },
-                    {
-                        "definition": "permadani"
+                        "definition": "agak bodoh; kurang waras; kurang ingatan",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "biar inya ambalar tapi pambarasih",
+                                "id": "walaupun dia agak bodoh tapi suka kebersihan"
+                            }
+                        ]
                     }
                 ]
             }

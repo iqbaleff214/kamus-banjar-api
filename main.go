@@ -1,7 +1,6 @@
 package main
 
 import (
-	"embed"
 	"log"
 	"os"
 
@@ -9,9 +8,6 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary"
 )
-
-//go:embed data/*.json
-var data embed.FS
 
 func main() {
 	app := setup()
@@ -25,7 +21,7 @@ func main() {
 }
 
 func setup() *fiber.App {
-	dictionaryRepository := dictionary.NewRepository(data)
+	dictionaryRepository := dictionary.NewRepository()
 
 	dictionaryService := dictionary.NewService(dictionaryRepository)
 

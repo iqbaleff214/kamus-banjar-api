@@ -2,12 +2,15 @@ package main
 
 import (
 	"errors"
+	"runtime"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 // GET /api/v1/
 func rootV1Handler(c *fiber.Ctx) error {
+	var memStats runtime.MemStats
+	runtime.ReadMemStats(&memStats)
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"owner":   "M. Iqbal Effendi <iqbaleff214@gmail.com>",
 		"license": "MIT",
@@ -29,6 +32,12 @@ func rootV1Handler(c *fiber.Ctx) error {
 				"method":      "GET",
 				"description": "Returning the definition and meaning according to the given Banjar word.",
 			},
+		},
+		"stats": map[string]float64{
+			"Alloc (MB)": float64(memStats.Alloc)/1024/1024,
+			"TotalAlloc (MB)": float64(memStats.TotalAlloc)/1024/1024,
+			"Sys (MB)": float64(memStats.Sys)/1024/1024,
+			"NumGC": float64(memStats.NumGC),
 		},
 	})
 }

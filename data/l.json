@@ -1,0 +1,248 @@
+[
+    {
+        "word": "laas",
+        "syllables": "la.as",
+        "alphabet": "l",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "habis",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "laas dah",
+                                "id": "sudah habis"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "malaasakan",
+                "syllables": "ma.la.as.akan",
+                "definitions": [
+                    {
+                        "definition": "menghabiskan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ulun kada kawa malaasakan ngini",
+                                "id": "saya tidak sanggup menghabiskan ini"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "labak",
+        "syllables": "la.bak",
+        "alphabet": "l",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lahan rawa",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "labak dangkal",
+                "definitions": [
+                    {
+                        "definition": "lahan rawa dengan kedalaman genangan air kurang dari 50cm selama 1 hingga 3 bulan secara terus menerus",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "labak dalam",
+                "definitions": [
+                    {
+                        "definition": "lahan rawa dengan kedalaman genangan air antara 100 hingga 200cm dan lebih dari 6 bulan",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "lahan labak",
+                "definitions": [
+                    {
+                        "definition": "lahan yang selalu basah, tetapi tidak tergenang sepanjang tahun",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "labak pematang",
+                "definitions": [
+                    {
+                        "definition": "daerah cekungan (depresi) dari suatu dataran, yang genangan airnya tidak menentu dengan lama genangan satu periode kurang dari 1 bulan, namun total waktu tergenang dalam 1 tahun bisa lebih dari 3 bulan dengan kedalaman genangan kurang dari 50cm",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "rawa labak",
+                "definitions": [
+                    {
+                        "definition": "daerah cekungan (depresi) dari suatu dataran, tidak dipengaruhi oleh gerakan pasang surut, basah sepanjang tahun dengan ketinggian air antara 25 hingga 100cm dalam jangka waktu 3 bulan hingga 6 bulan Iebih",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "labak sangat",
+                "definitions": [
+                    {
+                        "definition": "dalam lahan rawa dengan kedalaman genangan air lebih dr 200cm dan tergenang secara terus menerus",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "labak tengahan",
+                "definitions": [
+                    {
+                        "definition": "lahan rawa dengan kedalaman genangan air antara 50 hingga 100cm selama 3 hingga 6 bulan",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "labang",
+        "syllables": "la.bang",
+        "alphabet": "l",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "jemur; kering (tentang padi)",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "labang pang banih tu",
+                                "id": "tolong jemur padi itu"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "luas",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "labang nya rumahmu ni",
+                                "id": "luas sekali rumahmu ini"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "balabang",
+                "syllables": "ba.la.bang",
+                "definitions": [
+                    {
+                        "definition": "berjemur (tentang padi); telah kering dijemur (tentang padi)",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "banih ni sudah balabang",
+                                "id": "padi ini sudah kering dijemur"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "malabang",
+                "syllables": "ma.la.bang",
+                "definitions": [
+                    {
+                        "definition": "menjemur padi; mengeringkan padi",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mama malabang banih",
+                                "id": "ibu menjemur padi"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "labangan",
+                "syllables": "la.bang.an",
+                "definitions": [
+                    {
+                        "definition": "padi yang telah dijemur",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "palabangan",
+                "syllables": "pa.la.bang.an",
+                "definitions": [
+                    {
+                        "definition": "tempat menjemur atau mengeringkan padi",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "labar",
+        "syllables": "la.bar",
+        "alphabet": "l",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bubar; buyar; usai",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "limbah labar jumahatan ka wadah kami",
+                                "id": "usai salat Jumat ke tempat kami"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "labar am",
+                "definitions": [
+                    {
+                        "definition": "kata seru waduh; wah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "labar am tatinggal duitku",
+                                "id": "waduh uangku ketinggalan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

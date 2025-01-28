@@ -412,16 +412,24 @@ The term 'possessive form' here refers to the syllable structure in BBDH. The po
   | umpat 'ikut' | uumpatan 'ikut-ikutan' |
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
 
-### Abbreviation
+### Part of Speech
 
-| Abbreviation | Expansion    |
-| ------------ | ------------ |
-| a            | adjektiva    |
-| n            | nomina       |
-| pro          | pronomina    |
-| adv          | adverbia     |
-| v            | verba        |
-| p            | partikel     |
+| **Abbreviation** | **Full Form**          | **Description**                                                  |
+|-------------------|------------------------|-------------------------------------------------------------------|
+| **n**            | Noun                  | Refers to a person, place, or thing.                             |
+| **v**            | Verb                  | Indicates actions, processes, or states.                         |
+| **a**            | Adjective             | Describes or qualifies a noun.                                   |
+| **pro**          | Pronoun               | Replaces a noun.                                                 |
+| **adv**          | Adverb                | Modifies a verb, adjective, or sentence.                         |
+| **num**          | Numeral               | Indicates quantity or order.                                     |
+| **p**            | Particle              | A function word; does not change form (e.g., "lah", "kah").      |
+| **conj**         | Conjunction           | Connects clauses, phrases, or words.                             |
+| **prep**         | Preposition           | Indicates relationships between words (e.g., "in", "to").        |
+| **interj**       | Interjection          | Expresses emotions or spontaneous reactions.                     |
+| **clit**         | Clitic                | A short word attached to another word (e.g., "-'s", "-n't").     |
+| **dem**          | Demonstrative         | Points to something (e.g., "this", "that").                      |
+| **art**          | Article               | Limits a noun (e.g., "the", "a", "an").                          |
+
 
 ## Prerequisite
 

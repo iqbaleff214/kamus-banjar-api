@@ -413,16 +413,24 @@ Maksud bentuk persukuan di sini adalah struktur suku kata (silabel) dalam BBDH. 
   | ingat 'ingat' | iingatan 'yang diingat-ingat' |
 
 
-### Singkatan
+### Kategori Kelas Kata
 
-| Singkatan | Kepanjangan  |
-| --------- | ------------ |
-| a         | adjektiva    |
-| n         | nomina       |
-| pro       | pronomina    |
-| adv       | adverbia     |
-| v         | verba        |
-| p         | partikel     |
+| **Singkatan** | **Kepanjangan**          | **Penjelasan**                                                   |
+|---------------|--------------------------|-------------------------------------------------------------------|
+| **n**         | Nomina                  | Kata benda; merujuk pada orang, tempat, atau benda.              |
+| **v**         | Verba                   | Kata kerja; menyatakan tindakan, proses, atau keadaan.           |
+| **a**         | Adjektiva               | Kata sifat; menerangkan atau membatasi nomina.                   |
+| **pro**       | Pronomina               | Kata ganti; menggantikan nomina.                                 |
+| **adv**       | Adverbia                | Kata keterangan; menerangkan verba, adjektiva, atau kalimat.     |
+| **num**       | Numeralia               | Kata bilangan; menunjukkan jumlah atau urutan.                   |
+| **p**         | Partikel                | Kata tugas; tidak berubah bentuk (misalnya: "lah", "kah").       |
+| **konj**      | Konjungsi               | Kata sambung; menghubungkan klausa, frasa, atau kata.            |
+| **prep**      | Preposisi               | Kata depan; menunjukkan hubungan antara kata (contoh: "di", "ke").|
+| **interj**    | Interjeksi              | Kata seru; mengekspresikan emosi atau reaksi spontan.            |
+| **klit**      | Klitika                 | Kata pendek yang melekat pada kata lain (contoh: "-ku", "-mu").  |
+| **dem**       | Demonstrativa           | Kata tunjuk; menunjuk sesuatu (contoh: "ini", "itu").            |
+| **art**       | Artikel                 | Kata sandang; membatasi nomina (contoh: "sang", "si").           |
+
 
 
 ## Prasyarat

@@ -1,0 +1,35 @@
+[
+    {
+        "word": "raba",
+        "syllables": "ra.ba",
+        "alphabet": "r",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ranting kayu dalam air yang sering menjadi sarang ikan",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baraba",
+                "syllables": "ba.ra.ba",
+                "definitions": [
+                    {
+                        "definition": "banyak ranting kayunya dalam air",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "banyu ni baraba jadi kada kawa diluntai",
+                                "id": "sungai ini banyak ranting kayunya sehingga tidak bisa dijala"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

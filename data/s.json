@@ -1,0 +1,150 @@
+[
+    {
+        "word": "saat",
+        "syllables": "sa.at",
+        "alphabet": "s",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "binatang malam sejenis tupai yang mengeluarkan bau khas yang menyengat",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "sabaat",
+        "syllables": "sa.ba.at",
+        "alphabet": "s",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sekongkol",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "sabak",
+        "syllables": "sa.bak",
+        "alphabet": "s",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "berserakan; berhamburan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ratik sabak di rumahnya",
+                                "id": "sampah berserakan di rumahnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "basasabak",
+                "syllables": "ba.sa.sa.bak",
+                "definitions": [
+                    {
+                        "definition": "berhambur-habur",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya tu katuju basasabak",
+                                "id": "dia itu suka berhambur-hambur"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "manyabak",
+                "syllables": "ma.nya.bak",
+                "definitions": [
+                    {
+                        "definition": "berhamburan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "manyabak ratik wadai",
+                                "id": "berhamburan sampah kue"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "manyabaki",
+                "syllables": "ma.nya.baki",
+                "definitions": [
+                    {
+                        "definition": "menyebabkan berhamburan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kartas ni manyabaki rumah ja",
+                                "id": "kertas ini menyebabkan rumah berhamburan saja"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "panyabaknya",
+                "syllables": "pa.nya.bak.nya",
+                "definitions": [
+                    {
+                        "definition": "paling berantakan",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "rumahnya ni nang panyabaknya",
+                                "id": "rumahnya ini yang paling berantakan"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tasabak",
+                "syllables": "ta.sa.bak",
+                "definitions": [
+                    {
+                        "definition": "lebih berantakan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kamarnya pina tasabak pada samalam",
+                                "id": "kamarnya kelihatan lebih berantakan dibanding kemarin"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "saban",
+        "syllables": "sa.ban",
+        "alphabet": "s",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "tiap; setiap",
+                        "partOfSpeech": "num"
+                    }
+                ]
+            }
+        ]
+    }
+]

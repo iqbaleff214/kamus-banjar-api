@@ -1,0 +1,136 @@
+[
+    {
+        "word": "na",
+        "syllables": "na",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kata seru",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "na katahuan bajalan manyurangan",
+                                "id": "wah, ketahuan berjalan menyendiri"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "naan",
+        "syllables": "na.an",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions":  [
+                    {
+                        "definition": "hasil panen yang melimpah",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "naas",
+        "syllables": "na.as",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nahas; sial",
+                        "partOfSpeech": "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "nadar",
+        "syllables": "na.dar",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "nazar",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "banadar",
+                "syllables": "ba.na.dar",
+                "definitions": [
+                    {
+                        "definition": "bernazar",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ulun banadar mambaca burdah bila kawa baisi rumah",
+                                "id": "saya bernazar membaca burdah apabila mempunyai rumah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "naga",
+        "syllables": "na.ga",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "naga",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "naga mandi",
+                "definitions": [
+                    {
+                        "definition": "pelangi",
+                        "partOfSpeech": "n (kiasan)"
+                    }
+                ]
+            },
+            {
+                "word": "bau naga",
+                "definitions": [
+                    {
+                        "definition": "bau tidak enak misal ikan asin yang terlalu kering karena sinar matahari",
+                        "partOfSpeech": "a (kiasan)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "nanagaan",
+        "syllables": "na.na.ga.an",
+        "alphabet": "n",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pelangi",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,306 @@
+[
+    {
+        "word": "yahudi",
+        "syllables": "ya.hu.di",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "Yahudi",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mayahudi",
+                "syllables": "ma.ya.hu.di",
+                "definitions": [
+                    {
+                        "definition": "seperti orang Yahudi karena sifat jeleknya, misal suka membungakan uang, kikir, dsb",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sidin ngintu mayahudi kalakuan",
+                                "id": "beliau itu sifatnya seperti orang Yahudi"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaitu",
+        "syllables": "ya.i.tu",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "begitu; begitulah; maka",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "limbah malihat duit satuyuk yaitu inya kada ingat burit kupala lagi",
+                                "id": "sesudah melihat uang setumpuk begitu dia lupa segala-galanya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakin",
+        "syllables": "ya.kin",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "yakin",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "inya kada tapi yakin wan apa nang inya gawi",
+                                "id": "ia tidak terlalu yakin dengan apa yang ia kerjakan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bayakin",
+                "syllables": "ba.ya.kin",
+                "definitions": [
+                    {
+                        "definition": "tambah yakin",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "limbah malihat bukti-buktinya inya bayakin kalu lakinya salingkuh",
+                                "id": "setelah melihat bukti-buktinya ia tambah yakin kalau suaminya selingkuh"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "kayakinan",
+                "syllables": "ka.ya.kin.an",
+                "definitions": [
+                    {
+                        "definition": "keyakinan; terlalu yakin",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "mayakinakan",
+                "syllables": "ma.ya.kin.akan",
+                "definitions": [
+                    {
+                        "definition": "meyakinkan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "aku kada kawa mayakinakan inya supaya jangan maninggalakan aku",
+                                "id": "aku tidak bisa meyakinkan ia supaya jangan meninggalkan aku"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "payakinnya",
+                "syllables": "pa.ya.kin.nya",
+                "definitions": [
+                    {
+                        "definition": "paling yakin",
+                        "partOfSpeech": "a"
+                    },
+                    {
+                        "definition": "benar; nyata",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "bujur, payakinnya kulihat surang",
+                                "id": "benar, nyata betul saya lihat sendiri"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tayakin",
+                "syllables": "ta.ya.kin",
+                "definitions": [
+                    {
+                        "definition": "lebih yakin",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "limbah dipadahi inya tayakin mahadapi kanyataan",
+                                "id": "habis dinasihati ia lebih yakin menghadapi kenyataan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaksa",
+        "syllables": "yak.sa",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "raksasa",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakut",
+        "syllables": "ya.kut",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "(permata) yakut",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yamin",
+        "syllables": "ya.min",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lagi; rasakan",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "yamin kada maasi ditagur",
+                                "id": "rasakan tidak patuh dilarang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "word": "yasin",
+        "syllables": "ya.sin",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "surah Yasin",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "banyu yasin",
+                "definitions": [
+                    {
+                        "definition": "air yang telah dibacakan (surah) Yasin",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "bayasinan",
+                "syllables": "ba.ya.sin.an",
+                "definitions": [
+                    {
+                        "definition": "membaca surah Yasin bersama dari rumah ke rumah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "malam ini kita bayasinan di wadah pamanku",
+                                "id": "malam ini kita pergi ke acara yasinan di tempat pamanku"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yat",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lihat",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "yat nakalnya",
+                                "id": "lihat nakalnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yatu",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ya begitu",
+                        "partOfSpeech": "p",
+                        "examples": [
+                            {
+                                "bjn": "yatu lakasi bulik",
+                                "id": "ya begitu cepat pulang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuta",
+        "syllables": "yu.ta",
+        "alphabet": "y",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "juta",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    }
+]

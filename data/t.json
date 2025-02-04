@@ -1,0 +1,118 @@
+[
+    {
+        "word": "taal",
+        "syllables": "ta.al",
+        "alphabet": "t",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kotor",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "bajunya taal",
+                                "id": "bajunya kotor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bau taal",
+                "definitions": [
+                    {
+                        "definition": "bau pesing",
+                        "partOfSpeech": "a"
+                    }
+                ]
+            },
+            {
+                "word": "bataal",
+                "syllables": "ba.ta.al",
+                "definitions": [
+                    {
+                        "definition": "sangat kotor",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "bajunya bataal",
+                                "id": "bajunya sangat kotor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "taat",
+        "syllables": "ta.at",
+        "alphabet": "t",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "taat; patuh",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya taat baibadah",
+                                "id": "dia taat beribadah"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "kutuk",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sidin taat anaknya nang durhaka",
+                                "id": "beliau kutuk anaknya yang durhaka"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "kana taat",
+                "definitions": [
+                    {
+                        "definition": "kena hukum Tuhan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya kana taat",
+                                "id": "dia kena hukum Tuhan"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "manaatakan",
+                "syllables": "ma.na.at.akan",
+                "definitions": [
+                    {
+                        "definition": "meminta kepada Tuhan agar seseorang kena hukuman karena telah menzaliminya",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya manaatakan musuhnya",
+                                "id": "dia meminta kepada Tuhan agar musuhnya kena hukuman"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,81 @@
+[
+    {
+        "word": "uar",
+        "syllables": "uar",
+        "alphabet": "u",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sejenis kulit kayu bergetah untuk menyamak kulit atau sebagai pewarna",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "sebar",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "uar pang batu di muka rumah",
+                                "id": "tolong sebar batu di halaman"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mauar",
+                "syllables": "ma.u.ar",
+                "definitions": [
+                    {
+                        "definition": "memberi uar",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "abah parahatan mauar kulimbit sapi",
+                                "id": "ayah sedang memberi uar pada kulit sapi yang disamak"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "bauuar",
+                "syllables": "ba.u.u.ar",
+                "definitions": [
+                    {
+                        "definition": "berkoar-koar; ngomong sana ngomong sini",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "jangan bauuar mun kada tahu nang sabujurnya",
+                                "id": "jangan berkoar-koar jika tidak tahu yang sebenarnya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mauarakan",
+                "syllables": "ma.u.ar.akan",
+                "definitions": [
+                    {
+                        "definition": "menyebarkan (berita)",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sidin mauarakan masalah harta warisan",
+                                "id": "beliau berkoar-koar masalah harta warisan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

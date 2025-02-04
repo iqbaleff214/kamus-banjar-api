@@ -1,0 +1,139 @@
+[
+    {
+        "word": "wabah",
+        "syllables": "wa.bah",
+        "alphabet": "w",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "wabah",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mawabah",
+                "syllables": "ma.wa.bah",
+                "definitions": [
+                    {
+                        "definition": "mewabah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "panyakit mawabah di kampung subalah",
+                                "id": "penyakit mewabah di kampung sebelah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "waca",
+        "syllables": "wa.ca",
+        "alphabet": "w",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "baca; bacaan",
+                        "partOfSpeech": "n",
+                        "examples": [
+                            {
+                                "bjn": "sudah ikam waca kah buku kamarian",
+                                "id": "sudah kamu baca ya buku kemarin"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mawaca",
+                "syllables": "ma.wa.ca",
+                "definitions": [
+                    {
+                        "definition": "membaca",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sidin mawaca Al-Qur'an",
+                                "id": "beliau membaca Al-Qur'an"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "wada",
+        "syllables": "wa.da",
+        "alphabet": "w",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cela",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bawadaan",
+                "syllables": "ba.wa.da.an",
+                "definitions": [
+                    {
+                        "definition": "saling mencela",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "pada hal batatangga tapi masih haja katuju bawadaan",
+                                "id": "padahal bertetangga tetapi masih saja senang saling mencela"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mawada",
+                "syllables": "ma.wa.da",
+                "definitions": [
+                    {
+                        "definition": "mencela",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "inya ngintu katuju mawada urang miskin",
+                                "id": "ia itu senang mencela orang miskin"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "pawadaan",
+                "syllables": "pa.wa.da.an",
+                "definitions": [
+                    {
+                        "definition": "suka mencela",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "kada mambadai tuha masih haja pawadaan",
+                                "id": "meskipun sudah tua masih saja suka mencela"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

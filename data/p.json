@@ -1,0 +1,432 @@
+[
+    {
+        "word": "pacah",
+        "syllables": "pa.cah",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pecah",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bapacah",
+                "syllables": "ba.pa.cah",
+                "definitions": [
+                    {
+                        "definition": "berpecah; berpisah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kita bapacah haja mancariinya",
+                                "id": "kita berpisah saja mencarinya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "bapacahan",
+                "syllables": "ba.pa.cah.an",
+                "definitions": [
+                    {
+                        "definition": "pada pecah; ada yang pecah",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "hayam masuk ka dapur bapacahan tu kaina",
+                                "id": "jika ayam masuk ke dapur nanti akan ada yang pecah"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "kapacahan",
+                "syllables": "ka.pa.cah.an",
+                "definitions": [
+                    {
+                        "definition": "bocor (tentang ban)",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kami talambat marga kapacahan ban",
+                                "id": "kami terlambat karena bocor ban"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mamacah",
+                "syllables": "ma.ma.cah",
+                "definitions": [
+                    {
+                        "definition": "memecah; menetas; memisah-misah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mamacah intalu",
+                                "id": "memecah telur"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mamacahi",
+                "syllables": "ma.ma.cahi",
+                "definitions": [
+                    {
+                        "definition": "memecahi",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mamacahi batu lawan martil",
+                                "id": "memecahi batu dengan martil"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mamacahakan",
+                "syllables": "ma.ma.cah.akan",
+                "definitions": [
+                    {
+                        "definition": "memecahkan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ayu ikam mamacahakan piring urang",
+                                "id": "awas kamu memecahkan piring orang"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "papacahan",
+                "syllables": "pa.pa.cah.an",
+                "definitions": [
+                    {
+                        "definition": "pecahan; jawaban atas teka-teki",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "tapacah",
+                "syllables": "ta.pa.cah",
+                "definitions": [
+                    {
+                        "definition": "terpecah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "tapacah manjadi dua",
+                                "id": "terpecah menjadi dua"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tapacahi",
+                "syllables": "ta.pa.cahi",
+                "definitions": [
+                    {
+                        "definition": "terpecahi",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "word": "tapacahakan",
+                "syllables": "ta.pa.cah.akan",
+                "definitions": [
+                    {
+                        "definition": "terpecahkan; tertebak",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kada tapacahakan cucupatianku",
+                                "id": "teka-tekiku tidak tertebak"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacak",
+        "syllables": "pa.cak",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "cerdik",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "kancil takanal binatang nang pacak",
+                                "id": "kancil terkenal sebagai binatang yang cerdik"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "tapacak",
+                "syllables": "ta.pa.cak",
+                "definitions": [
+                    {
+                        "definition": "lebih cerdik",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "tapacak adingnya",
+                                "id": "lebih cerdik adiknya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacal",
+        "syllables": "pa.cal",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "peras kelapa parut untuk menghasilkan santan; pecal",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mamacal",
+                "syllables": "ma.ma.cal",
+                "definitions": [
+                    {
+                        "definition": "memeras kelapa parut",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mamacal nyiur gasan mambubur",
+                                "id": "memeras kelapa parut untuk membuat bubur"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacang",
+        "syllables": "pa.cang",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "hendak; akan",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "pacang madam",
+                                "id": "hendak merantau"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bapacang",
+                "syllables": "ba.pa.cang",
+                "definitions": [
+                    {
+                        "definition": "berencana; bersiap",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kami bapacang handak tulakan",
+                                "id": "kami berencana hendak bepergian"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mamacangakan",
+                "syllables": "ma.ma.cang.akan",
+                "definitions": [
+                    {
+                        "definition": "menyediakan; mencadangkan; menyiapkan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ulun mamacangakan wadai nitu gasan pian",
+                                "id": "saya menyediakan kue itu untukmu"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "pacangan",
+                "syllables": "pa.cang.an",
+                "definitions": [
+                    {
+                        "definition": "rencana; maksud",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "pacangan balawas hanyar tulak",
+                                "id": "rencananya lama baru berangkat lagi"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tapacang",
+                "syllables": "ta.pa.cang",
+                "definitions": [
+                    {
+                        "definition": "terencana",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "tapacang sudah inya handak tulak",
+                                "id": "dia sudah merencanakan mau pergi"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tapacangakan",
+                "syllables": "ta.pa.cang.akan",
+                "definitions": [
+                    {
+                        "definition": "tersiapkan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "duit ini tapacangakan gasan nukar rumah",
+                                "id": "duit ini tersiapkan untuk membeli rumah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacar",
+        "syllables": "pa.car",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "pacar; inai",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bapacar",
+                "syllables": "ba.pa.car",
+                "definitions": [
+                    {
+                        "definition": "memakai inai",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "sudah tradisi di kamping nitu, pangantin bapacar",
+                                "id": "sudah menjadi tradisi di daerah itu, pengantin memakai inai"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mamacari",
+                "syllables": "ma.ma.cari",
+                "definitions": [
+                    {
+                        "definition": "memakaikan inai",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "umanya nang mamacari kuku anaknya",
+                                "id": "ibunya yang memakaikan inai ke kuku anaknya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacat",
+        "syllables": "pa.cat",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "lintah",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "pacirin",
+        "syllables": "pa.ci.rin",
+        "alphabet": "p",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "comberan",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "banyu pacirin",
+                "definitions": [
+                    {
+                        "definition": "air comberan",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ]
+    }
+]

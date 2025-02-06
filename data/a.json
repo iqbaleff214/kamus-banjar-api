@@ -1066,7 +1066,7 @@
                     },
                     {
                         "definition": "mendorong",
-                        "partOfSpeech": "v (kiasan)"
+                        "partOfSpeech": "v"
                     }
                 ]
             }
@@ -1716,7 +1716,7 @@
                 "word": "alah",
                 "definitions": [
                     {
-                        "partOfSpeech": "n (kiasan)",
+                        "partOfSpeech": "n",
                         "examples": [
                             {
                                 "bjn": "alah surak manang taruh",
@@ -1854,7 +1854,7 @@
                         ]
                     },
                     {
-                        "partOfSpeech": "a (kiasan)",
+                        "partOfSpeech": "a",
                         "examples": [
                             {
                                 "bjn": "aalang rabah",
@@ -2084,7 +2084,7 @@
                         "partOfSpeech": "n"
                     },
                     {
-                        "partOfSpeech": "n (kiasan)",
+                        "partOfSpeech": "n",
                         "examples":[
                             {
                                 "bjn": "mangaji mulai di alipan",
@@ -2770,7 +2770,7 @@
                         ]
                     },
                     {
-                        "partOfSpeech": "v (kiasan)",
+                        "partOfSpeech": "v",
                         "examples": [
                             {
                                 "bjn": "barlian baamban luyang",

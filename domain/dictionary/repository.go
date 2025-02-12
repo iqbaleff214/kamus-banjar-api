@@ -36,11 +36,11 @@ func NewRepository(config any) Repository {
 		}
 		repo.init()
 		return &repo
-	case sql.DB:
+	case *sql.DB:
 		log.Println("Using database connection")
-		return nil
+		return &mysqlRepository{db: config.(*sql.DB)}
 	default:
-		log.Println("Using json from GitHUB")
+		log.Println("Using json from GitHUB", config)
 		return jsonRepository{alphabets}
 	}
 }

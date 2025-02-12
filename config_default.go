@@ -5,6 +5,7 @@ package main
 import (
 	"database/sql"
 	"embed"
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
 )

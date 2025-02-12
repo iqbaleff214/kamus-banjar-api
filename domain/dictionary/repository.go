@@ -6,6 +6,7 @@ import "embed"
 type Repository interface {
 	GetAlphabets() []Alphabet
 	GetWordsByAlphabet(alphabet string) ([]Word, error)
+	GetWord(word string) (Word, error)
 }
 
 // NewRepository is a function to instantiate new Repository object

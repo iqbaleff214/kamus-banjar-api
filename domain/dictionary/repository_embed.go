@@ -46,3 +46,19 @@ func (r *embedRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 
 	return words, errors.New("the alphabet is not available")
 }
+
+func (r *embedRepository) GetWord(word string) (Word, error) {
+	alphabet := string(word[0])
+	words, err := r.GetWordsByAlphabet(alphabet)
+	if err != nil {
+		return Word{}, err
+	}
+
+	for _, w := range words {
+		if word == w.Word {
+			return w, nil
+		}
+	}
+
+	return Word{}, errors.New("the word is not found")
+}

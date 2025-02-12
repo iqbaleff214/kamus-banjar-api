@@ -96,6 +96,22 @@ func (r jsonRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 	return []Word{}, errors.New("the alphabet is not available")
 }
 
+func (r jsonRepository) GetWord(word string) (Word, error) {
+	alphabet := string(word[0])
+	words, err := r.GetWordsByAlphabet(alphabet)
+	if err != nil {
+		return Word{}, err
+	}
+
+	for _, w := range words {
+		if word == w.Word {
+			return w, nil
+		}
+	}
+
+	return Word{}, errors.New("the word is not found")
+}
+
 func (r jsonRepository) dataSourceUrl(letter string) string {
 	return "https://raw.githubusercontent.com/iqbaleff214/kamus-banjar-api/refs/heads/main/data/" + letter + ".json"
 }

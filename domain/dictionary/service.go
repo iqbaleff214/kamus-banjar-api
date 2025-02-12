@@ -25,19 +25,7 @@ func (s service) GetAlphabets() ([]Alphabet, error) {
 }
 
 func (s service) GetWord(word string) (Word, error) {
-	alphabet := string(word[0])
-	words, err := s.repository.GetWordsByAlphabet(alphabet)
-	if err != nil {
-		return Word{}, errors.New("the word is not found")
-	}
-
-	for _, w := range words {
-		if word == w.Word {
-			return w, nil
-		}
-	}
-
-	return Word{}, errors.New("the word is not found")
+	return s.repository.GetWord(word)
 }
 
 func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error) {
@@ -55,7 +43,7 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	// Get all available alphabets
 	alphabets := s.repository.GetAlphabets()
 
-	// Matching the requested alphabet with the availables
+	// Matching the requested alphabet with the available
 	var alphabetObj Alphabet
 	for _, a := range alphabets {
 		if alphabet == a.Letter {
@@ -70,7 +58,7 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	}
 
 	// Rearrange words as string
-	words := []string{}
+	var words []string
 	for _, w := range wordsByAlphabet {
 		words = append(words, w.Word)
 	}

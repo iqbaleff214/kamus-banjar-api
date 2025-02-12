@@ -446,10 +446,10 @@ Proyek ini dibangun menggunakan [**Go version 1.22.2**](https://go.dev/dl/), dan
 
 Jalankan perintah berikut untuk membuat _file_ biner:
 ```shell
-go build -ldflags "-s -w" -o ./out .
+go build -ldflags "-s -w" -o ./bin/app .
 ```
 
-Kemudian jalankan menggunakan perintah `./out`.
+Kemudian jalankan menggunakan perintah `./bin/app`.
 
 ## Penggunaan
 

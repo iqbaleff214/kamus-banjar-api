@@ -15,7 +15,7 @@ type jsonRepository struct {
 }
 
 // GetAlphabets to retrieve all alphabets
-func (r jsonRepository) GetAlphabets() []Alphabet {
+func (r jsonRepository) GetAlphabets() ([]Alphabet, error) {
 	var mu sync.Mutex
 	var wg sync.WaitGroup
 
@@ -33,7 +33,7 @@ func (r jsonRepository) GetAlphabets() []Alphabet {
 				fmt.Println(letter, err)
 				return
 			}
-			defer resp.Body.Close()
+			defer func() { _ = resp.Body.Close() }()
 
 			if resp.StatusCode != 200 {
 				return
@@ -60,7 +60,7 @@ func (r jsonRepository) GetAlphabets() []Alphabet {
 
 	wg.Wait()
 
-	return alphabets
+	return alphabets, nil
 }
 
 // GetWordsByAlphabet to retrieve all words that associate with certain alphabet
@@ -100,7 +100,7 @@ func (r jsonRepository) GetWord(word string) (Word, error) {
 	alphabet := string(word[0])
 	words, err := r.GetWordsByAlphabet(alphabet)
 	if err != nil {
-		return Word{}, err
+		return Word{}, errors.New("the word is not found")
 	}
 
 	for _, w := range words {

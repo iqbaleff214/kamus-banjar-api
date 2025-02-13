@@ -13,9 +13,10 @@ type fsRepository struct {
 	alphabets  []string
 	index      map[string]Alphabet
 	dictionary map[string][]Word
+	path       string
 }
 
-func (r *fsRepository) GetAlphabets() []Alphabet {
+func (r *fsRepository) GetAlphabets() ([]Alphabet, error) {
 	var alphabets []Alphabet
 	for _, letter := range r.alphabets {
 		if v, ok := r.index[letter]; ok {
@@ -23,7 +24,7 @@ func (r *fsRepository) GetAlphabets() []Alphabet {
 		}
 	}
 
-	return alphabets
+	return alphabets, nil
 }
 
 func (r *fsRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
@@ -44,7 +45,7 @@ func (r *fsRepository) GetWord(word string) (Word, error) {
 	alphabet := string(word[0])
 	words, err := r.GetWordsByAlphabet(alphabet)
 	if err != nil {
-		return Word{}, err
+		return Word{}, errors.New("the word is not found")
 	}
 
 	for _, w := range words {
@@ -69,7 +70,7 @@ func (r *fsRepository) init() {
 // load letters
 func (r *fsRepository) loadLetters() error {
 	for _, letter := range r.alphabets {
-		letterFile := filepath.Join("data", letter+".json")
+		letterFile := filepath.Join(r.path, "data", letter+".json")
 
 		content, err := os.ReadFile(letterFile)
 		if err != nil {
@@ -95,7 +96,7 @@ func (r *fsRepository) loadLetters() error {
 
 func (r *fsRepository) loadWords() error {
 	for _, letter := range r.alphabets {
-		letterFile := filepath.Join("data", letter+".json")
+		letterFile := filepath.Join(r.path, "data", letter+".json")
 
 		content, err := os.ReadFile(letterFile)
 		if err != nil {

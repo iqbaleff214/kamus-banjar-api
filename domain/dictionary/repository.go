@@ -3,12 +3,13 @@ package dictionary
 import (
 	"database/sql"
 	"embed"
+	"github.com/stretchr/testify/mock"
 	"log"
 )
 
 // Repository contains method to interact with data source
 type Repository interface {
-	GetAlphabets() []Alphabet
+	GetAlphabets() ([]Alphabet, error)
 	GetWordsByAlphabet(alphabet string) ([]Word, error)
 	GetWord(word string) (Word, error)
 }
@@ -27,12 +28,13 @@ func NewRepository(config any) Repository {
 		repo := embedRepository{}
 		repo.init(config.(embed.FS))
 		return &repo
-	case bool:
+	case string:
 		log.Println("Using read file")
 		repo := fsRepository{
 			alphabets:  alphabets,
 			index:      make(map[string]Alphabet),
 			dictionary: make(map[string][]Word),
+			path:       config.(string),
 		}
 		repo.init()
 		return &repo
@@ -43,4 +45,25 @@ func NewRepository(config any) Repository {
 		log.Println("Using json from GitHUB", config)
 		return jsonRepository{alphabets}
 	}
+}
+
+// --------------------------------| MOCK OBJECT |-------------------------------- //
+
+type MockRepository struct {
+	mock.Mock
+}
+
+func (r *MockRepository) GetAlphabets() ([]Alphabet, error) {
+	args := r.Called()
+	return args.Get(0).([]Alphabet), args.Error(1)
+}
+
+func (r *MockRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
+	args := r.Called(alphabet)
+	return args.Get(0).([]Word), args.Error(1)
+}
+
+func (r *MockRepository) GetWord(word string) (Word, error) {
+	args := r.Called(word)
+	return args.Get(0).(Word), args.Error(1)
 }

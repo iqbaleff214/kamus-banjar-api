@@ -34,8 +34,8 @@ func (r *embedRepository) init(data embed.FS) {
 	}
 }
 
-func (r *embedRepository) GetAlphabets() []Alphabet {
-	return r.alphabets
+func (r *embedRepository) GetAlphabets() ([]Alphabet, error) {
+	return r.alphabets, nil
 }
 
 func (r *embedRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {

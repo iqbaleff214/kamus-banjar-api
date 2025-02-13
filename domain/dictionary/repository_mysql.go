@@ -4,32 +4,31 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type mysqlRepository struct {
 	db *sql.DB
 }
 
-func (r *mysqlRepository) GetAlphabets() []Alphabet {
+func (r *mysqlRepository) GetAlphabets() ([]Alphabet, error) {
 	var result []Alphabet
 
 	query := "SELECT l.letter, COUNT(w.id) as total FROM letters l JOIN words w ON l.letter = w.letter GROUP BY l.letter;"
 	rows, err := r.db.Query(query)
 	if err != nil {
-		log.Fatal(err)
+		return result, err
 	}
 	defer func() { _ = rows.Close() }()
 
 	for rows.Next() {
 		alphabet := Alphabet{}
 		if err = rows.Scan(&alphabet.Letter, &alphabet.Total); err != nil {
-			log.Fatal(err)
+			return result, err
 		}
 		result = append(result, alphabet)
 	}
 
-	return result
+	return result, nil
 }
 
 func (r *mysqlRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {

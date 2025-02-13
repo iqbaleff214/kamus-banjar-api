@@ -22,7 +22,12 @@ func repoConfig() any {
 	}
 
 	if _, err := os.ReadDir("data"); err == nil {
-		return true
+		if os.Getenv("SOURCE_PATH") != "" {
+			return os.Getenv("SOURCE_PATH")
+		}
+
+		curDir, _ := os.Getwd()
+		return curDir
 	}
 
 	return nil

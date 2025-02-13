@@ -20,8 +20,7 @@ func NewService(repository Repository) Service {
 }
 
 func (s service) GetAlphabets() ([]Alphabet, error) {
-	alphabets := s.repository.GetAlphabets()
-	return alphabets, nil
+	return s.repository.GetAlphabets()
 }
 
 func (s service) GetWord(word string) (Word, error) {
@@ -41,7 +40,10 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	}
 
 	// Get all available alphabets
-	alphabets := s.repository.GetAlphabets()
+	alphabets, err := s.repository.GetAlphabets()
+	if err != nil {
+		return Alphabet{}, nil, err
+	}
 
 	// Matching the requested alphabet with the available
 	var alphabetObj Alphabet

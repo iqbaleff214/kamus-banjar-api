@@ -444,10 +444,10 @@ This project is built using [**Go version 1.22.2**](https://go.dev/dl/), and it 
 
 Execute the following command to build the binary:
 ```shell
-go build -ldflags "-s -w" -o ./out .
+go build -ldflags "-s -w" -o ./bin/app .
 ```
 
-Then you can run the service using the command `./out`.
+Then you can run the service using the command `./bin/app`.
 
 ## Usage
 

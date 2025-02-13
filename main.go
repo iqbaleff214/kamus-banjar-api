@@ -21,7 +21,7 @@ func main() {
 }
 
 func setup() *fiber.App {
-	dictionaryRepository := dictionary.NewRepository()
+	dictionaryRepository := dictionary.NewRepository(repoConfig())
 
 	dictionaryService := dictionary.NewService(dictionaryRepository)
 

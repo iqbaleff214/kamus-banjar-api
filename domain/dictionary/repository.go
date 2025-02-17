@@ -3,8 +3,9 @@ package dictionary
 import (
 	"database/sql"
 	"embed"
-	"github.com/stretchr/testify/mock"
 	"log"
+
+	"github.com/stretchr/testify/mock"
 )
 
 // Repository contains method to interact with data source
@@ -33,7 +34,7 @@ func NewRepository(config any) Repository {
 		repo := fsRepository{
 			alphabets:  alphabets,
 			index:      make(map[string]Alphabet),
-			dictionary: make(map[string][]Word),
+			dictionary: NewDictionary(),
 			path:       config.(string),
 		}
 		repo.init()

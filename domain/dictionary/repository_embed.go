@@ -8,8 +8,8 @@ import (
 )
 
 type embedRepository struct {
-	alphabets []Alphabet
-	words     map[string][]Word
+	alphabets  []Alphabet
+	dictionary Dictionary
 }
 
 func (r *embedRepository) init(data embed.FS) {
@@ -21,15 +21,18 @@ func (r *embedRepository) init(data embed.FS) {
 	}
 
 	r.alphabets = make([]Alphabet, len(letters))
-	r.words = make(map[string][]Word)
+	r.dictionary = NewDictionary()
 	for i, letter := range letters {
 		r.alphabets[i].Letter = letter
-		if b, err := fs.ReadFile(data, "data/"+letter+".json"); err == nil {
-			var result []Word
-			if err = json.Unmarshal(b, &result); err == nil {
-				r.words[letter] = result
-				r.alphabets[i].Total = len(result)
-			}
+		b, err := fs.ReadFile(data, "data/"+letter+".json")
+		if err != nil {
+			continue
+		}
+
+		var result []Word
+		if err = json.Unmarshal(b, &result); err == nil {
+			r.dictionary.AddEntries(result)
+			r.alphabets[i].Total = len(result)
 		}
 	}
 }
@@ -39,25 +42,17 @@ func (r *embedRepository) GetAlphabets() ([]Alphabet, error) {
 }
 
 func (r *embedRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
-	words, ok := r.words[alphabet]
-	if ok {
-		return words, nil
+	entries := r.dictionary.GetEntries(alphabet)
+	if len(entries) > 0 {
+		return entries, nil
 	}
 
-	return words, errors.New("the alphabet is not available")
+	return entries, errors.New("the alphabet is not available")
 }
 
 func (r *embedRepository) GetWord(word string) (Word, error) {
-	alphabet := string(word[0])
-	words, err := r.GetWordsByAlphabet(alphabet)
-	if err != nil {
-		return Word{}, err
-	}
-
-	for _, w := range words {
-		if word == w.Word {
-			return w, nil
-		}
+	if word, ok := r.dictionary.GetWord(word); ok {
+		return word, nil
 	}
 
 	return Word{}, errors.New("the word is not found")

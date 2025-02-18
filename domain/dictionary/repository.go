@@ -3,8 +3,9 @@ package dictionary
 import (
 	"database/sql"
 	"embed"
-	"github.com/stretchr/testify/mock"
 	"log"
+
+	"github.com/stretchr/testify/mock"
 )
 
 // Repository contains method to interact with data source
@@ -43,7 +44,7 @@ func NewRepository(config any) Repository {
 		return &mysqlRepository{db: config.(*sql.DB)}
 	default:
 		log.Println("Using json from GitHUB", config)
-		return jsonRepository{alphabets}
+		return newJsonRepository(alphabets)
 	}
 }
 

@@ -12,7 +12,7 @@ import (
 type fsRepository struct {
 	alphabets  []string
 	index      map[string]Alphabet
-	dictionary map[string][]Word
+	dictionary Dictionary
 	path       string
 }
 
@@ -33,25 +33,14 @@ func (r *fsRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 		return result, errors.New("the alphabet is not available")
 	}
 
-	entries, ok := r.dictionary[alphabet]
-	if !ok {
-		return result, errors.New("the alphabet is not available")
-	}
-
+	entries := r.dictionary.GetEntries(alphabet)
 	return entries, nil
 }
 
 func (r *fsRepository) GetWord(word string) (Word, error) {
-	alphabet := string(word[0])
-	words, err := r.GetWordsByAlphabet(alphabet)
-	if err != nil {
-		return Word{}, errors.New("the word is not found")
-	}
-
-	for _, w := range words {
-		if word == w.Word {
-			return w, nil
-		}
+	value, exist := r.dictionary.GetWord(word)
+	if exist {
+		return value, nil
 	}
 
 	return Word{}, errors.New("the word is not found")
@@ -108,8 +97,8 @@ func (r *fsRepository) loadWords() error {
 			return errors.New("the alphabet is not available")
 		}
 
-		for _, word := range result {
-			r.dictionary[letter] = append(r.dictionary[letter], word)
+		for idx, word := range result {
+			r.dictionary.AddEntry(idx, word)
 		}
 	}
 

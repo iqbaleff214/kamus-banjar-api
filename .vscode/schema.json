@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Words",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["word", "alphabet", "meanings"],
+    "properties": {
+      "word": {
+        "type": "string"
+      },
+      "syllables": {
+        "type": "string"
+      },
+      "alphabet": {
+        "type": "string"
+      },
+      "meanings": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/WordMeaning"
+        }
+      },
+      "derivatives": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/WordDerivative"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "WordMeaning": {
+      "type": "object",
+      "required": ["definitions"],
+      "properties": {
+        "definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WordDefinition"
+          }
+        }
+      }
+    },
+    "WordDefinition": {
+      "type": "object",
+      "required": ["partOfSpeech"],
+      "properties": {
+        "definition": {
+          "type": "string"
+        },
+        "refer": {
+          "type": "string"
+        },
+        "partOfSpeech": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WordExample"
+          }
+        }
+      }
+    },
+    "WordExample": {
+      "type": "object",
+      "properties": {
+        "bjn": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "WordDerivative": {
+      "type": "object",
+      "required": ["word", "definitions"],
+      "properties": {
+        "word": {
+          "type": "string"
+        },
+        "syllables": {
+          "type": "string"
+        },
+        "definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WordDefinition"
+          }
+        }
+      }
+    }
+  }
+}

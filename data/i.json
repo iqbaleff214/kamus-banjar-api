@@ -765,5 +765,208 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "ikral",
+        "syllables": "ik.ral",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ikrar; janji",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikral",
+                "syllables": "ba.ik.ral",
+                "definitions": [
+                    {
+                        "definition": "berikrar",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "udah lawas inya baikral",
+                                "id": "sudah lama dia berikrar"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikung",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "orang; ekor (satuan hitungan)",
+                        "partOfSpeech": "num"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikung",
+                "syllables": "ba.i.kung",
+                "definitions": [
+                    {
+                        "definition": "satuan orang/binatang; berwujud",
+                        "partOfSpeech": "n",
+                        "examples": [
+                            {
+                                "bjn": "hantu baikung",
+                                "id": "hantu yang berwujud"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "baikungan",
+                "syllables": "ba.i.kung.an",
+                "definitions": [
+                    {
+                        "definition": "satuan orang/binatang; berwujud",
+                        "partOfSpeech": "n",
+                        "examples": [
+                            {
+                                "bjn": "hantu baikung",
+                                "id": "hantu yang berwujud"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "saikung",
+                "syllables": "sa.i.kung",
+                "definitions": [
+                    {
+                        "definition": "seorang; seekor",
+                        "partOfSpeech": "num",
+                        "examples": [
+                            {
+                                "bjn": "aku maunjun ulihi saikung iwak",
+                                "id": "saya memancing mendapat seekor ikan"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikup",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "peluk",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maikup",
+                "syllables": "ma.i.kup",
+                "definitions": [
+                    {
+                        "definition": "memeluk",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maikup tihang",
+                                "id": "memeluk tiang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ilah",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "alasan",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "pisah",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            },
+            {
+                "definitions": [
+                    {
+                        "definition": "bilang",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "bailah",
+                "syllables": "ba.i.lah",
+                "definitions": [
+                    {
+                        "definition": "beralasan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "jangan bailah",
+                                "id": "jangan beralasan"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "bailah",
+                "syllables": "ba.i.lah",
+                "definitions": [
+                    {
+                        "definition": "berpisah; mandiri",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "imbah bisi laki inya bailah",
+                                "id": "setelah mempunyai suami dia mandiri"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "mailahakan",
+                "syllables": "ma.i.lah.akan",
+                "definitions": [
+                    {
+                        "definition": "memisahkan; mengkhususkan",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ]
     }
 ]

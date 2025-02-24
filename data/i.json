@@ -82,5 +82,688 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "idabul",
+        "alphabet": "i",
+        "syllables": "i.da.bul",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "prakarsa; olah; perkara; hal",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baidabul",
+                "syllables": "ba.i.da.bul",
+                "definitions": [
+                    {
+                        "definition": "berprakarsa; punya olah",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "siapang baidabul kaya ini",
+                                "id": "siapa yang berprakarsa seperti ini"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "idang",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "panggilan bagi wanita muda/gadis",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "idung",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "hidung",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baidung",
+                "syllables": "ba.idung",
+                "definitions": [
+                    {
+                        "definition": "berhidung",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            },
+            {
+                "word": "maidung",
+                "syllables": "ma.idung",
+                "definitions": [
+                    {
+                        "definition": "memunculkan hidung ke permukaan air agar dapat bernafas",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mun maidung lawasi haja",
+                                "id": "kalau memunculkan hidung ke permukaan air agar dapat bernafas lama-lama saja"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "igama",
+        "syllables": "iga.ma",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "agama",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "igat",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "kotor",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "igat banar lantainya",
+                                "id": "kotor sekali lantainya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baigat",
+                "syllables": "ba.igat",
+                "definitions": [
+                    {
+                        "definition": "tambah kotor",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "imbah kada kasumba baigat",
+                                "id": "setelah terkena pewarna tambah kotor"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maigati",
+                "syllables": "ma.i.gati",
+                "definitions": [
+                    {
+                        "definition": "mengotori",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "jangan maigati lantai",
+                                "id": "jangan mengotori lantai"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "igul",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "acuh; hirau; peduli",
+                        "partOfSpeech": "a"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "iigul",
+                "syllables": "i.igul",
+                "definitions": [
+                    {
+                        "definition": "acuh; hirau; peduli",
+                        "partOfSpeech": "a"
+                    }
+                ]
+            },
+            {
+                "word": "kada igul",
+                "definitions": [
+                    {
+                        "definition": "acuh tak acuh",
+                        "partOfSpeech": "a"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "igung",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "menjaga perasaan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ngalih banar aku ni igung sidin",
+                                "id": "sulit sekali saya ini menjaga perasaan beliau"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "maigungakan",
+                "syllables": "ma.i.gung.akan",
+                "definitions": [
+                    {
+                        "definition": "menjaga perasaan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ngalih banar aku ni maigungakan sidin",
+                                "id": "sulit sekali saya ini menjaga perasaan beliau"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "igut",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "gigit",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "igut gulaannya",
+                                "id": "gigit permennya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baigut",
+                "syllables": "ba.i.gut",
+                "definitions": [
+                    {
+                        "definition": "dengan cara menggigit; saling menggigit",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "kalahi baigut",
+                                "id": "berkelahi saling menggigit"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maigut",
+                "syllables": "ma.i.gut",
+                "definitions": [
+                    {
+                        "definition": "menggigit",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "kai maigut jagung",
+                                "id": "kakek menggigit jagung"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "paigutan",
+                "syllables": "pa.i.gut.an",
+                "definitions": [
+                    {
+                        "definition": "suka menggigit",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "anaknya paigutan",
+                                "id": "anaknya suka menggigit"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "taigut",
+                "syllables": "ta.i.gut",
+                "definitions": [
+                    {
+                        "definition": "tergigit",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "aku taigut ilat",
+                                "id": "saya tergigit lidah"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ihnar",
+        "syllables": "ih.nar",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "bos; pimpinan",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ihwal",
+        "syllables": "ih.wal",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "ihwal",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "iji",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "biji (satuan hitungan)",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikam",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "engkau; kamu",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikam",
+                "syllables": "ba.i.kam",
+                "definitions": [
+                    {
+                        "definition": "berkamu; berengkau",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "wan kuitan jangan baikam",
+                                "id": "dengan orang tua jangan berkamu"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikap",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "dekap",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "ikap gancang-gancang",
+                                "id": "dekap kuat-kuat"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikapan",
+                "syllables": "ba.i.kap.an",
+                "definitions": [
+                    {
+                        "definition": "berdekapan",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "baikapan inya wan kawannya",
+                                "id": "berdekapan dia dengan temannya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maikap",
+                "syllables": "ma.i.kap",
+                "definitions": [
+                    {
+                        "definition": "mendekap",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maipan matan balakang",
+                                "id": "mendekap dari belakang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikar",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "curang; licik; culas",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "bakawanan jangan ikar",
+                                "id": "berteman jangan culas"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikar",
+                "syllables": "ba.i.kar",
+                "definitions": [
+                    {
+                        "definition": "berbuat curang",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mun main jangan baikar",
+                                "id": "kalau bermain jangan berbuat curang"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "kaikaran",
+                "syllables": "ka.i.kar.an",
+                "definitions": [
+                    {
+                        "definition": "terlalu culas; keculasan",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "inya kaikaran bakawan",
+                                "id": "dia terlalu culas berteman"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maikari",
+                "syllables": "ma.i.kari",
+                "definitions": [
+                    {
+                        "definition": "mencurangi",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maikari kawan",
+                                "id": "mencurangi teman"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "paikarnya",
+                "syllables": "pa.i.kar.nya",
+                "definitions": [
+                    {
+                        "definition": "paling curang; ikar",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "mun ditagih utang inya paikarnya",
+                                "id": "kalau ditagih utang dia paling curang"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikas",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "batas; hingga",
+                        "partOfSpeech": "n"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikas",
+                "syllables": "ba.i.kas",
+                "definitions": [
+                    {
+                        "definition": "berbatas",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "bukunya sudah baikas",
+                                "id": "bukunya sudah berbatas"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maikasi",
+                "syllables": "ma.i.kasi",
+                "definitions": [
+                    {
+                        "definition": "memberi batas; membatasi",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "maikas tanah nang hanyar ditukar",
+                                "id": "memberi batas tanah yang baru dibeli"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ikit",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "sedikit",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "ikit nya",
+                                "id": "sedikitnya"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "baikit",
+                "syllables": "ba.i.kit",
+                "definitions": [
+                    {
+                        "definition": "tambah sedikit",
+                        "partOfSpeech": "adv",
+                        "examples": [
+                            {
+                                "bjn": "baikit wadainya",
+                                "id": "tambah sedikit kuenya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "kaikitan",
+                "syllables": "ka.i.kit.an",
+                "definitions": [
+                    {
+                        "definition": "terlalu sedikit",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "kaikitan mambarii aku",
+                                "id": "terlalu sedikit memberi saya"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "maikiti",
+                "syllables": "ma.i.kiti",
+                "definitions": [
+                    {
+                        "definition": "menjadikan sedikit; mengurangi",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "mun handak maikiti kada papa jua",
+                                "id": "kalau hendak mengurangi tidak apa-apa juga"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "paikitnya",
+                "syllables": "pa.i.kit.nya",
+                "definitions": [
+                    {
+                        "definition": "paling sedikit",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "ampun inya paikitnya",
+                                "id": "milik dia paling sedikit"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "taikit",
+                "syllables": "ta.i.kit",
+                "definitions": [
+                    {
+                        "definition": "lebih sedikit",
+                        "partOfSpeech": "a",
+                        "examples": [
+                            {
+                                "bjn": "ari ini rajakinya taikit",
+                                "id": "hari ini rezekinya lebih sedikit"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]

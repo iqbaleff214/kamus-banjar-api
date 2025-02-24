@@ -1,6 +1,11 @@
 package dictionary
 
-import "strings"
+import (
+	"errors"
+	"strings"
+
+	"github.com/lithammer/fuzzysearch/fuzzy"
+)
 
 type Entries struct {
 	index map[string]int
@@ -9,6 +14,7 @@ type Entries struct {
 
 type Dictionary struct {
 	entries map[string]Entries
+	words   []string
 }
 
 func NewDictionary() Dictionary {
@@ -26,17 +32,20 @@ func (d *Dictionary) AddEntry(index int, word Word) {
 
 	_, ok := d.entries[alphabet]
 	if !ok {
-		entries := Entries{
+		d.entries[alphabet] = Entries{
 			index: map[string]int{},
 			words: []Word{},
 		}
-		d.entries[alphabet] = entries
 	}
 
 	entries := d.entries[alphabet]
 	entries.index[word.Word] = index
 	entries.words = append(entries.words, word)
 	d.entries[alphabet] = entries
+
+	for _, word := range entries.words {
+		d.words = append(d.words, word.Word)
+	}
 }
 
 func (d *Dictionary) AddEntries(words []Word) {
@@ -66,4 +75,20 @@ func (d *Dictionary) GetEntries(alphabet string) []Word {
 	}
 
 	return entries.words
+}
+
+func (d *Dictionary) Search(keyword string) (SearchResult, error) {
+	matches := fuzzy.Find(keyword, d.words)
+
+	result := SearchResult{
+		Search: keyword,
+		Words:  matches,
+		Total:  len(matches),
+	}
+
+	if result.Total > 0 {
+		return result, nil
+	}
+
+	return result, errors.New("no matching word found")
 }

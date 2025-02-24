@@ -38,3 +38,9 @@ type WordDerivative struct {
 }
 
 type AlphabeticWord map[string][]Word
+
+type SearchResult struct {
+	Search string   `json:"search"`
+	Total  int      `json:"total"`
+	Words  []string `json:"words"`
+}

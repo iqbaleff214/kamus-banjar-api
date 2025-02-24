@@ -7,6 +7,7 @@ type Service interface {
 	GetAlphabets() ([]Alphabet, error)
 	GetWord(word string) (Word, error)
 	GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
+	Search(keyword string) (SearchResult, error)
 }
 
 // service as a class
@@ -66,4 +67,8 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	}
 
 	return alphabetObj, words, nil
+}
+
+func (s service) Search(keyword string) (SearchResult, error) {
+	return s.repository.Search(keyword)
 }

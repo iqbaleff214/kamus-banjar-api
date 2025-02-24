@@ -43,9 +43,7 @@ func (d *Dictionary) AddEntry(index int, word Word) {
 	entries.words = append(entries.words, word)
 	d.entries[alphabet] = entries
 
-	for _, word := range entries.words {
-		d.words = append(d.words, word.Word)
-	}
+	d.words = append(d.words, word.Word)
 }
 
 func (d *Dictionary) AddEntries(words []Word) {

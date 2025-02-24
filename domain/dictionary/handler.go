@@ -78,10 +78,7 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 }
 
 func (h handler) Search(c *fiber.Ctx) error {
-	keyword := strings.ToLower(c.Query("search"))
-	if len(strings.TrimSpace(keyword)) == 0 {
-		return fiber.NewError(fiber.StatusBadRequest, "empty keyword")
-	}
+	keyword := c.Query("search")
 	data, err := h.service.Search(keyword)
 
 	if err != nil {

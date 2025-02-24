@@ -74,13 +74,20 @@ func (r *mysqlRepository) GetWord(word string) (Word, error) {
 	return result, nil
 }
 
-func (r *mysqlRepository) Search(word string) (SearchResult, error) {
+func (r *mysqlRepository) Search(keyword string) (SearchResult, error) {
 	result := SearchResult{
-		Search: word,
+		Search: keyword,
 		Words:  []string{},
 	}
-	query := "SELECT w.word FROM words w WHERE w.word LIKE ?;"
-	rows, err := r.db.Query(query, "%"+word+"%")
+
+	if w, err := r.GetWord(keyword); err == nil {
+		result.Words = []string{w.Word}
+		result.Total = 1
+		return result, nil
+	}
+
+	query := "SELECT w.word FROM words w WHERE LEVENSHTEIN(?, w.word) = 1;"
+	rows, err := r.db.Query(query, keyword)
 	if err != nil {
 		return result, err
 	}

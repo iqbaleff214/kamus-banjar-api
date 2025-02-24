@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/lithammer/fuzzysearch/fuzzy"
+	"github.com/agnivade/levenshtein"
 )
 
 type Entries struct {
@@ -76,7 +76,22 @@ func (d *Dictionary) GetEntries(alphabet string) []Word {
 }
 
 func (d *Dictionary) Search(keyword string) (SearchResult, error) {
-	matches := fuzzy.Find(keyword, d.words)
+	matches := []string{}
+
+	if w, ok := d.GetWord(keyword); ok {
+		return SearchResult{
+			Search: keyword,
+			Words:  []string{w.Word},
+			Total:  1,
+		}, nil
+	}
+
+	for _, word := range d.words {
+		score := levenshtein.ComputeDistance(word, keyword)
+		if score == 1 {
+			matches = append(matches, word)
+		}
+	}
 
 	result := SearchResult{
 		Search: keyword,

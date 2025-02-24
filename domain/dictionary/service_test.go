@@ -70,21 +70,29 @@ func Test_service_GetWord(t *testing.T) {
 		{"should return error when alphabet is valid but word not found", "yaeni", fmt.Errorf("the word is not found"), dictionary.Word{}}, // Y is a valid alphabet, but yaeni is not a word
 	}
 
-	b, err := os.ReadFile(filepath.Join(curDir, "data", "y.json"))
-	if err != nil {
-		t.Fatal(err)
-	}
-	var words []dictionary.Word
-	if err = json.Unmarshal(b, &words); err != nil {
-		t.Fatal(err)
-	}
-	for _, w := range words {
-		cases = append(cases, testCase{
-			name: "should return definition of " + w.Word,
-			word: w.Word,
-			err:  nil,
-			exp:  w,
-		})
+
+	for _, l := range []string{
+		"a", "b", "c", "d", "g", "h",
+		"i", "j", "k", "l", "m", "n",
+		"p", "r", "s", "t", "u", "w",
+		"y",
+	} {
+		b, err := os.ReadFile(filepath.Join(curDir, "data", l + ".json"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		var words []dictionary.Word
+		if err = json.Unmarshal(b, &words); err != nil {
+			t.Fatal(err)
+		}
+		for _, w := range words {
+			cases = append(cases, testCase{
+				name: "should return definition of " + w.Word,
+				word: w.Word,
+				err:  nil,
+				exp:  w,
+			})
+		}
 	}
 
 	for _, tt := range cases {

@@ -968,5 +968,69 @@
                 ]
             }
         ]
+    },
+    {
+        "word": "ilan",
+        "alphabet": "i",
+        "meanings": [
+            {
+                "definitions": [
+                    {
+                        "definition": "terjaga",
+                        "partOfSpeech": "v"
+                    }
+                ]
+            }
+        ],
+        "derivatives": [
+            {
+                "word": "mailan",
+                "syllables": "ma.i.lan",
+                "definitions": [
+                    {
+                        "definition": "terjaga dari tidur",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "saban tangah malam aku mailan",
+                                "id": "setiap tengah malam saya terjaga dari tidur"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "tailan",
+                "syllables": "ta.i.lan",
+                "definitions": [
+                    {
+                        "definition": "terjaga dari tidur",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "anak tailan tarus dini hari",
+                                "id": "anak saya terjaga terus dini hari"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "word": "iilanan",
+                "syllables": "i.i.lan.an",
+                "definitions": [
+                    {
+                        "definition": "terjaga dari tidur tetap mata susah dibuka",
+                        "partOfSpeech": "v",
+                        "examples": [
+                            {
+                                "bjn": "pas kamalingan aku iilanan",
+                                "id": "ketika kemalingan saya antara bangun dan tidur"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]

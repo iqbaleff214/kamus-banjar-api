@@ -13,6 +13,7 @@ type Repository interface {
 	GetAlphabets() ([]Alphabet, error)
 	GetWordsByAlphabet(alphabet string) ([]Word, error)
 	GetWord(word string) (Word, error)
+	Search(keyword string) (SearchResult, error)
 }
 
 // NewRepository is a function to instantiate new Repository object
@@ -67,4 +68,9 @@ func (r *MockRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 func (r *MockRepository) GetWord(word string) (Word, error) {
 	args := r.Called(word)
 	return args.Get(0).(Word), args.Error(1)
+}
+
+func (r *MockRepository) Search(keyword string) (SearchResult, error) {
+	args := r.Called(keyword)
+	return args.Get(0).(SearchResult), args.Error(1)
 }

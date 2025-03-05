@@ -39,6 +39,7 @@ func setup() *fiber.App {
 
 	api.Get("/v1/alphabets", dictionaryHandler.GetAlphabets)
 	api.Get("/v1/alphabets/:letter", dictionaryHandler.GetWordsByAlphabet)
+	api.Get("/v1/entries", dictionaryHandler.Search)
 	api.Get("/v1/entries/:word", dictionaryHandler.GetWord)
 
 	return app

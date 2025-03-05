@@ -115,3 +115,7 @@ func (r jsonRepository) GetWord(word string) (Word, error) {
 func (r jsonRepository) dataSourceUrl(letter string) string {
 	return "https://raw.githubusercontent.com/iqbaleff214/kamus-banjar-api/refs/heads/main/data/" + letter + ".json"
 }
+
+func (r jsonRepository) Search(keyword string) (SearchResult, error) {
+	return SearchResult{}, errors.New("method Search isn't implemented for JSON repository")
+}

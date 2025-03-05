@@ -104,3 +104,7 @@ func (r *fsRepository) loadWords() error {
 
 	return nil
 }
+
+func (r *fsRepository) Search(keyword string) (SearchResult, error) {
+	return r.dictionary.Search(keyword)
+}

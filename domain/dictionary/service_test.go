@@ -3,12 +3,15 @@ package dictionary_test
 import (
 	"encoding/json"
 	"fmt"
+	"os"
+	"path/filepath"
+	"reflect"
+	"testing"
+
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"os"
-	"path/filepath"
-	"testing"
 )
 
 func TestNewService(t *testing.T) {
@@ -161,6 +164,93 @@ func Test_service_GetWordsByAlphabet(t *testing.T) {
 				assert.Nil(t, er)
 			} else {
 				assert.EqualError(t, er, tt.err.Error())
+			}
+		})
+	}
+}
+
+func Test_service_Search(t *testing.T) {
+	curDir, err := os.Getwd()
+	if err != nil {
+		t.Fatalf("failed to get current directory: %v", err)
+	}
+
+	curDir = filepath.Join(curDir, "..", "..")
+
+	repo := dictionary.NewRepository(curDir)
+	serv := dictionary.NewService(repo)
+
+	tests := []struct {
+		name    string
+		keyword string
+		want    []string
+		wantErr string
+	}{
+		{
+			name:    "Exact match - word found",
+			keyword: "abadan",
+			want:    []string{"abadan"},
+			wantErr: "",
+		},
+		{
+			name:    "No match - word not found",
+			keyword: "xyzabc",
+			want:    []string{},
+			wantErr: "no matching word found",
+		},
+		{
+			name:    "Fuzzy search - similar words found",
+			keyword: "aban",
+			want:    []string{"abah", "abat", "abun", "acan", "aman", "amban", "saban"},
+			wantErr: "",
+		},
+		{
+			name:    "Case insensitive search",
+			keyword: "ABUH",
+			want:    []string{"abuh"},
+			wantErr: "",
+		},
+		{
+			name:    "Empty input",
+			keyword: "",
+			want:    nil,
+			wantErr: "search keyword is required",
+		},
+		{
+			name:    "Input with numbers",
+			keyword: "ab4d4n",
+			want:    nil,
+			wantErr: "symbols are not allowed",
+		},
+		{
+			name:    "Input with whitespace",
+			keyword: " abadan ",
+			want:    []string{"abadan"},
+			wantErr: "",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := serv.Search(tt.keyword)
+			if tt.wantErr != "" {
+				if err == nil {
+					t.Errorf("Search(%s) error = nil, wantErr %v", got.Search, tt.wantErr)
+					return
+				}
+				if err.Error() != tt.wantErr {
+					t.Errorf("Search(%s) error = %v, wantErr %v", got.Search, err, tt.wantErr)
+				}
+				return
+			}
+
+			if err != nil {
+				t.Errorf("Search(%s) unexpected error = %v", got.Search, err)
+				return
+			}
+
+			if !reflect.DeepEqual(got.Words, tt.want) {
+				t.Errorf("Search(%s) = %v, want %v", got.Search, got.Words, tt.want)
 			}
 		})
 	}

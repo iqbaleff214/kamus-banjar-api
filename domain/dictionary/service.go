@@ -1,12 +1,18 @@
 package dictionary
 
-import "errors"
+import (
+	"errors"
+	"strings"
+
+	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary/utils"
+)
 
 // Service contains all business logic method
 type Service interface {
 	GetAlphabets() ([]Alphabet, error)
 	GetWord(word string) (Word, error)
 	GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
+	Search(keyword string) (SearchResult, error)
 }
 
 // service as a class
@@ -66,4 +72,17 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	}
 
 	return alphabetObj, words, nil
+}
+
+func (s service) Search(keyword string) (SearchResult, error) {
+	transform := strings.ToLower(strings.TrimSpace(keyword))
+	if len(transform) == 0 {
+		return SearchResult{}, errors.New("search keyword is required")
+	}
+
+	if !utils.IsAlphabet(transform) {
+		return SearchResult{}, errors.New("symbols are not allowed")
+	}
+
+	return s.repository.Search(transform)
 }

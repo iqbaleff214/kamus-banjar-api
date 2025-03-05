@@ -34,6 +34,7 @@ func (r *mysqlRepository) GetAlphabets() ([]Alphabet, error) {
 func (r *mysqlRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 	var result []Word
 
+	// not a fuzzy search, but eh not bad
 	query := "SELECT w.word FROM words w WHERE w.letter = ?;"
 	rows, err := r.db.Query(query, alphabet)
 	if err != nil {
@@ -68,6 +69,41 @@ func (r *mysqlRepository) GetWord(word string) (Word, error) {
 
 	if err := json.Unmarshal([]byte(data), &result); err != nil {
 		return result, err
+	}
+
+	return result, nil
+}
+
+func (r *mysqlRepository) Search(keyword string) (SearchResult, error) {
+	result := SearchResult{
+		Search: keyword,
+		Words:  []string{},
+	}
+
+	if w, err := r.GetWord(keyword); err == nil {
+		result.Words = []string{w.Word}
+		result.Total = 1
+		return result, nil
+	}
+
+	query := "SELECT w.word FROM words w WHERE LEVENSHTEIN(?, w.word) = 1;"
+	rows, err := r.db.Query(query, keyword)
+	if err != nil {
+		return result, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		word := Word{}
+		if err = rows.Scan(&word.Word); err != nil {
+			return result, err
+		}
+		result.Words = append(result.Words, word.Word)
+	}
+
+	result.Total = len(result.Words)
+	if result.Total == 0 {
+		return result, errors.New("no matching word found")
 	}
 
 	return result, nil

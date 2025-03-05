@@ -57,3 +57,7 @@ func (r *embedRepository) GetWord(word string) (Word, error) {
 
 	return Word{}, errors.New("the word is not found")
 }
+
+func (r *embedRepository) Search(keyword string) (SearchResult, error) {
+	return r.dictionary.Search(keyword)
+}

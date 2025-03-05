@@ -11,6 +11,7 @@ type Handler interface {
 	GetAlphabets(c *fiber.Ctx) error
 	GetWordsByAlphabet(c *fiber.Ctx) error
 	GetWord(c *fiber.Ctx) error
+	Search(c *fiber.Ctx) error
 }
 
 // handler as a class
@@ -73,5 +74,21 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 		"message": "Definition of word '" + result.Word + "' successfully retrieved.",
 		"status":  "success",
 		"data":    result,
+	})
+}
+
+func (h handler) Search(c *fiber.Ctx) error {
+	keyword := c.Query("search")
+	data, err := h.service.Search(keyword)
+
+	if err != nil {
+		return fiber.NewError(fiber.StatusNotFound, err.Error())
+	}
+
+	return c.Status(fiber.StatusOK).JSON(map[string]any{
+		"code":    fiber.StatusOK,
+		"message": "Matching word retrieved successfully",
+		"status":  "success",
+		"data":    data,
 	})
 }

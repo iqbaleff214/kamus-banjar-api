@@ -28,9 +28,9 @@ jobs:
       - name: Build binaries
         run: |
           mkdir -p dist
-          GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-linux-amd64
-          GOOS=windows GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-windows-amd64.exe
-          GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-macos-amd64
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-linux-amd64
+          CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-windows-amd64.exe
+          CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o dist/app-macos-amd64
 
       - name: Generate checksums
         run: |

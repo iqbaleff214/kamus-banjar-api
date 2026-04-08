@@ -80,12 +80,21 @@ docker compose up -d
 # API available at http://localhost:8001
 ```
 
-**Production (Traefik):**
+**Production (Traefik, embedded JSON):**
 ```bash
 # 1. Start shared Traefik if not running: cd traefik/ && docker compose up -d
 # 2. cp .env.prod.example .env.prod  # set DOMAIN
 # 3. docker compose -f docker-compose.prod.yml --env-file .env.prod up -d
 ```
+
+**Production (Traefik + built-in MySQL):**
+```bash
+# 1. Start shared Traefik if not running: cd traefik/ && docker compose up -d
+# 2. cp .env.mysql.example .env.mysql  # set DOMAIN + MySQL credentials
+# 3. docker compose -f docker-compose.mysql.yml --env-file .env.mysql up -d
+```
+
+On first startup MySQL auto-runs `database/migrations/001_schema.sql` then `database/seeds/002_seed.sql` via `docker-entrypoint-initdb.d`. To wipe and re-seed: `docker compose -f docker-compose.mysql.yml down -v`.
 
 Router/service label prefix is `kamus-banjar-api` — keep it unique across apps sharing the same Traefik instance.
 

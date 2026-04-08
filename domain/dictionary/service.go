@@ -56,6 +56,7 @@ func (s service) GetWordsByAlphabet(alphabet string) (Alphabet, []string, error)
 	for _, a := range alphabets {
 		if alphabet == a.Letter {
 			alphabetObj = a
+			break
 		}
 	}
 

@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary"
 )
@@ -29,6 +30,7 @@ func setup() *fiber.App {
 
 	// app setup
 	app := fiber.New(config())
+	app.Use(compress.New())
 	app.Use(cors.New())
 
 	// api route

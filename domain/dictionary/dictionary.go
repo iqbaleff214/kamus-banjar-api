@@ -2,6 +2,7 @@ package dictionary
 
 import (
 	"errors"
+	"sort"
 	"strings"
 
 	"github.com/agnivade/levenshtein"
@@ -13,16 +14,13 @@ type Entries struct {
 }
 
 type Dictionary struct {
-	entries map[string]Entries
-	words   []string
+	entries map[string]*Entries
 }
 
 func NewDictionary() Dictionary {
-	d := Dictionary{
-		entries: make(map[string]Entries),
+	return Dictionary{
+		entries: make(map[string]*Entries),
 	}
-
-	return d
 }
 
 func (d *Dictionary) AddEntry(index int, word Word) {
@@ -30,20 +28,16 @@ func (d *Dictionary) AddEntry(index int, word Word) {
 	// ignore alphabet from entry
 	alphabet := strings.ToLower(string(word.Word[0]))
 
-	_, ok := d.entries[alphabet]
-	if !ok {
-		d.entries[alphabet] = Entries{
+	if _, ok := d.entries[alphabet]; !ok {
+		d.entries[alphabet] = &Entries{
 			index: map[string]int{},
 			words: []Word{},
 		}
 	}
 
-	entries := d.entries[alphabet]
-	entries.index[word.Word] = index
-	entries.words = append(entries.words, word)
-	d.entries[alphabet] = entries
-
-	d.words = append(d.words, word.Word)
+	e := d.entries[alphabet]
+	e.index[word.Word] = index
+	e.words = append(e.words, word)
 }
 
 func (d *Dictionary) AddEntries(words []Word) {
@@ -53,26 +47,26 @@ func (d *Dictionary) AddEntries(words []Word) {
 }
 
 func (d *Dictionary) GetWord(word string) (Word, bool) {
-	ch := string(word[0])
-	entries, ok := d.entries[ch]
+	ch := strings.ToLower(string(word[0]))
+	e, ok := d.entries[ch]
 	if !ok {
 		return Word{}, false
 	}
 
-	if idx, ok := entries.index[word]; !ok {
+	if idx, ok := e.index[word]; !ok {
 		return Word{}, false
 	} else {
-		return entries.words[idx], true
+		return e.words[idx], true
 	}
 }
 
 func (d *Dictionary) GetEntries(alphabet string) []Word {
-	entries, ok := d.entries[alphabet]
+	e, ok := d.entries[alphabet]
 	if !ok {
 		return nil
 	}
 
-	return entries.words
+	return e.words
 }
 
 func (d *Dictionary) Search(keyword string) (SearchResult, error) {
@@ -86,13 +80,19 @@ func (d *Dictionary) Search(keyword string) (SearchResult, error) {
 		}, nil
 	}
 
-	for _, word := range d.words {
-		score := levenshtein.ComputeDistance(word, keyword)
-		if score == 1 {
-			matches = append(matches, word)
+	// Scan all words across all buckets. A front-insertion/deletion can shift
+	// the first letter, so limiting to one bucket would miss valid matches.
+	// With ~250 words this is fast; the main saving vs. the old code is that
+	// we no longer maintain a redundant flat d.words []string copy.
+	for _, e := range d.entries {
+		for _, w := range e.words {
+			if levenshtein.ComputeDistance(w.Word, keyword) == 1 {
+				matches = append(matches, w.Word)
+			}
 		}
 	}
 
+	sort.Strings(matches)
 	result := SearchResult{
 		Search: keyword,
 		Words:  matches,

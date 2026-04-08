@@ -72,6 +72,23 @@ GET /api/v1/entries?search=keyword  # Fuzzy search
 | `MYSQL_DSN` | — | MySQL DSN; enables MySQL repository when set |
 | `SOURCE_PATH` | `data/` | Path to JSON files (only with `fs` tag) |
 
+## Docker
+
+**Local development:**
+```bash
+docker compose up -d
+# API available at http://localhost:8001
+```
+
+**Production (Traefik):**
+```bash
+# 1. Start shared Traefik if not running: cd traefik/ && docker compose up -d
+# 2. cp .env.prod.example .env.prod  # set DOMAIN
+# 3. docker compose -f docker-compose.prod.yml --env-file .env.prod up -d
+```
+
+Router/service label prefix is `kamus-banjar-api` — keep it unique across apps sharing the same Traefik instance.
+
 ## Tests
 
 Unit tests in `domain/dictionary/service_test.go` load actual JSON data from `data/` and use a mock repository. Test cases are generated dynamically from the real data files — avoid modifying test data structures without understanding how test cases are auto-generated.

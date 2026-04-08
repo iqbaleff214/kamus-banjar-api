@@ -1,0 +1,95 @@
+# ─── Traefik — Server-level reverse proxy ─────────────────────────────────────
+#
+# Deploy this ONCE on the server. Every app on this server joins the
+# `traefik_public` network (external) and exposes itself via labels.
+#
+# Setup:
+#   1. cd traefik/
+#   2. cp .env.example .env && fill in ACME_EMAIL and TRAEFIK_DASHBOARD_AUTH
+#   3. docker compose up -d
+#
+# Generate TRAEFIK_DASHBOARD_AUTH:
+#   docker run --rm httpd:alpine htpasswd -nB admin
+#   Then escape every $ as $$ in the .env value.
+#
+# After this is running, deploy each app with its own docker-compose.prod.yml.
+
+services:
+  traefik:
+    image: traefik:v3.3
+    restart: unless-stopped
+    command:
+      # ── Entrypoints ──────────────────────────────────────────────────────────
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+
+      # ── Global HTTP → HTTPS redirect ─────────────────────────────────────────
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+
+      # ── Docker provider ───────────────────────────────────────────────────────
+      # Watch all containers on the traefik_public network.
+      # Only containers with traefik.enable=true are exposed.
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik_public"
+      - "--providers.docker.watch=true"
+
+      # ── Let's Encrypt (ACME TLS challenge) ───────────────────────────────────
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+
+      # ── Logging ───────────────────────────────────────────────────────────────
+      - "--accesslog=true"
+      - "--accesslog.format=json"
+      - "--log.level=INFO"
+      - "--log.format=json"
+
+      # ── Dashboard (served via router label below) ─────────────────────────────
+      - "--api.dashboard=true"
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      # Read-only Docker socket — Traefik watches container events
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Persisted Let's Encrypt certificates across restarts
+      - letsencrypt:/letsencrypt
+
+    networks:
+      - traefik_public
+
+    labels:
+      - "traefik.enable=true"
+
+      # ── Dashboard router ──────────────────────────────────────────────────────
+      # Access at https://traefik.yourdomain.com (set TRAEFIK_DOMAIN in .env)
+      - "traefik.http.routers.traefik-dashboard.rule=Host(`traefik.${TRAEFIK_DOMAIN}`)"
+      - "traefik.http.routers.traefik-dashboard.entrypoints=websecure"
+      - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.traefik-dashboard.service=api@internal"
+      - "traefik.http.routers.traefik-dashboard.middlewares=dashboard-auth@docker"
+      - "traefik.http.middlewares.dashboard-auth.basicauth.users=${TRAEFIK_DASHBOARD_AUTH}"
+
+      # ── Global security headers middleware ────────────────────────────────────
+      # Apps reference this as "security-headers@docker" in their labels.
+      - "traefik.http.middlewares.security-headers.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.security-headers.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.security-headers.headers.stsPreload=true"
+      - "traefik.http.middlewares.security-headers.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.security-headers.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.security-headers.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.security-headers.headers.referrerPolicy=strict-origin-when-cross-origin"
+      - "traefik.http.middlewares.security-headers.headers.frameDeny=true"
+
+volumes:
+  letsencrypt:
+    name: traefik_letsencrypt
+
+networks:
+  traefik_public:
+    name: traefik_public

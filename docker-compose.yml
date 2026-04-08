@@ -1,0 +1,18 @@
+# ─── Kamus Banjar API — Local Development ─────────────────────────────────────
+#
+# Usage:
+#   docker compose up -d
+#
+# The API will be available at http://localhost:8001
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-8001}:8001"
+    environment:
+      PORT: ":8001"
+      MYSQL_DSN: ${MYSQL_DSN:-}
+    restart: unless-stopped

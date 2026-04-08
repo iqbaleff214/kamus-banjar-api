@@ -1,0 +1,48 @@
+# ─── Kamus Banjar API — Production (with shared Traefik) ──────────────────────
+#
+# Requires the shared Traefik instance to be running first:
+#   cd traefik/ && docker compose up -d
+#
+# Setup:
+#   1. Copy .env.prod.example → .env.prod and set DOMAIN (and MYSQL_DSN if needed).
+#   2. docker compose -f docker-compose.prod.yml --env-file .env.prod up -d
+#
+# The `traefik_public` network is created and owned by traefik/docker-compose.yml.
+# This compose only declares it as external — it never creates or destroys it.
+
+x-restart: &restart
+  restart: unless-stopped
+
+services:
+
+  # ─── API ────────────────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    <<: *restart
+    environment:
+      PORT: ":8001"
+      MYSQL_DSN: ${MYSQL_DSN:-}
+    networks:
+      - traefik_public
+    labels:
+      - "traefik.enable=true"
+
+      # Tell Traefik which network to use
+      - "traefik.docker.network=traefik_public"
+
+      # ── Router ────────────────────────────────────────────────────────────────
+      - "traefik.http.routers.kamus-banjar-api.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.kamus-banjar-api.entrypoints=websecure"
+      - "traefik.http.routers.kamus-banjar-api.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.kamus-banjar-api.service=kamus-banjar-api-svc"
+      - "traefik.http.routers.kamus-banjar-api.middlewares=security-headers@docker"
+
+      # ── Service ───────────────────────────────────────────────────────────────
+      - "traefik.http.services.kamus-banjar-api-svc.loadbalancer.server.port=8001"
+
+networks:
+  # Shared public network — created by traefik/docker-compose.yml, NOT here.
+  traefik_public:
+    external: true

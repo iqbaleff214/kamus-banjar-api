@@ -31,6 +31,7 @@ func (h handler) GetAlphabets(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
+	c.Set("Cache-Control", "public, max-age=86400")
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"code":    fiber.StatusOK,
 		"message": "All alphabets successfully retrieved.",
@@ -48,6 +49,7 @@ func (h handler) GetWordsByAlphabet(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusBadRequest, err.Error())
 	}
 
+	c.Set("Cache-Control", "public, max-age=86400")
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"code":    fiber.StatusOK,
 		"message": "All words with letter '" + letter + "' successfully retrieved.",
@@ -69,6 +71,7 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusNotFound, err.Error())
 	}
 
+	c.Set("Cache-Control", "public, max-age=604800")
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"code":    fiber.StatusOK,
 		"message": "Definition of word '" + result.Word + "' successfully retrieved.",
@@ -85,6 +88,7 @@ func (h handler) Search(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusNotFound, err.Error())
 	}
 
+	c.Set("Cache-Control", "public, max-age=3600")
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"code":    fiber.StatusOK,
 		"message": "Matching word retrieved successfully",

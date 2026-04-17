@@ -59,15 +59,44 @@ func (r *mysqlRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 func (r *mysqlRepository) GetWord(word string) (Word, error) {
 	var result Word
 
-	query := "SELECT w.data FROM words w WHERE w.word = ? AND w.status = 'active';"
+	query := `SELECT w.data, w.source, w.contributor_id, w.approved_by, w.approved_at, w.created_at, w.updated_at
+	          FROM words w WHERE w.word = ? AND w.status = 'active';`
 
-	var data string
-	if err := r.db.QueryRow(query, word).Scan(&data); err != nil {
+	var (
+		data          string
+		source        string
+		contributorID sql.NullString
+		approvedBy    sql.NullString
+		approvedAt    sql.NullTime
+		createdAt     sql.NullTime
+		updatedAt     sql.NullTime
+	)
+	err := r.db.QueryRow(query, word).Scan(
+		&data, &source, &contributorID, &approvedBy, &approvedAt, &createdAt, &updatedAt,
+	)
+	if err != nil {
 		return result, errors.New("the word is not found")
 	}
 
-	if err := json.Unmarshal([]byte(data), &result); err != nil {
+	if err = json.Unmarshal([]byte(data), &result); err != nil {
 		return result, err
+	}
+
+	result.Source = source
+	if contributorID.Valid {
+		result.ContributorID = &contributorID.String
+	}
+	if approvedBy.Valid {
+		result.ApprovedBy = &approvedBy.String
+	}
+	if approvedAt.Valid {
+		result.ApprovedAt = &approvedAt.Time
+	}
+	if createdAt.Valid {
+		result.CreatedAt = &createdAt.Time
+	}
+	if updatedAt.Valid {
+		result.UpdatedAt = &updatedAt.Time
 	}
 
 	return result, nil

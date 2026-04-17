@@ -6,6 +6,12 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+// VoteCounter is an optional dependency injected into the handler to append
+// vote counts to word-detail responses. Implemented by community.Service.
+type VoteCounter interface {
+	GetVoteSummary(word string) (up, down int, err error)
+}
+
 // Handler contains method for fiber route handlers.
 type Handler interface {
 	GetAlphabets(c *fiber.Ctx) error
@@ -16,10 +22,13 @@ type Handler interface {
 
 type handler struct {
 	service Service
+	votes   VoteCounter // optional; nil when community features are disabled
 }
 
-func NewHandler(service Service) Handler {
-	return handler{service}
+// NewHandler creates a dictionary handler. Pass a non-nil VoteCounter to include
+// vote counts in GET /api/v1/entries/:word responses.
+func NewHandler(service Service, votes VoteCounter) Handler {
+	return handler{service: service, votes: votes}
 }
 
 // GET /api/v1/alphabets
@@ -69,13 +78,20 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusNotFound, err.Error())
 	}
 
-	c.Set("Cache-Control", "public, max-age=604800")
-	return c.Status(fiber.StatusOK).JSON(map[string]any{
+	resp := map[string]any{
 		"code":    fiber.StatusOK,
 		"message": "Definition of word '" + result.Word + "' successfully retrieved.",
 		"status":  "success",
 		"data":    result,
-	})
+		"votes":   nil,
+	}
+	if h.votes != nil {
+		up, down, _ := h.votes.GetVoteSummary(word)
+		resp["votes"] = map[string]int{"up": up, "down": down}
+	}
+
+	c.Set("Cache-Control", "public, max-age=604800")
+	return c.Status(fiber.StatusOK).JSON(resp)
 }
 
 // GET /api/v1/entries?search=keyword

@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/community"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/config"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/contribution"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
@@ -18,7 +19,13 @@ import (
 func New(db *sql.DB, cfg config.Config) *fiber.App {
 	dictionaryRepository := dictionary.NewRepository(db)
 	dictionaryService := dictionary.NewService(dictionaryRepository)
-	dictionaryHandler := dictionary.NewHandler(dictionaryService)
+
+	communityRepository := community.NewRepository(db)
+	communityService := community.NewService(communityRepository)
+	communityHandler := community.NewHandler(communityService, dictionaryService)
+
+	// Pass communityService as VoteCounter so GetWord includes vote counts.
+	dictionaryHandler := dictionary.NewHandler(dictionaryService, communityService)
 
 	userRepository := user.NewRepository(db)
 	userService := user.NewService(userRepository, cfg.JWTSecret, cfg.JWTAccessTTL, cfg.JWTRefreshTTL)
@@ -44,6 +51,21 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	api.Get("/alphabets/:letter", dictionaryHandler.GetWordsByAlphabet)
 	api.Get("/entries", dictionaryHandler.Search)
 	api.Get("/entries/:word", dictionaryHandler.GetWord)
+
+	// Public community endpoints
+	api.Get("/word-of-the-day", communityHandler.GetWordOfTheDay)
+	api.Get("/entries/:word/comments", communityHandler.ListComments)
+
+	// Authenticated community endpoints
+	api.Post("/entries/:word/votes", middleware.Auth(cfg.JWTSecret), communityHandler.Vote)
+	api.Post("/entries/:word/comments", middleware.Auth(cfg.JWTSecret), communityHandler.PostComment)
+	api.Delete("/entries/:word/comments/:id", middleware.Auth(cfg.JWTSecret), communityHandler.DeleteComment)
+
+	// Bookmark endpoints
+	me := api.Group("/me", middleware.Auth(cfg.JWTSecret))
+	me.Get("/bookmarks", communityHandler.ListBookmarks)
+	me.Post("/bookmarks/:word", communityHandler.AddBookmark)
+	me.Delete("/bookmarks/:word", communityHandler.RemoveBookmark)
 
 	// Auth endpoints
 	auth := api.Group("/auth")
@@ -78,6 +100,9 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	admin.Post("/words", contribHandler.AdminCreateWord)
 	admin.Put("/words/:id", contribHandler.AdminUpdateWord)
 	admin.Delete("/words/:id", contribHandler.AdminDeleteWord)
+	// Admin — community
+	admin.Delete("/entries/:word/comments/:id", communityHandler.DeleteComment)
+	admin.Put("/word-of-the-day", communityHandler.SetWordOfTheDay)
 
 	return app
 }

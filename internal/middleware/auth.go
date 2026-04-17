@@ -39,12 +39,14 @@ func Auth(secret string) fiber.Handler {
 
 		sub, _ := claims["sub"].(string)
 		role, _ := claims["role"].(string)
+		name, _ := claims["name"].(string)
 		if sub == "" {
 			return fiber.NewError(fiber.StatusUnauthorized, "invalid token subject")
 		}
 
 		c.Locals("userID", sub)
 		c.Locals("userRole", role)
+		c.Locals("userName", name)
 		return c.Next()
 	}
 }

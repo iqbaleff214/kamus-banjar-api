@@ -113,7 +113,7 @@ func (s *service) Login(req LoginRequest) (TokenPair, error) {
 		return TokenPair{}, ErrInvalidCreds
 	}
 
-	return s.generateTokenPair(u.ID, u.Role)
+	return s.generateTokenPair(u.ID, u.Role, u.Name)
 }
 
 func (s *service) RefreshTokens(refreshToken string) (TokenPair, error) {
@@ -138,7 +138,7 @@ func (s *service) RefreshTokens(refreshToken string) (TokenPair, error) {
 		return TokenPair{}, err
 	}
 
-	return s.generateTokenPair(u.ID, u.Role)
+	return s.generateTokenPair(u.ID, u.Role, u.Name)
 }
 
 func (s *service) Logout(refreshToken string) error {
@@ -214,12 +214,13 @@ func (s *service) Promote(userID string) error {
 // Internal helpers
 // ─────────────────────────────────────────────────────────────
 
-func (s *service) generateTokenPair(userID, role string) (TokenPair, error) {
+func (s *service) generateTokenPair(userID, role, name string) (TokenPair, error) {
 	now := time.Now()
 
 	accessClaims := jwt.MapClaims{
 		"sub":  userID,
 		"role": role,
+		"name": name,
 		"iat":  now.Unix(),
 		"exp":  now.Add(s.jwtAccessTTL).Unix(),
 	}

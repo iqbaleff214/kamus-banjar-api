@@ -6,7 +6,9 @@ import (
 	"io/fs"
 	"log"
 
+	"github.com/google/uuid"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
+	"golang.org/x/crypto/bcrypt"
 )
 
 var letters = []string{
@@ -45,10 +47,10 @@ func Seed(db *sql.DB, data fs.FS) {
 		}
 
 		for _, w := range words {
-			data, _ := json.Marshal(w)
+			raw, _ := json.Marshal(w)
 			if _, err = db.Exec(
 				"INSERT IGNORE INTO words (word, letter, source, data) VALUES (?, ?, 'official', ?)",
-				w.Word, letter, string(data),
+				w.Word, letter, string(raw),
 			); err != nil {
 				log.Printf("seed: insert word '%s': %v", w.Word, err)
 			}
@@ -58,4 +60,35 @@ func Seed(db *sql.DB, data fs.FS) {
 	}
 
 	log.Println("seeding complete")
+}
+
+// SeedAdmin creates an admin account if no admin user exists yet.
+// Email and password are sourced from ADMIN_EMAIL / ADMIN_PASSWORD env vars.
+// No-op when either value is empty or an admin already exists.
+func SeedAdmin(db *sql.DB, email, password string) {
+	if email == "" || password == "" {
+		return
+	}
+
+	var count int
+	if err := db.QueryRow(`SELECT COUNT(*) FROM users WHERE role = 'admin'`).Scan(&count); err != nil || count > 0 {
+		return
+	}
+
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), 12)
+	if err != nil {
+		log.Printf("seed admin: bcrypt error: %v", err)
+		return
+	}
+
+	_, err = db.Exec(
+		`INSERT INTO users (id, name, email, password, role, is_active) VALUES (?, 'Admin', ?, ?, 'admin', 1)`,
+		uuid.New().String(), email, string(hash),
+	)
+	if err != nil {
+		log.Printf("seed admin: insert error: %v", err)
+		return
+	}
+
+	log.Printf("seed admin: created admin account for %s", email)
 }

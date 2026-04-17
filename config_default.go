@@ -1,29 +1,30 @@
-//go:build !fs
-
 package main
 
 import (
 	"database/sql"
-	"embed"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
 )
 
-//go:embed data/*.json
-var embedded embed.FS
-
-func repoConfig() any {
-	if os.Getenv("MYSQL_DSN") != "" {
-		db, err := sql.Open("mysql", os.Getenv("MYSQL_DSN"))
-		if err != nil {
-			log.Fatal(err)
-		}
-		db.SetMaxOpenConns(10)
-		db.SetMaxIdleConns(5)
-		db.SetConnMaxLifetime(0)
-		return db
+func openDB() *sql.DB {
+	dsn := os.Getenv("MYSQL_DSN")
+	if dsn == "" {
+		log.Fatal("MYSQL_DSN environment variable is required")
 	}
 
-	return embedded
+	db, err := sql.Open("mysql", dsn)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	db.SetMaxOpenConns(10)
+	db.SetMaxIdleConns(5)
+	db.SetConnMaxLifetime(0)
+
+	if err = db.Ping(); err != nil {
+		log.Fatalf("database connection failed: %v", err)
+	}
+
+	return db
 }

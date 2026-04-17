@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"log"
 	"os"
 
@@ -11,7 +12,12 @@ import (
 )
 
 func main() {
-	app := setup()
+	db := openDB()
+	defer db.Close()
+
+	seed(db)
+
+	app := setup(db)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -21,24 +27,18 @@ func main() {
 	log.Fatal(app.Listen(port))
 }
 
-func setup() *fiber.App {
-	dictionaryRepository := dictionary.NewRepository(repoConfig())
-
+func setup(db *sql.DB) *fiber.App {
+	dictionaryRepository := dictionary.NewRepository(db)
 	dictionaryService := dictionary.NewService(dictionaryRepository)
-
 	dictionaryHandler := dictionary.NewHandler(dictionaryService)
 
-	// app setup
 	app := fiber.New(config())
 	app.Use(compress.New())
 	app.Use(cors.New())
 
-	// api route
 	api := app.Group("/api")
 
-	// api v1
 	api.Get("/v1", rootV1Handler)
-
 	api.Get("/v1/alphabets", dictionaryHandler.GetAlphabets)
 	api.Get("/v1/alphabets/:letter", dictionaryHandler.GetWordsByAlphabet)
 	api.Get("/v1/entries", dictionaryHandler.Search)

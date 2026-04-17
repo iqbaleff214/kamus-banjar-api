@@ -3,7 +3,6 @@ module github.com/iqbaleff214/kamus-banjar-api
 go 1.22.2
 
 require (
-	github.com/agnivade/levenshtein v1.2.1
 	github.com/go-sql-driver/mysql v1.9.0
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/stretchr/testify v1.10.0

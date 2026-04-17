@@ -2,8 +2,6 @@ package dictionary
 
 import (
 	"database/sql"
-	"embed"
-	"log"
 
 	"github.com/stretchr/testify/mock"
 )
@@ -16,37 +14,9 @@ type Repository interface {
 	Search(keyword string) (SearchResult, error)
 }
 
-// NewRepository is a function to instantiate new Repository object
-func NewRepository(config any) Repository {
-	alphabets := []string{
-		"a", "b", "c", "d", "g", "h",
-		"i", "j", "k", "l", "m", "n",
-		"p", "r", "s", "t", "u", "w",
-		"y",
-	}
-	switch config.(type) {
-	case embed.FS:
-		log.Println("Using embedded filesystem")
-		repo := embedRepository{}
-		repo.init(config.(embed.FS))
-		return &repo
-	case string:
-		log.Println("Using read file")
-		repo := fsRepository{
-			alphabets:  alphabets,
-			index:      make(map[string]Alphabet),
-			dictionary: NewDictionary(),
-			path:       config.(string),
-		}
-		repo.init()
-		return &repo
-	case *sql.DB:
-		log.Println("Using database connection")
-		return &mysqlRepository{db: config.(*sql.DB)}
-	default:
-		log.Println("Using json from GitHUB", config)
-		return jsonRepository{alphabets}
-	}
+// NewRepository returns a MySQL-backed Repository.
+func NewRepository(db *sql.DB) Repository {
+	return &mysqlRepository{db: db}
 }
 
 // --------------------------------| MOCK OBJECT |-------------------------------- //

@@ -1,0 +1,1766 @@
+openapi: 3.0.3
+
+info:
+  title: Kamus Banjar API
+  description: |
+    REST API for the Banjar language dictionary (Kamus Banjar).
+
+    ## Authentication
+    Protected endpoints require a JWT access token in the `Authorization` header:
+    ```
+    Authorization: Bearer <access_token>
+    ```
+    Access tokens expire after **15 minutes**. Use `POST /api/v1/auth/refresh` to rotate tokens.
+
+    ## Roles
+    | Role    | Description |
+    |---------|-------------|
+    | `guest` | Unauthenticated. Read-only access to public endpoints. |
+    | `user`  | Registered member. Can submit words, vote, comment, bookmark. |
+    | `admin` | Dictionary curator. Full access to all endpoints. |
+
+    ## Word Status
+    Words have an internal `status` field that is **not** exposed in public responses:
+    - `pending` — submitted by a user, awaiting admin review
+    - `active` — visible in all public endpoints
+    - `rejected` — hidden; contributor can see rejection notes
+
+    ## Source
+    The `source` field on a word indicates its origin:
+    - `official` — added by an admin from the government-published dictionary
+    - `community` — submitted by a user and approved by an admin
+  version: 2.0.0
+  contact:
+    name: M. Iqbal Effendi
+    email: iqbaleff214@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8001
+    description: Local development
+  - url: https://api.kamus-banjar.example.com
+    description: Production
+
+tags:
+  - name: Info
+    description: API information
+  - name: Dictionary
+    description: Public read-only dictionary endpoints
+  - name: Auth
+    description: Registration, login, token management
+  - name: Contributions
+    description: Community word submissions
+  - name: Community
+    description: Voting, comments, bookmarks, word of the day
+  - name: Admin — Words
+    description: Admin word management
+  - name: Admin — Contributions
+    description: Admin contribution review
+  - name: Admin — Users
+    description: Admin user management
+  - name: Admin — Dashboard
+    description: Stats and configuration
+
+# ─────────────────────────────────────────────────────────────
+# PATHS
+# ─────────────────────────────────────────────────────────────
+
+paths:
+
+  # ── Info ──────────────────────────────────────────────────
+
+  /api/v1/:
+    get:
+      tags: [Info]
+      summary: API info
+      description: Returns API metadata and a list of available endpoints.
+      operationId: getApiInfo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiInfo'
+
+  # ── Dictionary ────────────────────────────────────────────
+
+  /api/v1/alphabets:
+    get:
+      tags: [Dictionary]
+      summary: List all alphabets
+      description: Returns all letters that have at least one active word, with word counts.
+      operationId: getAlphabets
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Alphabet'
+              example:
+                code: 200
+                status: success
+                message: All alphabets successfully retrieved.
+                data:
+                  - letter: a
+                    total: 120
+                  - letter: b
+                    total: 85
+
+  /api/v1/alphabets/{letter}:
+    get:
+      tags: [Dictionary]
+      summary: List words by letter
+      description: Returns all active word entries that start with the given letter.
+      operationId: getWordsByAlphabet
+      parameters:
+        - $ref: '#/components/parameters/LetterParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          letter:
+                            type: string
+                            example: a
+                          total:
+                            type: integer
+                            example: 120
+                          words:
+                            type: array
+                            items:
+                              type: string
+                            example: [abadan, abah, abat]
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/v1/entries:
+    get:
+      tags: [Dictionary]
+      summary: Fuzzy search words
+      description: |
+        Searches for active words using exact match first, then Levenshtein distance 1.
+        Returns a list of matching word strings (not full definitions).
+      operationId: searchWords
+      parameters:
+        - name: search
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+          example: abada
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/SearchResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/entries/{word}:
+    get:
+      tags: [Dictionary]
+      summary: Get word definition
+      description: Returns the full definition of an active word, including meanings, examples, derivatives, source, and vote counts.
+      operationId: getWord
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Word'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/word-of-the-day:
+    get:
+      tags: [Community]
+      summary: Word of the day
+      description: Returns today's featured word. Selected randomly if not curated by an admin. Cached for 1 hour.
+      operationId: getWordOfTheDay
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Word'
+
+  # ── Auth ─────────────────────────────────────────────────
+
+  /api/v1/auth/register:
+    post:
+      tags: [Auth]
+      summary: Register a new account
+      description: |
+        Creates a new user account with role `user`.
+        Rate limited to **10 requests/minute per IP**.
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /api/v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Login
+      description: |
+        Authenticates a user and returns a JWT access token and refresh token.
+        Rate limited to **10 requests/minute per IP**.
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/TokenPair'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /api/v1/auth/refresh:
+    post:
+      tags: [Auth]
+      summary: Refresh tokens
+      description: |
+        Exchanges a valid refresh token for a new access token + refresh token pair.
+        The old refresh token is revoked immediately (rotation).
+      operationId: refreshTokens
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refresh_token]
+              properties:
+                refresh_token:
+                  type: string
+                  example: 550e8400-e29b-41d4-a716-446655440000
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/TokenPair'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/auth/logout:
+    post:
+      tags: [Auth]
+      summary: Logout
+      description: Revokes the provided refresh token. The access token expires on its own after 15 minutes.
+      operationId: logout
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refresh_token]
+              properties:
+                refresh_token:
+                  type: string
+                  example: 550e8400-e29b-41d4-a716-446655440000
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/auth/me:
+    get:
+      tags: [Auth]
+      summary: Get current user profile
+      operationId: getMe
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    put:
+      tags: [Auth]
+      summary: Update profile
+      description: Updates the authenticated user's display name and/or password.
+      operationId: updateMe
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProfileRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ── Contributions ─────────────────────────────────────────
+
+  /api/v1/contributions:
+    post:
+      tags: [Contributions]
+      summary: Submit a new word
+      description: |
+        Submits a new word for review. The word is created with `status: pending`
+        and `source: community`. It will not appear in public endpoints until approved by an admin.
+      operationId: submitContribution
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WordSubmitRequest'
+      responses:
+        '201':
+          description: Submission created
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Contribution'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/contributions/mine:
+    get:
+      tags: [Contributions]
+      summary: List own submissions
+      description: Returns all word submissions made by the authenticated user, including pending and rejected ones.
+      operationId: getMyContributions
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedContributions'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/contributions/{id}:
+    get:
+      tags: [Contributions]
+      summary: Get a submission
+      description: Returns a single contribution. Only accessible by the contributor or an admin.
+      operationId: getContribution
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Contribution'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [Contributions]
+      summary: Edit a submission
+      description: |
+        Edits a `pending` or `rejected` submission. The status resets to `pending`
+        and a new `revised` audit log entry is created.
+        Only the contributor can edit their own submission.
+      operationId: editContribution
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WordSubmitRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Contribution'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Contributions]
+      summary: Delete a submission
+      description: Permanently deletes a `pending` submission. Active (approved) words cannot be deleted.
+      operationId: deleteContribution
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Community — Votes ─────────────────────────────────────
+
+  /api/v1/entries/{word}/votes:
+    post:
+      tags: [Community]
+      summary: Vote on a word
+      description: |
+        Upvotes or downvotes an active word entry. One vote per user per word.
+        Submitting the same vote again **toggles it off** (removes the vote).
+        Submitting the opposite vote **replaces** the previous one.
+      operationId: voteWord
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [vote]
+              properties:
+                vote:
+                  type: integer
+                  enum: [1, -1]
+                  description: '`1` = upvote, `-1` = downvote'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Community — Comments ──────────────────────────────────
+
+  /api/v1/entries/{word}/comments:
+    get:
+      tags: [Community]
+      summary: List comments
+      description: Returns all comments for a word, including threaded replies (one level deep). Public endpoint.
+      operationId: listComments
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Comment'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      tags: [Community]
+      summary: Post a comment
+      description: Adds a comment to an active word. Optionally replies to an existing comment via `parent_id`.
+      operationId: postComment
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentRequest'
+      responses:
+        '201':
+          description: Comment created
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Comment'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/entries/{word}/comments/{commentId}:
+    delete:
+      tags: [Community]
+      summary: Delete own comment
+      description: Deletes a comment. Only the comment author can use this endpoint. Admins should use the admin route.
+      operationId: deleteOwnComment
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+        - $ref: '#/components/parameters/CommentIdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Community — Bookmarks ─────────────────────────────────
+
+  /api/v1/me/bookmarks:
+    get:
+      tags: [Community]
+      summary: List bookmarks
+      description: Returns a paginated list of words the authenticated user has bookmarked.
+      operationId: listBookmarks
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: string
+                    example: [abadan, abah]
+                  meta:
+                    $ref: '#/components/schemas/PaginationMeta'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/me/bookmarks/{word}:
+    post:
+      tags: [Community]
+      summary: Add bookmark
+      description: Bookmarks a word. Silently succeeds if already bookmarked.
+      operationId: addBookmark
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Community]
+      summary: Remove bookmark
+      description: Removes a bookmarked word. Silently succeeds if not bookmarked.
+      operationId: removeBookmark
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ── Admin — Words ─────────────────────────────────────────
+
+  /api/v1/admin/words:
+    get:
+      tags: [Admin — Words]
+      summary: List all words (admin)
+      description: Returns all words regardless of status or source. Supports filtering and pagination.
+      operationId: adminListWords
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, pending, rejected]
+        - name: source
+          in: query
+          schema:
+            type: string
+            enum: [official, community]
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedWords'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Admin — Words]
+      summary: Add official word
+      description: |
+        Adds a word directly with `source: official` and `status: active`.
+        No contribution record is created. The word is immediately visible in the public API.
+      operationId: adminCreateWord
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WordSubmitRequest'
+      responses:
+        '201':
+          description: Word created
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Word'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  /api/v1/admin/words/{id}:
+    put:
+      tags: [Admin — Words]
+      summary: Edit any word
+      description: Updates a word entry regardless of its source. Admins can edit both official and community words.
+      operationId: adminUpdateWord
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WordSubmitRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Word'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Admin — Words]
+      summary: Soft-delete a word
+      description: Deactivates a word by setting its status to `rejected`. The word is no longer visible in the public API but is not permanently removed.
+      operationId: adminDeleteWord
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Admin — Contributions ─────────────────────────────────
+
+  /api/v1/admin/contributions:
+    get:
+      tags: [Admin — Contributions]
+      summary: List contributions
+      description: Returns all word contributions. Filter by status to see the review queue.
+      operationId: adminListContributions
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: status
+          in: query
+          description: Filter by contribution action status
+          schema:
+            type: string
+            enum: [submitted, approved, rejected, revised]
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedContributions'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/v1/admin/contributions/{id}/approve:
+    patch:
+      tags: [Admin — Contributions]
+      summary: Approve a contribution
+      description: |
+        Approves a pending word contribution. Sets the word's `status` to `active`
+        and records `approved_by` and `approved_at`. The word immediately appears
+        in the public API with `source: community`.
+      operationId: approveContribution
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/admin/contributions/{id}/reject:
+    patch:
+      tags: [Admin — Contributions]
+      summary: Reject a contribution
+      description: |
+        Rejects a pending word contribution. Sets the word's `status` to `rejected`.
+        The contributor can see the optional `notes` field in their submissions list.
+      operationId: rejectContribution
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notes:
+                  type: string
+                  description: Optional feedback explaining the rejection reason.
+                  example: Word already exists in the official dictionary under a different spelling.
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Admin — Comments ──────────────────────────────────────
+
+  /api/v1/admin/entries/{word}/comments/{commentId}:
+    delete:
+      tags: [Admin — Words]
+      summary: Delete any comment (admin)
+      description: Allows admins to delete any comment on any word, regardless of authorship.
+      operationId: adminDeleteComment
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WordParam'
+        - $ref: '#/components/parameters/CommentIdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Admin — Users ─────────────────────────────────────────
+
+  /api/v1/admin/users:
+    get:
+      tags: [Admin — Users]
+      summary: List users
+      description: Returns a paginated list of all registered users.
+      operationId: adminListUsers
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: role
+          in: query
+          schema:
+            type: string
+            enum: [admin, user]
+        - name: active
+          in: query
+          schema:
+            type: boolean
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+                  meta:
+                    $ref: '#/components/schemas/PaginationMeta'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/v1/admin/users/{id}/deactivate:
+    patch:
+      tags: [Admin — Users]
+      summary: Deactivate a user
+      description: Sets `is_active` to `false`. Deactivated users cannot log in. Admins cannot deactivate their own account.
+      operationId: deactivateUser
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/admin/users/{id}/activate:
+    patch:
+      tags: [Admin — Users]
+      summary: Activate a user
+      description: Sets `is_active` to `true`, re-enabling login for the user.
+      operationId: activateUser
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/v1/admin/users/{id}/promote:
+    patch:
+      tags: [Admin — Users]
+      summary: Promote user to admin
+      description: Sets the user's `role` to `admin`. This action cannot be undone via the API.
+      operationId: promoteUser
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ── Admin — Dashboard ─────────────────────────────────────
+
+  /api/v1/admin/stats:
+    get:
+      tags: [Admin — Dashboard]
+      summary: Platform statistics
+      description: Returns a snapshot of platform health — word counts, user counts, contribution activity, and top contributors.
+      operationId: adminGetStats
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/AdminStats'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/v1/admin/word-of-the-day:
+    put:
+      tags: [Admin — Dashboard]
+      summary: Schedule word of the day
+      description: |
+        Manually schedules a specific active word as the word of the day for a given date.
+        Typically used to schedule tomorrow's word in advance.
+      operationId: adminSetWordOfTheDay
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [word, date]
+              properties:
+                word:
+                  type: string
+                  example: abadan
+                date:
+                  type: string
+                  format: date
+                  example: '2026-04-19'
+      responses:
+        '200':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          description: Word not found or not active
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+# ─────────────────────────────────────────────────────────────
+# COMPONENTS
+# ─────────────────────────────────────────────────────────────
+
+components:
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT access token obtained from `POST /api/v1/auth/login`.
+
+  # ── Parameters ────────────────────────────────────────────
+
+  parameters:
+    LetterParam:
+      name: letter
+      in: path
+      required: true
+      description: A single lowercase Banjar alphabet letter (a–y, no e/f/o/q/v/x/z).
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 1
+        example: a
+
+    WordParam:
+      name: word
+      in: path
+      required: true
+      description: A Banjar word (lowercase).
+      schema:
+        type: string
+        example: abadan
+
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: UUID of the resource.
+      schema:
+        type: string
+        format: uuid
+        example: 550e8400-e29b-41d4-a716-446655440000
+
+    CommentIdParam:
+      name: commentId
+      in: path
+      required: true
+      description: UUID of the comment.
+      schema:
+        type: string
+        format: uuid
+        example: 550e8400-e29b-41d4-a716-446655440001
+
+    PageParam:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+
+    LimitParam:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+  # ── Responses ─────────────────────────────────────────────
+
+  responses:
+    NoContent:
+      description: OK — operation succeeded with no body to return
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SuccessResponse'
+
+    BadRequest:
+      description: Bad request — validation error or invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 400
+            status: error
+            message: search keyword is required
+
+    Unauthorized:
+      description: Unauthorized — missing or invalid access token
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 401
+            status: error
+            message: Unauthorized
+
+    Forbidden:
+      description: Forbidden — valid token but insufficient role
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 403
+            status: error
+            message: Forbidden
+
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 404
+            status: error
+            message: the word is not found
+
+    Conflict:
+      description: Conflict — resource already exists
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 409
+            status: error
+            message: email already registered
+
+    TooManyRequests:
+      description: Too many requests — rate limit exceeded
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: 429
+            status: error
+            message: too many requests
+
+  # ── Schemas ───────────────────────────────────────────────
+
+  schemas:
+
+    # Wrappers
+
+    SuccessResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 200
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Operation successful.
+        data:
+          description: Response payload. Shape varies by endpoint.
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: Bad request.
+
+    PaginationMeta:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        limit:
+          type: integer
+          example: 20
+        total:
+          type: integer
+          example: 145
+        total_pages:
+          type: integer
+          example: 8
+
+    # Dictionary
+
+    Alphabet:
+      type: object
+      properties:
+        letter:
+          type: string
+          example: a
+        total:
+          type: integer
+          description: Number of active words for this letter.
+          example: 120
+
+    WordExample:
+      type: object
+      properties:
+        bjn:
+          type: string
+          description: Example sentence in Banjar language.
+          example: Inya abadan bisa baisi.
+        id:
+          type: string
+          description: Indonesian translation of the example.
+          example: Dia selalu bisa memiliki.
+
+    WordDefinition:
+      type: object
+      required: [partOfSpeech]
+      properties:
+        partOfSpeech:
+          type: string
+          example: v
+        definition:
+          type: string
+          example: selamanya; tidak berakhir
+        refer:
+          type: string
+          description: Cross-reference to another word.
+        examples:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordExample'
+
+    WordMeaning:
+      type: object
+      properties:
+        definitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDefinition'
+
+    WordDerivative:
+      type: object
+      properties:
+        word:
+          type: string
+          example: maabadani
+        syllables:
+          type: string
+          example: ma-a-ba-da-ni
+        definitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDefinition'
+
+    Word:
+      type: object
+      properties:
+        word:
+          type: string
+          example: abadan
+        syllables:
+          type: string
+          example: a-ba-dan
+        alphabet:
+          type: string
+          example: a
+        source:
+          type: string
+          enum: [official, community]
+          description: Origin of the word entry. Only present when MySQL backend is active.
+          example: official
+        votes:
+          type: object
+          description: Aggregate vote counts. Only present when MySQL backend is active.
+          properties:
+            up:
+              type: integer
+              example: 42
+            down:
+              type: integer
+              example: 3
+        meanings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordMeaning'
+        derivatives:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDerivative'
+
+    SearchResult:
+      type: object
+      properties:
+        search:
+          type: string
+          example: abada
+        total:
+          type: integer
+          example: 1
+        words:
+          type: array
+          items:
+            type: string
+          example: [abadan]
+
+    ApiInfo:
+      type: object
+      properties:
+        owner:
+          type: string
+          example: M. Iqbal Effendi <iqbaleff214@gmail.com>
+        license:
+          type: string
+          example: MIT
+        source:
+          type: string
+          example: https://github.com/iqbaleff214/kamus-banjar-api
+        version:
+          type: string
+          example: '1'
+        endpoints:
+          type: array
+          items:
+            type: object
+            properties:
+              path:
+                type: string
+              method:
+                type: string
+              description:
+                type: string
+
+    # Auth
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+        name:
+          type: string
+          example: Ahmad Fauzan
+        email:
+          type: string
+          format: email
+          example: ahmad@example.com
+        role:
+          type: string
+          enum: [admin, user]
+          example: user
+        is_active:
+          type: boolean
+          example: true
+        created_at:
+          type: string
+          format: date-time
+          example: '2026-04-18T10:00:00Z'
+        updated_at:
+          type: string
+          format: date-time
+          example: '2026-04-18T10:00:00Z'
+
+    TokenPair:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: JWT. Valid for 15 minutes.
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        refresh_token:
+          type: string
+          description: Opaque token. Valid for 7 days. Stored hashed server-side.
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+    RegisterRequest:
+      type: object
+      required: [name, email, password]
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 100
+          example: Ahmad Fauzan
+        email:
+          type: string
+          format: email
+          example: ahmad@example.com
+        password:
+          type: string
+          minLength: 8
+          format: password
+          example: s3cur3p@ss
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+          example: ahmad@example.com
+        password:
+          type: string
+          format: password
+          example: s3cur3p@ss
+
+    UpdateProfileRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 100
+          example: Ahmad Fauzan Baru
+        old_password:
+          type: string
+          format: password
+          description: Required when changing password.
+        new_password:
+          type: string
+          format: password
+          minLength: 8
+          description: Required when changing password.
+
+    # Contributions
+
+    WordSubmitRequest:
+      type: object
+      required: [word, alphabet, meanings]
+      properties:
+        word:
+          type: string
+          example: barabai
+        syllables:
+          type: string
+          example: ba-ra-bai
+        alphabet:
+          type: string
+          minLength: 1
+          maxLength: 1
+          example: b
+        meanings:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/WordMeaning'
+        derivatives:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDerivative'
+
+    Contribution:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 660e8400-e29b-41d4-a716-446655440000
+        word_id:
+          type: string
+          format: uuid
+          example: 770e8400-e29b-41d4-a716-446655440000
+        word:
+          $ref: '#/components/schemas/Word'
+        contributor_id:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+        reviewer_id:
+          type: string
+          format: uuid
+          nullable: true
+          example: null
+        action:
+          type: string
+          enum: [submitted, approved, rejected, revised]
+          example: submitted
+        notes:
+          type: string
+          nullable: true
+          description: Rejection reason written by the reviewer.
+          example: null
+        created_at:
+          type: string
+          format: date-time
+          example: '2026-04-18T10:00:00Z'
+
+    PaginatedContributions:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contribution'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+
+    PaginatedWords:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Word'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+
+    # Community
+
+    Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 880e8400-e29b-41d4-a716-446655440000
+        word_id:
+          type: string
+          format: uuid
+          example: 770e8400-e29b-41d4-a716-446655440000
+        user_id:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+        user_name:
+          type: string
+          example: Ahmad Fauzan
+        parent_id:
+          type: string
+          format: uuid
+          nullable: true
+          example: null
+        body:
+          type: string
+          example: Kata ini juga umum dipakai di daerah Hulu Sungai.
+        replies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+          description: One level of threaded replies. Only present on top-level comments.
+        created_at:
+          type: string
+          format: date-time
+          example: '2026-04-18T10:00:00Z'
+
+    CommentRequest:
+      type: object
+      required: [body]
+      properties:
+        body:
+          type: string
+          minLength: 1
+          example: Kata ini juga umum dipakai di daerah Hulu Sungai.
+        parent_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: Set to reply to an existing comment. Leave null for a top-level comment.
+          example: null
+
+    # Admin
+
+    AdminStats:
+      type: object
+      properties:
+        words:
+          type: object
+          properties:
+            official:
+              type: integer
+              example: 1200
+            community:
+              type: integer
+              example: 45
+            pending:
+              type: integer
+              example: 12
+            rejected:
+              type: integer
+              example: 8
+        users:
+          type: object
+          properties:
+            total:
+              type: integer
+              example: 320
+            active:
+              type: integer
+              example: 310
+            inactive:
+              type: integer
+              example: 10
+        contributions:
+          type: object
+          properties:
+            pending:
+              type: integer
+              example: 12
+            this_week:
+              type: integer
+              example: 5
+            this_month:
+              type: integer
+              example: 18
+        top_contributors:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                format: uuid
+              name:
+                type: string
+                example: Ahmad Fauzan
+              approved_count:
+                type: integer
+                example: 10

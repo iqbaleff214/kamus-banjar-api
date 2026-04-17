@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/admin"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/community"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/config"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/contribution"
@@ -34,6 +35,10 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	contribRepository := contribution.NewRepository(db)
 	contribService := contribution.NewService(contribRepository)
 	contribHandler := contribution.NewHandler(contribService)
+
+	adminRepository := admin.NewRepository(db)
+	adminService := admin.NewService(adminRepository)
+	adminHandler := admin.NewHandler(adminService)
 
 	app := fiber.New(fiber.Config{
 		AppName:      "Kamus Banjar API",
@@ -85,24 +90,26 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	contrib.Delete("/:id", contribHandler.Delete)
 
 	// Admin endpoints
-	admin := api.Group("/admin", middleware.Auth(cfg.JWTSecret), middleware.Role("admin"))
+	adminGrp := api.Group("/admin", middleware.Auth(cfg.JWTSecret), middleware.Role("admin"))
 	// Admin — users
-	admin.Get("/users", userHandler.ListUsers)
-	admin.Patch("/users/:id/deactivate", userHandler.Deactivate)
-	admin.Patch("/users/:id/activate", userHandler.Activate)
-	admin.Patch("/users/:id/promote", userHandler.Promote)
+	adminGrp.Get("/users", userHandler.ListUsers)
+	adminGrp.Patch("/users/:id/deactivate", userHandler.Deactivate)
+	adminGrp.Patch("/users/:id/activate", userHandler.Activate)
+	adminGrp.Patch("/users/:id/promote", userHandler.Promote)
 	// Admin — contributions
-	admin.Get("/contributions", contribHandler.AdminList)
-	admin.Patch("/contributions/:id/approve", contribHandler.Approve)
-	admin.Patch("/contributions/:id/reject", contribHandler.Reject)
+	adminGrp.Get("/contributions", contribHandler.AdminList)
+	adminGrp.Patch("/contributions/:id/approve", contribHandler.Approve)
+	adminGrp.Patch("/contributions/:id/reject", contribHandler.Reject)
 	// Admin — words
-	admin.Get("/words", contribHandler.AdminListWords)
-	admin.Post("/words", contribHandler.AdminCreateWord)
-	admin.Put("/words/:id", contribHandler.AdminUpdateWord)
-	admin.Delete("/words/:id", contribHandler.AdminDeleteWord)
+	adminGrp.Get("/words", contribHandler.AdminListWords)
+	adminGrp.Post("/words", contribHandler.AdminCreateWord)
+	adminGrp.Put("/words/:id", contribHandler.AdminUpdateWord)
+	adminGrp.Delete("/words/:id", contribHandler.AdminDeleteWord)
 	// Admin — community
-	admin.Delete("/entries/:word/comments/:id", communityHandler.DeleteComment)
-	admin.Put("/word-of-the-day", communityHandler.SetWordOfTheDay)
+	adminGrp.Delete("/entries/:word/comments/:id", communityHandler.DeleteComment)
+	adminGrp.Put("/word-of-the-day", communityHandler.SetWordOfTheDay)
+	// Admin — stats
+	adminGrp.Get("/stats", adminHandler.GetStats)
 
 	return app
 }

@@ -84,26 +84,36 @@ mysql -u user -p kamusbanjar < database/migrations/005_contributions.sql
 mysql -u user -p kamusbanjar < database/migrations/006_community.sql
 ```
 
-Atau gunakan Docker Compose (MySQL variant) yang otomatis menjalankan semua migrasi saat pertama kali dijalankan.
+Atau gunakan Docker Compose yang otomatis menjalankan semua migrasi saat pertama kali dijalankan.
 
-## Docker (Quick Start)
+## Docker
 
-**Development dengan MySQL:**
+### Development
+
 ```shell
-docker compose -f docker-compose.mysql.yml --env-file .env.mysql up -d
-# API tersedia di http://localhost:8001
+cp .env.dev.example .env.dev
+docker compose -f docker-compose.dev.yml --env-file .env.dev up -d
 ```
 
-Salin dan isi file env:
+API tersedia di `http://localhost:8001`. MySQL tersedia di `localhost:3306`.  
+Untuk wipe dan re-seed: `docker compose -f docker-compose.dev.yml down -v`
+
+### Production (Traefik)
+
+Jalankan Traefik terlebih dahulu:
 ```shell
-cp .env.mysql.example .env.mysql
-# Edit .env.mysql: isi DOMAIN, MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD, JWT_SECRET, dll.
+cd traefik/ && docker compose up -d && cd ..
 ```
 
-**Hanya kamus (embedded JSON, tanpa MySQL):**
+Kemudian:
 ```shell
+cp .env.example .env
+# Edit .env — wajib: DOMAIN, MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD, JWT_SECRET
 docker compose up -d
 ```
+
+API tersedia di `https://<DOMAIN>` dengan TLS otomatis dari Let's Encrypt.  
+Untuk wipe dan re-seed: `docker compose down -v`
 
 ## Penggunaan
 

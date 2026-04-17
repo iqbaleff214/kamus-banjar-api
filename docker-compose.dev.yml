@@ -1,0 +1,63 @@
+# ─── Kamus Banjar API — Development ─────────────────────────────────────────
+#
+# Starts the API and a local MySQL instance. No Traefik required.
+# MySQL port 3306 is exposed on localhost for direct access (e.g. TablePlus).
+#
+# Setup:
+#   1. cp .env.dev.example .env.dev
+#   2. Edit .env.dev if needed (defaults work out of the box).
+#   3. docker compose -f docker-compose.dev.yml --env-file .env.dev up -d
+#
+# API available at: http://localhost:8001
+# MySQL available at: localhost:3306
+#
+# To wipe data and re-seed: docker compose -f docker-compose.dev.yml down -v
+
+services:
+
+  # ─── MySQL ──────────────────────────────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-kamusbanjar}
+      MYSQL_USER: ${MYSQL_USER:-kamus}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-kamus}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql_dev_data:/var/lib/mysql
+      - ./database/migrations/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+      - ./database/seeds/002_seed.sql:/docker-entrypoint-initdb.d/002_seed.sql:ro
+      - ./database/migrations/003_refresh_tokens.sql:/docker-entrypoint-initdb.d/003_refresh_tokens.sql:ro
+      - ./database/migrations/004_word_source.sql:/docker-entrypoint-initdb.d/004_word_source.sql:ro
+      - ./database/migrations/005_contributions.sql:/docker-entrypoint-initdb.d/005_contributions.sql:ro
+      - ./database/migrations/006_community.sql:/docker-entrypoint-initdb.d/006_community.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "${MYSQL_USER:-kamus}", "-p${MYSQL_PASSWORD:-kamus}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ─── API ────────────────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-8001}:8001"
+    environment:
+      PORT: ":8001"
+      MYSQL_DSN: "${MYSQL_USER:-kamus}:${MYSQL_PASSWORD:-kamus}@tcp(mysql:3306)/${MYSQL_DATABASE:-kamusbanjar}?parseTime=true&charset=utf8mb4"
+      JWT_SECRET: "${JWT_SECRET:-dev-secret-key-change-in-production!!}"
+      JWT_ACCESS_TTL: "${JWT_ACCESS_TTL:-15m}"
+      JWT_REFRESH_TTL: "${JWT_REFRESH_TTL:-168h}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-admin@example.com}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-admin1234}"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_dev_data:

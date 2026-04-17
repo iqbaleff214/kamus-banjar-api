@@ -1,18 +1,85 @@
-# ─── Kamus Banjar API — Local Development ─────────────────────────────────────
+# ─── Kamus Banjar API — Production (Traefik + MySQL) ────────────────────────
 #
-# Usage:
-#   docker compose up -d
+# Requires a shared Traefik instance to be running first:
+#   cd traefik/ && docker compose up -d
 #
-# The API will be available at http://localhost:8001
+# Setup:
+#   1. cp .env.example .env
+#   2. Edit .env — fill in DOMAIN, passwords, and JWT_SECRET (min. 32 chars).
+#   3. docker compose up -d
+#
+# On first startup MySQL auto-runs all init scripts in alphabetical order.
+# To wipe and re-seed: docker compose down -v
+#
+# The `traefik_public` network is owned by traefik/docker-compose.yml.
+# This file only declares it as external — it never creates or destroys it.
+
+x-restart: &restart
+  restart: unless-stopped
 
 services:
+
+  # ─── MySQL ──────────────────────────────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    <<: *restart
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-kamusbanjar}
+      MYSQL_USER: ${MYSQL_USER:-kamus}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/migrations/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+      - ./database/seeds/002_seed.sql:/docker-entrypoint-initdb.d/002_seed.sql:ro
+      - ./database/migrations/003_refresh_tokens.sql:/docker-entrypoint-initdb.d/003_refresh_tokens.sql:ro
+      - ./database/migrations/004_word_source.sql:/docker-entrypoint-initdb.d/004_word_source.sql:ro
+      - ./database/migrations/005_contributions.sql:/docker-entrypoint-initdb.d/005_contributions.sql:ro
+      - ./database/migrations/006_community.sql:/docker-entrypoint-initdb.d/006_community.sql:ro
+    networks:
+      - backend_net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "${MYSQL_USER:-kamus}", "-p${MYSQL_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ─── API ────────────────────────────────────────────────────────────────────
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "${PORT:-8001}:8001"
+    <<: *restart
     environment:
       PORT: ":8001"
-      MYSQL_DSN: ${MYSQL_DSN:-}
-    restart: unless-stopped
+      MYSQL_DSN: "${MYSQL_USER:-kamus}:${MYSQL_PASSWORD}@tcp(mysql:3306)/${MYSQL_DATABASE:-kamusbanjar}?parseTime=true&charset=utf8mb4"
+      JWT_SECRET: "${JWT_SECRET}"
+      JWT_ACCESS_TTL: "${JWT_ACCESS_TTL:-15m}"
+      JWT_REFRESH_TTL: "${JWT_REFRESH_TTL:-168h}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+    networks:
+      - traefik_public
+      - backend_net
+    depends_on:
+      mysql:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_public"
+      - "traefik.http.routers.kamus-banjar-api.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.kamus-banjar-api.entrypoints=websecure"
+      - "traefik.http.routers.kamus-banjar-api.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.kamus-banjar-api.service=kamus-banjar-api-svc"
+      - "traefik.http.routers.kamus-banjar-api.middlewares=security-headers@docker"
+      - "traefik.http.services.kamus-banjar-api-svc.loadbalancer.server.port=8001"
+
+volumes:
+  mysql_data:
+
+networks:
+  traefik_public:
+    external: true
+  backend_net:
+    internal: true

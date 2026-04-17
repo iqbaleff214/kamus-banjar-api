@@ -10,14 +10,16 @@ type Alphabet struct {
 
 // Word model to contain word definition.
 // Source and contributor fields are populated only by the MySQL repository.
-// Status is intentionally omitted from JSON — it is an internal field.
+// ID and Status are admin-only fields: omitempty keeps them out of public responses.
 type Word struct {
+	ID            int64            `json:"id,omitempty"`
 	Word          string           `json:"word"`
 	Syllable      string           `json:"syllables,omitempty"`
 	Alphabet      string           `json:"alphabet"`
 	Meanings      []WordMeaning    `json:"meanings"`
 	Derivatives   []WordDerivative `json:"derivatives,omitempty"`
 	Source        string           `json:"source,omitempty"`
+	Status        string           `json:"status,omitempty"`
 	ContributorID *string          `json:"contributor_id,omitempty"`
 	ApprovedBy    *string          `json:"approved_by,omitempty"`
 	ApprovedAt    *time.Time       `json:"approved_at,omitempty"`

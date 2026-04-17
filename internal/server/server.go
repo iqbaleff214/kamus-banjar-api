@@ -8,6 +8,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/config"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/contribution"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/middleware"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/user"
@@ -22,6 +23,10 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	userRepository := user.NewRepository(db)
 	userService := user.NewService(userRepository, cfg.JWTSecret, cfg.JWTAccessTTL, cfg.JWTRefreshTTL)
 	userHandler := user.NewHandler(userService)
+
+	contribRepository := contribution.NewRepository(db)
+	contribService := contribution.NewService(contribRepository)
+	contribHandler := contribution.NewHandler(contribService)
 
 	app := fiber.New(fiber.Config{
 		AppName:      "Kamus Banjar API",
@@ -49,12 +54,30 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	auth.Get("/me", middleware.Auth(cfg.JWTSecret), userHandler.Me)
 	auth.Put("/me", middleware.Auth(cfg.JWTSecret), userHandler.UpdateProfile)
 
-	// Admin user management endpoints
+	// User contribution endpoints
+	contrib := api.Group("/contributions", middleware.Auth(cfg.JWTSecret))
+	contrib.Post("/", contribHandler.Submit)
+	contrib.Get("/mine", contribHandler.Mine)
+	contrib.Get("/:id", contribHandler.GetByID)
+	contrib.Put("/:id", contribHandler.Edit)
+	contrib.Delete("/:id", contribHandler.Delete)
+
+	// Admin endpoints
 	admin := api.Group("/admin", middleware.Auth(cfg.JWTSecret), middleware.Role("admin"))
+	// Admin — users
 	admin.Get("/users", userHandler.ListUsers)
 	admin.Patch("/users/:id/deactivate", userHandler.Deactivate)
 	admin.Patch("/users/:id/activate", userHandler.Activate)
 	admin.Patch("/users/:id/promote", userHandler.Promote)
+	// Admin — contributions
+	admin.Get("/contributions", contribHandler.AdminList)
+	admin.Patch("/contributions/:id/approve", contribHandler.Approve)
+	admin.Patch("/contributions/:id/reject", contribHandler.Reject)
+	// Admin — words
+	admin.Get("/words", contribHandler.AdminListWords)
+	admin.Post("/words", contribHandler.AdminCreateWord)
+	admin.Put("/words/:id", contribHandler.AdminUpdateWord)
+	admin.Delete("/words/:id", contribHandler.AdminDeleteWord)
 
 	return app
 }

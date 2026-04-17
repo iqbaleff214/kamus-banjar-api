@@ -32,14 +32,13 @@ func Load() Config {
 		AdminPassword: os.Getenv("ADMIN_PASSWORD"),
 	}
 
-	if cfg.MySQLDSN == "" {
-		log.Fatal("MYSQL_DSN environment variable is required")
-	}
-	if cfg.JWTSecret == "" {
-		log.Fatal("JWT_SECRET environment variable is required")
-	}
-	if len(cfg.JWTSecret) < 32 {
-		log.Fatal("JWT_SECRET must be at least 32 characters")
+	if cfg.MySQLDSN != "" {
+		if cfg.JWTSecret == "" {
+			log.Fatal("JWT_SECRET environment variable is required when MYSQL_DSN is set")
+		}
+		if len(cfg.JWTSecret) < 32 {
+			log.Fatal("JWT_SECRET must be at least 32 characters")
+		}
 	}
 
 	return cfg

@@ -6,6 +6,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/pagination"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/response"
 )
 
 // Handler exposes all HTTP handlers for the community domain.
@@ -53,11 +55,7 @@ func (h *handler) Vote(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Vote recorded.",
-	})
+	return response.NoContent(c, "Vote recorded.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -76,12 +74,7 @@ func (h *handler) ListComments(c *fiber.Ctx) error {
 		comments = []Comment{}
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Comments retrieved.",
-		"data":    comments,
-	})
+	return response.OK(c, "Comments retrieved.", comments)
 }
 
 // POST /api/v1/entries/:word/comments
@@ -99,12 +92,7 @@ func (h *handler) PostComment(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.Status(fiber.StatusCreated).JSON(map[string]any{
-		"code":    fiber.StatusCreated,
-		"status":  "success",
-		"message": "Comment posted.",
-		"data":    comment,
-	})
+	return response.Created(c, "Comment posted.", comment)
 }
 
 // DELETE /api/v1/entries/:word/comments/:id  (own comment)
@@ -116,11 +104,7 @@ func (h *handler) DeleteComment(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Comment deleted.",
-	})
+	return response.NoContent(c, "Comment deleted.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -129,22 +113,13 @@ func (h *handler) DeleteComment(c *fiber.Ctx) error {
 
 // GET /api/v1/me/bookmarks
 func (h *handler) ListBookmarks(c *fiber.Ctx) error {
-	page, limit := pagination(c)
+	page, limit := pagination.Parse(c)
 	words, total, err := h.svc.ListBookmarks(callerID(c), page, limit)
 	if err != nil {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	totalPages := (total + limit - 1) / limit
-	return c.JSON(map[string]any{
-		"data": words,
-		"meta": map[string]any{
-			"page":        page,
-			"limit":       limit,
-			"total":       total,
-			"total_pages": totalPages,
-		},
-	})
+	return response.Paginated(c, "Bookmarks retrieved.", words, pagination.NewMeta(page, limit, total))
 }
 
 // POST /api/v1/me/bookmarks/:word
@@ -155,11 +130,7 @@ func (h *handler) AddBookmark(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Bookmark added.",
-	})
+	return response.NoContent(c, "Bookmark added.")
 }
 
 // DELETE /api/v1/me/bookmarks/:word
@@ -170,11 +141,7 @@ func (h *handler) RemoveBookmark(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Bookmark removed.",
-	})
+	return response.NoContent(c, "Bookmark removed.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -194,12 +161,7 @@ func (h *handler) GetWordOfTheDay(c *fiber.Ctx) error {
 	}
 
 	c.Set("Cache-Control", "public, max-age=3600")
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Word of the day retrieved.",
-		"data":    result,
-	})
+	return response.OK(c, "Word of the day retrieved.", result)
 }
 
 // PUT /api/v1/admin/word-of-the-day
@@ -213,11 +175,7 @@ func (h *handler) SetWordOfTheDay(c *fiber.Ctx) error {
 		return mapErr(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Word of the day set.",
-	})
+	return response.NoContent(c, "Word of the day set.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -227,18 +185,6 @@ func (h *handler) SetWordOfTheDay(c *fiber.Ctx) error {
 func callerID(c *fiber.Ctx) string {
 	id, _ := c.Locals("userID").(string)
 	return id
-}
-
-func pagination(c *fiber.Ctx) (page, limit int) {
-	page = c.QueryInt("page", 1)
-	if page < 1 {
-		page = 1
-	}
-	limit = c.QueryInt("limit", 20)
-	if limit < 1 || limit > 100 {
-		limit = 20
-	}
-	return
 }
 
 func mapErr(err error) error {

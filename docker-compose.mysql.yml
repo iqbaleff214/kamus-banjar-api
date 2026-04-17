@@ -8,8 +8,12 @@
 #   2. docker compose -f docker-compose.mysql.yml --env-file .env.mysql up -d
 #
 # On first startup MySQL will automatically run (in order):
-#   database/migrations/001_schema.sql  — creates tables
+#   database/migrations/001_schema.sql  — creates words/letters tables
 #   database/seeds/002_seed.sql         — inserts all dictionary data
+#   database/migrations/003_refresh_tokens.sql — refresh token table
+#   database/migrations/004_word_source.sql    — word source/status columns
+#   database/migrations/005_contributions.sql  — contribution workflow tables
+#   database/migrations/006_community.sql      — votes, comments, bookmarks, wotd
 #
 # Subsequent restarts skip the init scripts because the data volume already exists.
 # To re-seed from scratch: docker compose -f docker-compose.mysql.yml down -v
@@ -36,6 +40,10 @@ services:
       # Init scripts run in sorted order on first startup only.
       - ./database/migrations/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
       - ./database/seeds/002_seed.sql:/docker-entrypoint-initdb.d/002_seed.sql:ro
+      - ./database/migrations/003_refresh_tokens.sql:/docker-entrypoint-initdb.d/003_refresh_tokens.sql:ro
+      - ./database/migrations/004_word_source.sql:/docker-entrypoint-initdb.d/004_word_source.sql:ro
+      - ./database/migrations/005_contributions.sql:/docker-entrypoint-initdb.d/005_contributions.sql:ro
+      - ./database/migrations/006_community.sql:/docker-entrypoint-initdb.d/006_community.sql:ro
     networks:
       - backend_net
     healthcheck:
@@ -54,6 +62,11 @@ services:
     environment:
       PORT: ":8001"
       MYSQL_DSN: "${MYSQL_USER:-kamus}:${MYSQL_PASSWORD}@tcp(mysql:3306)/${MYSQL_DATABASE:-kamusbanjar}?parseTime=true&charset=utf8mb4"
+      JWT_SECRET: "${JWT_SECRET}"
+      JWT_ACCESS_TTL: "${JWT_ACCESS_TTL:-15m}"
+      JWT_REFRESH_TTL: "${JWT_REFRESH_TTL:-168h}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
     networks:
       - traefik_public
       - backend_net

@@ -5,6 +5,8 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/pagination"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/response"
 )
 
 // Handler exposes all HTTP handlers for the contribution domain.
@@ -52,24 +54,19 @@ func (h *handler) Submit(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.Status(fiber.StatusCreated).JSON(map[string]any{
-		"code":    fiber.StatusCreated,
-		"status":  "success",
-		"message": "Submission created.",
-		"data":    contrib,
-	})
+	return response.Created(c, "Submission created.", contrib)
 }
 
 // GET /api/v1/contributions/mine
 func (h *handler) Mine(c *fiber.Ctx) error {
-	page, limit := pagination(c)
+	page, limit := pagination.Parse(c)
 
 	list, total, err := h.svc.Mine(callerID(c), page, limit)
 	if err != nil {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(paginatedResponse(list, page, limit, total))
+	return response.Paginated(c, "Submissions retrieved.", list, pagination.NewMeta(page, limit, total))
 }
 
 // GET /api/v1/contributions/:id
@@ -80,12 +77,7 @@ func (h *handler) GetByID(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Contribution retrieved.",
-		"data":    contrib,
-	})
+	return response.OK(c, "Contribution retrieved.", contrib)
 }
 
 // PUT /api/v1/contributions/:id
@@ -100,12 +92,7 @@ func (h *handler) Edit(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Submission updated.",
-		"data":    contrib,
-	})
+	return response.OK(c, "Submission updated.", contrib)
 }
 
 // DELETE /api/v1/contributions/:id
@@ -114,11 +101,7 @@ func (h *handler) Delete(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Submission deleted.",
-	})
+	return response.NoContent(c, "Submission deleted.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -127,7 +110,7 @@ func (h *handler) Delete(c *fiber.Ctx) error {
 
 // GET /api/v1/admin/contributions
 func (h *handler) AdminList(c *fiber.Ctx) error {
-	page, limit := pagination(c)
+	page, limit := pagination.Parse(c)
 	status := c.Query("status")
 
 	list, total, err := h.svc.ListAll(status, page, limit)
@@ -135,7 +118,7 @@ func (h *handler) AdminList(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(paginatedResponse(list, page, limit, total))
+	return response.Paginated(c, "Contributions retrieved.", list, pagination.NewMeta(page, limit, total))
 }
 
 // PATCH /api/v1/admin/contributions/:id/approve
@@ -144,11 +127,7 @@ func (h *handler) Approve(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Contribution approved.",
-	})
+	return response.NoContent(c, "Contribution approved.")
 }
 
 // PATCH /api/v1/admin/contributions/:id/reject
@@ -161,11 +140,7 @@ func (h *handler) Reject(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Contribution rejected.",
-	})
+	return response.NoContent(c, "Contribution rejected.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -174,7 +149,7 @@ func (h *handler) Reject(c *fiber.Ctx) error {
 
 // GET /api/v1/admin/words
 func (h *handler) AdminListWords(c *fiber.Ctx) error {
-	page, limit := pagination(c)
+	page, limit := pagination.Parse(c)
 	status := c.Query("status")
 	source := c.Query("source")
 
@@ -183,7 +158,7 @@ func (h *handler) AdminListWords(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(paginatedResponse(words, page, limit, total))
+	return response.Paginated(c, "Words retrieved.", words, pagination.NewMeta(page, limit, total))
 }
 
 // POST /api/v1/admin/words
@@ -198,12 +173,7 @@ func (h *handler) AdminCreateWord(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.Status(fiber.StatusCreated).JSON(map[string]any{
-		"code":    fiber.StatusCreated,
-		"status":  "success",
-		"message": "Word created.",
-		"data":    w,
-	})
+	return response.Created(c, "Word created.", w)
 }
 
 // PUT /api/v1/admin/words/:id
@@ -223,12 +193,7 @@ func (h *handler) AdminUpdateWord(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Word updated.",
-		"data":    w,
-	})
+	return response.OK(c, "Word updated.", w)
 }
 
 // DELETE /api/v1/admin/words/:id
@@ -242,11 +207,7 @@ func (h *handler) AdminDeleteWord(c *fiber.Ctx) error {
 		return mapError(err)
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Word deactivated.",
-	})
+	return response.NoContent(c, "Word deactivated.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -256,31 +217,6 @@ func (h *handler) AdminDeleteWord(c *fiber.Ctx) error {
 func callerID(c *fiber.Ctx) string {
 	id, _ := c.Locals("userID").(string)
 	return id
-}
-
-func pagination(c *fiber.Ctx) (page, limit int) {
-	page = c.QueryInt("page", 1)
-	if page < 1 {
-		page = 1
-	}
-	limit = c.QueryInt("limit", 20)
-	if limit < 1 || limit > 100 {
-		limit = 20
-	}
-	return
-}
-
-func paginatedResponse(data any, page, limit, total int) map[string]any {
-	totalPages := (total + limit - 1) / limit
-	return map[string]any{
-		"data": data,
-		"meta": map[string]any{
-			"page":        page,
-			"limit":       limit,
-			"total":       total,
-			"total_pages": totalPages,
-		},
-	}
 }
 
 func mapError(err error) error {

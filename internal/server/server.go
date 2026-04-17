@@ -17,7 +17,36 @@ import (
 )
 
 // New creates and configures the Fiber application with all routes registered.
+// When db is nil (no MYSQL_DSN configured), only the public dictionary endpoints
+// are registered. Auth, community write, and admin routes require MySQL.
 func New(db *sql.DB, cfg config.Config) *fiber.App {
+	app := fiber.New(fiber.Config{
+		AppName:      "Kamus Banjar API",
+		ErrorHandler: errorHandler,
+	})
+
+	app.Use(compress.New())
+	app.Use(cors.New())
+
+	api := app.Group("/api/v1")
+	api.Get("/", rootV1Handler)
+
+	if db == nil {
+		// Dictionary-only mode: no MySQL available.
+		dictRepo := dictionary.NewRepository(db)
+		dictSvc := dictionary.NewService(dictRepo)
+		dictHandler := dictionary.NewHandler(dictSvc, nil)
+
+		api.Get("/alphabets", dictHandler.GetAlphabets)
+		api.Get("/alphabets/:letter", dictHandler.GetWordsByAlphabet)
+		api.Get("/entries", dictHandler.Search)
+		api.Get("/entries/:word", dictHandler.GetWord)
+
+		return app
+	}
+
+	// ── MySQL-backed services ────────────────────────────────────
+
 	dictionaryRepository := dictionary.NewRepository(db)
 	dictionaryService := dictionary.NewService(dictionaryRepository)
 
@@ -40,39 +69,28 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	adminService := admin.NewService(adminRepository)
 	adminHandler := admin.NewHandler(adminService)
 
-	app := fiber.New(fiber.Config{
-		AppName:      "Kamus Banjar API",
-		ErrorHandler: errorHandler,
-	})
-
-	app.Use(compress.New())
-	app.Use(cors.New())
-
-	api := app.Group("/api/v1")
-
-	// Public dictionary endpoints
-	api.Get("/", rootV1Handler)
+	// ── Public dictionary endpoints ──────────────────────────────
 	api.Get("/alphabets", dictionaryHandler.GetAlphabets)
 	api.Get("/alphabets/:letter", dictionaryHandler.GetWordsByAlphabet)
 	api.Get("/entries", dictionaryHandler.Search)
 	api.Get("/entries/:word", dictionaryHandler.GetWord)
 
-	// Public community endpoints
+	// ── Public community endpoints ───────────────────────────────
 	api.Get("/word-of-the-day", communityHandler.GetWordOfTheDay)
 	api.Get("/entries/:word/comments", communityHandler.ListComments)
 
-	// Authenticated community endpoints
+	// ── Authenticated community endpoints ────────────────────────
 	api.Post("/entries/:word/votes", middleware.Auth(cfg.JWTSecret), communityHandler.Vote)
 	api.Post("/entries/:word/comments", middleware.Auth(cfg.JWTSecret), communityHandler.PostComment)
 	api.Delete("/entries/:word/comments/:id", middleware.Auth(cfg.JWTSecret), communityHandler.DeleteComment)
 
-	// Bookmark endpoints
+	// ── Bookmark endpoints ───────────────────────────────────────
 	me := api.Group("/me", middleware.Auth(cfg.JWTSecret))
 	me.Get("/bookmarks", communityHandler.ListBookmarks)
 	me.Post("/bookmarks/:word", communityHandler.AddBookmark)
 	me.Delete("/bookmarks/:word", communityHandler.RemoveBookmark)
 
-	// Auth endpoints
+	// ── Auth endpoints ───────────────────────────────────────────
 	auth := api.Group("/auth")
 	auth.Post("/register", userHandler.Register)
 	auth.Post("/login", userHandler.Login)
@@ -81,7 +99,7 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	auth.Get("/me", middleware.Auth(cfg.JWTSecret), userHandler.Me)
 	auth.Put("/me", middleware.Auth(cfg.JWTSecret), userHandler.UpdateProfile)
 
-	// User contribution endpoints
+	// ── User contribution endpoints ──────────────────────────────
 	contrib := api.Group("/contributions", middleware.Auth(cfg.JWTSecret))
 	contrib.Post("/", contribHandler.Submit)
 	contrib.Get("/mine", contribHandler.Mine)
@@ -89,7 +107,7 @@ func New(db *sql.DB, cfg config.Config) *fiber.App {
 	contrib.Put("/:id", contribHandler.Edit)
 	contrib.Delete("/:id", contribHandler.Delete)
 
-	// Admin endpoints
+	// ── Admin endpoints ──────────────────────────────────────────
 	adminGrp := api.Group("/admin", middleware.Auth(cfg.JWTSecret), middleware.Role("admin"))
 	// Admin — users
 	adminGrp.Get("/users", userHandler.ListUsers)

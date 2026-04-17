@@ -1,6 +1,9 @@
 package admin
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/response"
+)
 
 // Handler exposes admin HTTP handlers.
 type Handler interface {
@@ -23,10 +26,5 @@ func (h *handler) GetStats(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.Status(fiber.StatusOK).JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"message": "Stats retrieved successfully.",
-		"status":  "success",
-		"data":    stats,
-	})
+	return response.OK(c, "Stats retrieved successfully.", stats)
 }

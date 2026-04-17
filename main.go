@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"embed"
 	"log"
 
@@ -15,13 +16,17 @@ var seedData embed.FS
 func main() {
 	cfg := config.Load()
 
-	db := cfg.OpenDB()
-	defer db.Close()
+	var db *sql.DB
+	if cfg.MySQLDSN != "" {
+		db = cfg.OpenDB()
+		defer db.Close()
 
-	seeder.Seed(db, seedData)
-	seeder.SeedAdmin(db, cfg.AdminEmail, cfg.AdminPassword)
+		seeder.Seed(db, seedData)
+		seeder.SeedAdmin(db, cfg.AdminEmail, cfg.AdminPassword)
+	} else {
+		log.Println("MYSQL_DSN not set — starting in read-only dictionary mode (auth, community, and admin routes disabled)")
+	}
 
 	app := server.New(db, cfg)
-
 	log.Fatal(app.Listen(cfg.Port))
 }

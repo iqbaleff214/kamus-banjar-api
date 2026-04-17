@@ -22,10 +22,32 @@ Penjelasan secara teori tentang bahasa Banjar silakan merujuk ke halaman [wiki](
 
 Proyek ini dibangun menggunakan [**Go version 1.22.2**](https://go.dev/dl/), dan diharapkan untuk dikembangkan menggunakan versi Golang yang serupa untuk mendapatkan hasil sesuai harapan.
 
+## Variabel Lingkungan
+
+| Variabel | Default | Deskripsi |
+|---|---|---|
+| `PORT` | `:8001` | Port server |
+| `MYSQL_DSN` | — | MySQL DSN. **Wajib** untuk mengaktifkan autentikasi, komunitas, kontribusi, dan endpoint admin. Tanpa ini, hanya endpoint kamus publik yang aktif. |
+| `JWT_SECRET` | — | Rahasia JWT (min. 32 karakter). Wajib bila `MYSQL_DSN` diset. |
+| `JWT_ACCESS_TTL` | `15m` | Masa berlaku access token (format Go duration, contoh: `15m`, `1h`) |
+| `JWT_REFRESH_TTL` | `168h` | Masa berlaku refresh token (format Go duration, contoh: `168h`, `7d`) |
+| `ADMIN_EMAIL` | — | Email untuk akun admin awal (opsional) |
+| `ADMIN_PASSWORD` | — | Password untuk akun admin awal (opsional) |
+| `SOURCE_PATH` | `data/` | Path ke file JSON (hanya dengan build tag `fs`) |
+
+> **Catatan:** Endpoint auth, komunitas (write), kontribusi, dan admin **membutuhkan MySQL** (`MYSQL_DSN` harus diset). Tanpa MySQL, hanya endpoint kamus publik (`/alphabets`, `/entries`) yang terdaftar.
+
 ## Cara Menjalankan
 
-- Instalasikan dependensi proyek menggunakan perintah `go mod download`.
-- Jalankan proyek dengan perintah `go run .` atau `go run main.go`.
+```shell
+# Dengan MySQL
+MYSQL_DSN="user:pass@tcp(localhost:3306)/kamusbanjar" \
+JWT_SECRET="your-secret-key-at-least-32-chars" \
+go run .
+
+# Hanya kamus (tanpa MySQL)
+go run .
+```
 
 ## Cara Menjalankan Tes
 
@@ -34,7 +56,11 @@ Jalankan perintah berikut untuk melakukan test:
 go test -v -cover ./...
 ```
 
-Dengan perintah tersebut, dapat dilihat juga berapa tingkat _coverage_ dari _unit test_ yang ada. Jika melakukan perubahan pada kode, pastikan menjalankan tes terlebih dahulu untuk memastikan semua fungsionalitas tetap bekerja.
+Untuk integration test (membutuhkan database MySQL test):
+```shell
+TEST_MYSQL_DSN="user:pass@tcp(localhost:3306)/kamusbanjar_test" \
+go test -tags=integration -v ./integration/...
+```
 
 ## Cara Membuat _File_ Biner
 
@@ -44,6 +70,40 @@ go build -ldflags "-s -w" -o ./bin/app .
 ```
 
 Kemudian jalankan menggunakan perintah `./bin/app`.
+
+## Migrasi Database
+
+Jalankan migrasi secara berurutan:
+
+```shell
+mysql -u user -p kamusbanjar < database/migrations/001_schema.sql
+mysql -u user -p kamusbanjar < database/seeds/002_seed.sql
+mysql -u user -p kamusbanjar < database/migrations/003_refresh_tokens.sql
+mysql -u user -p kamusbanjar < database/migrations/004_word_source.sql
+mysql -u user -p kamusbanjar < database/migrations/005_contributions.sql
+mysql -u user -p kamusbanjar < database/migrations/006_community.sql
+```
+
+Atau gunakan Docker Compose (MySQL variant) yang otomatis menjalankan semua migrasi saat pertama kali dijalankan.
+
+## Docker (Quick Start)
+
+**Development dengan MySQL:**
+```shell
+docker compose -f docker-compose.mysql.yml --env-file .env.mysql up -d
+# API tersedia di http://localhost:8001
+```
+
+Salin dan isi file env:
+```shell
+cp .env.mysql.example .env.mysql
+# Edit .env.mysql: isi DOMAIN, MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD, JWT_SECRET, dll.
+```
+
+**Hanya kamus (embedded JSON, tanpa MySQL):**
+```shell
+docker compose up -d
+```
 
 ## Penggunaan
 
@@ -103,16 +163,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
 }
 ```
 
-#### Respon galat
-Respon akan dikembalikan dalam bentuk JSON juga jika terdapat galat. Contohnya:
-```json
-{
-  "code": 400,
-  "message": "alphabet only has one character",
-  "status": "error"
-}
-```
-
 ### [GET] /api/v1/entries/{word}
 Mengembalikan definisi dan arti dari kosakata bahasa Banjar yang diberikan.
 
@@ -135,28 +185,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
           {
             "definition": "ayah",
             "partOfSpeech": "n"
-          },
-          {
-            "definition": "mertua laki-laki",
-            "partOfSpeech": "n"
-          }
-        ]
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "baabah",
-        "syllables": "ba.a.bah",
-        "definitions": [
-          {
-            "definition": "berayah; menyebut ayah",
-            "partOfSpeech": "v",
-            "examples": [
-              {
-                "bjn": "inya kada baabah",
-                "id": "dia tidak berayah"
-              }
-            ]
           }
         ]
       }
@@ -164,16 +192,6 @@ Respon akan dikembalikan dalam bentuk JSON. Contohnya:
   },
   "message": "Definition of word 'abah' successfully retrieved.",
   "status": "success"
-}
-```
-
-#### Respon galat
-Respon akan dikembalikan dalam bentuk JSON juga jika terdapat galat. Contohnya:
-```json
-{
-  "code": 404,
-  "message": "the word is not found",
-  "status": "error"
 }
 ```
 

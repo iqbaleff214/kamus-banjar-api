@@ -2,10 +2,11 @@ package user
 
 import (
 	"errors"
-	"strconv"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/pagination"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/response"
 )
 
 type Handler interface {
@@ -50,12 +51,7 @@ func (h *handler) Register(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusBadRequest, err.Error())
 	}
 
-	return c.Status(fiber.StatusCreated).JSON(map[string]any{
-		"code":    fiber.StatusCreated,
-		"status":  "success",
-		"message": "Account created successfully.",
-		"data":    u,
-	})
+	return response.Created(c, "Account created successfully.", u)
 }
 
 // POST /api/v1/auth/login
@@ -77,12 +73,7 @@ func (h *handler) Login(c *fiber.Ctx) error {
 		}
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Login successful.",
-		"data":    pair,
-	})
+	return response.OK(c, "Login successful.", pair)
 }
 
 // POST /api/v1/auth/refresh
@@ -100,12 +91,7 @@ func (h *handler) Refresh(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusUnauthorized, err.Error())
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Tokens refreshed.",
-		"data":    pair,
-	})
+	return response.OK(c, "Tokens refreshed.", pair)
 }
 
 // POST /api/v1/auth/logout  (requires auth)
@@ -119,11 +105,7 @@ func (h *handler) Logout(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Logged out successfully.",
-	})
+	return response.NoContent(c, "Logged out successfully.")
 }
 
 // GET /api/v1/auth/me  (requires auth)
@@ -137,12 +119,7 @@ func (h *handler) Me(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Profile retrieved.",
-		"data":    u,
-	})
+	return response.OK(c, "Profile retrieved.", u)
 }
 
 // PUT /api/v1/auth/me  (requires auth)
@@ -164,12 +141,7 @@ func (h *handler) UpdateProfile(c *fiber.Ctx) error {
 		}
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "Profile updated.",
-		"data":    u,
-	})
+	return response.OK(c, "Profile updated.", u)
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -178,11 +150,7 @@ func (h *handler) UpdateProfile(c *fiber.Ctx) error {
 
 // GET /api/v1/admin/users
 func (h *handler) ListUsers(c *fiber.Ctx) error {
-	page := queryInt(c, "page", 1)
-	limit := queryInt(c, "limit", 20)
-	if limit > 100 {
-		limit = 100
-	}
+	page, limit := pagination.Parse(c)
 	role := c.Query("role")
 
 	var active *bool
@@ -199,16 +167,7 @@ func (h *handler) ListUsers(c *fiber.Ctx) error {
 		users = []User{}
 	}
 
-	totalPages := (total + limit - 1) / limit
-	return c.JSON(map[string]any{
-		"data": users,
-		"meta": map[string]any{
-			"page":        page,
-			"limit":       limit,
-			"total":       total,
-			"total_pages": totalPages,
-		},
-	})
+	return response.Paginated(c, "Users retrieved.", users, pagination.NewMeta(page, limit, total))
 }
 
 // PATCH /api/v1/admin/users/:id/deactivate
@@ -235,11 +194,7 @@ func (h *handler) setActive(c *fiber.Ctx, active bool) error {
 		}
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "User updated.",
-	})
+	return response.NoContent(c, "User updated.")
 }
 
 // PATCH /api/v1/admin/users/:id/promote
@@ -251,11 +206,7 @@ func (h *handler) Promote(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
-	return c.JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"status":  "success",
-		"message": "User promoted to admin.",
-	})
+	return response.NoContent(c, "User promoted to admin.")
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -267,14 +218,3 @@ func callerID(c *fiber.Ctx) string {
 	return id
 }
 
-func queryInt(c *fiber.Ctx, key string, defaultVal int) int {
-	raw := c.Query(key)
-	if raw == "" {
-		return defaultVal
-	}
-	v, err := strconv.Atoi(raw)
-	if err != nil || v < 1 {
-		return defaultVal
-	}
-	return v
-}

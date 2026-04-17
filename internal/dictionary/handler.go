@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/iqbaleff214/kamus-banjar-api/pkg/response"
 )
 
 // VoteCounter is an optional dependency injected into the handler to append
@@ -39,12 +40,7 @@ func (h handler) GetAlphabets(c *fiber.Ctx) error {
 	}
 
 	c.Set("Cache-Control", "public, max-age=86400")
-	return c.Status(fiber.StatusOK).JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"message": "All alphabets successfully retrieved.",
-		"status":  "success",
-		"data":    alphabets,
-	})
+	return response.OK(c, "All alphabets successfully retrieved.", alphabets)
 }
 
 // GET /api/v1/alphabets/:letter
@@ -57,15 +53,10 @@ func (h handler) GetWordsByAlphabet(c *fiber.Ctx) error {
 	}
 
 	c.Set("Cache-Control", "public, max-age=86400")
-	return c.Status(fiber.StatusOK).JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"message": "All words with letter '" + letter + "' successfully retrieved.",
-		"status":  "success",
-		"data": map[string]any{
-			"letter": alphabet.Letter,
-			"total":  alphabet.Total,
-			"words":  words,
-		},
+	return response.OK(c, "All words with letter '"+letter+"' successfully retrieved.", map[string]any{
+		"letter": alphabet.Letter,
+		"total":  alphabet.Total,
+		"words":  words,
 	})
 }
 
@@ -78,20 +69,20 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 		return fiber.NewError(fiber.StatusNotFound, err.Error())
 	}
 
-	resp := map[string]any{
-		"code":    fiber.StatusOK,
-		"message": "Definition of word '" + result.Word + "' successfully retrieved.",
-		"status":  "success",
-		"data":    result,
-		"votes":   nil,
-	}
+	var votes any
 	if h.votes != nil {
 		up, down, _ := h.votes.GetVoteSummary(word)
-		resp["votes"] = map[string]int{"up": up, "down": down}
+		votes = map[string]int{"up": up, "down": down}
 	}
 
 	c.Set("Cache-Control", "public, max-age=604800")
-	return c.Status(fiber.StatusOK).JSON(resp)
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"code":    fiber.StatusOK,
+		"status":  "success",
+		"message": "Definition of word '" + result.Word + "' successfully retrieved.",
+		"data":    result,
+		"votes":   votes,
+	})
 }
 
 // GET /api/v1/entries?search=keyword
@@ -104,10 +95,5 @@ func (h handler) Search(c *fiber.Ctx) error {
 	}
 
 	c.Set("Cache-Control", "public, max-age=3600")
-	return c.Status(fiber.StatusOK).JSON(map[string]any{
-		"code":    fiber.StatusOK,
-		"message": "Matching word retrieved successfully",
-		"status":  "success",
-		"data":    data,
-	})
+	return response.OK(c, "Matching word retrieved successfully.", data)
 }

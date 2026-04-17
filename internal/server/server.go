@@ -1,12 +1,40 @@
-package main
+package server
 
 import (
+	"database/sql"
 	"errors"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/compress"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
 )
 
-// GET /api/v1/
+// New creates and configures the Fiber application with all routes registered.
+func New(db *sql.DB) *fiber.App {
+	dictionaryRepository := dictionary.NewRepository(db)
+	dictionaryService := dictionary.NewService(dictionaryRepository)
+	dictionaryHandler := dictionary.NewHandler(dictionaryService)
+
+	app := fiber.New(fiber.Config{
+		AppName:      "Kamus Banjar API",
+		ErrorHandler: errorHandler,
+	})
+
+	app.Use(compress.New())
+	app.Use(cors.New())
+
+	api := app.Group("/api")
+
+	api.Get("/v1", rootV1Handler)
+	api.Get("/v1/alphabets", dictionaryHandler.GetAlphabets)
+	api.Get("/v1/alphabets/:letter", dictionaryHandler.GetWordsByAlphabet)
+	api.Get("/v1/entries", dictionaryHandler.Search)
+	api.Get("/v1/entries/:word", dictionaryHandler.GetWord)
+
+	return app
+}
+
 func rootV1Handler(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(map[string]any{
 		"owner":   "M. Iqbal Effendi <iqbaleff214@gmail.com>",
@@ -33,7 +61,6 @@ func rootV1Handler(c *fiber.Ctx) error {
 	})
 }
 
-// Error handler response
 func errorHandler(c *fiber.Ctx, err error) error {
 	code := fiber.StatusInternalServerError
 

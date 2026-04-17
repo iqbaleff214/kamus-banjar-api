@@ -13,7 +13,7 @@ type mysqlRepository struct {
 func (r *mysqlRepository) GetAlphabets() ([]Alphabet, error) {
 	var result []Alphabet
 
-	query := "SELECT l.letter, COUNT(w.id) as total FROM letters l JOIN words w ON l.letter = w.letter GROUP BY l.letter;"
+	query := "SELECT l.letter, COUNT(w.id) as total FROM letters l JOIN words w ON l.letter = w.letter WHERE w.status = 'active' GROUP BY l.letter;"
 	rows, err := r.db.Query(query)
 	if err != nil {
 		return result, err
@@ -34,8 +34,7 @@ func (r *mysqlRepository) GetAlphabets() ([]Alphabet, error) {
 func (r *mysqlRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 	var result []Word
 
-	// not a fuzzy search, but eh not bad
-	query := "SELECT w.word FROM words w WHERE w.letter = ?;"
+	query := "SELECT w.word FROM words w WHERE w.letter = ? AND w.status = 'active';"
 	rows, err := r.db.Query(query, alphabet)
 	if err != nil {
 		return result, err
@@ -60,7 +59,7 @@ func (r *mysqlRepository) GetWordsByAlphabet(alphabet string) ([]Word, error) {
 func (r *mysqlRepository) GetWord(word string) (Word, error) {
 	var result Word
 
-	query := "SELECT w.data FROM words w WHERE w.word = ?;"
+	query := "SELECT w.data FROM words w WHERE w.word = ? AND w.status = 'active';"
 
 	var data string
 	if err := r.db.QueryRow(query, word).Scan(&data); err != nil {
@@ -86,7 +85,7 @@ func (r *mysqlRepository) Search(keyword string) (SearchResult, error) {
 		return result, nil
 	}
 
-	query := "SELECT w.word FROM words w WHERE LEVENSHTEIN(?, w.word) = 1;"
+	query := "SELECT w.word FROM words w WHERE w.status = 'active' AND LEVENSHTEIN(?, w.word) = 1;"
 	rows, err := r.db.Query(query, keyword)
 	if err != nil {
 		return result, err

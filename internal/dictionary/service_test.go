@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -21,11 +21,10 @@ var testLetters = []string{
 	"y",
 }
 
-// loadWords reads all words from the data directory relative to the test file.
+// loadWords reads all words from the data directory relative to the repo root.
 func loadWords(t *testing.T) []dictionary.Word {
 	t.Helper()
-	curDir, _ := os.Getwd()
-	root := filepath.Join(curDir, "..", "..")
+	root := repoRoot(t)
 
 	var all []dictionary.Word
 	for _, l := range testLetters {
@@ -45,8 +44,7 @@ func loadWords(t *testing.T) []dictionary.Word {
 // loadAlphabets builds the Alphabet list from JSON data files.
 func loadAlphabets(t *testing.T) []dictionary.Alphabet {
 	t.Helper()
-	curDir, _ := os.Getwd()
-	root := filepath.Join(curDir, "..", "..")
+	root := repoRoot(t)
 
 	alphabets := make([]dictionary.Alphabet, len(testLetters))
 	for i, l := range testLetters {
@@ -61,6 +59,14 @@ func loadAlphabets(t *testing.T) []dictionary.Alphabet {
 		alphabets[i] = dictionary.Alphabet{Letter: l, Total: len(words)}
 	}
 	return alphabets
+}
+
+// repoRoot returns the repository root by walking up from the test file directory.
+func repoRoot(t *testing.T) string {
+	t.Helper()
+	curDir, _ := os.Getwd()
+	// internal/dictionary → ../../
+	return filepath.Join(curDir, "..", "..")
 }
 
 func TestNewService(t *testing.T) {
@@ -155,6 +161,7 @@ func Test_service_GetWord(t *testing.T) {
 
 func Test_service_GetWordsByAlphabet(t *testing.T) {
 	allAlphabets := loadAlphabets(t)
+	root := repoRoot(t)
 
 	type testCase struct {
 		name     string
@@ -165,9 +172,6 @@ func Test_service_GetWordsByAlphabet(t *testing.T) {
 	}
 
 	var cases []testCase
-
-	curDir, _ := os.Getwd()
-	root := filepath.Join(curDir, "..", "..")
 
 	for _, a := range allAlphabets {
 		b, err := os.ReadFile(filepath.Join(root, "data", a.Letter+".json"))
@@ -187,7 +191,7 @@ func Test_service_GetWordsByAlphabet(t *testing.T) {
 		})
 	}
 
-	// "z" is a valid letter a-z but not in the Banjar alphabet list —
+	// "z" passes the a-z letter check but is not in the Banjar alphabet list —
 	// service calls GetAlphabets then GetWordsByAlphabet before returning the error.
 	type errorCase struct {
 		testCase
@@ -205,7 +209,6 @@ func Test_service_GetWordsByAlphabet(t *testing.T) {
 		cases = append(cases, ec.testCase)
 	}
 
-	// index error cases by alphabet for mock setup
 	errorCaseMap := map[string]errorCase{}
 	for _, ec := range errorCases {
 		errorCaseMap[ec.alphabet] = ec
@@ -299,8 +302,9 @@ func Test_service_Search(t *testing.T) {
 			repo := new(dictionary.MockRepository)
 			serv := dictionary.NewService(repo)
 
-			if tt.wantErr == "" || (tt.wantErr == "no matching word found") {
-				normalized := normalizeKeyword(tt.keyword)
+			normalized := strings.ToLower(strings.TrimSpace(tt.keyword))
+
+			if tt.wantErr == "" || tt.wantErr == "no matching word found" {
 				result := dictionary.SearchResult{Search: normalized, Words: tt.want, Total: len(tt.want)}
 				var repoErr error
 				if tt.wantErr == "no matching word found" {
@@ -332,8 +336,4 @@ func Test_service_Search(t *testing.T) {
 			repo.AssertExpectations(t)
 		})
 	}
-}
-
-func normalizeKeyword(keyword string) string {
-	return strings.ToLower(strings.TrimSpace(keyword))
 }

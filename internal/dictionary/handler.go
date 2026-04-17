@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// Handler contains method for fiber route handlers
+// Handler contains method for fiber route handlers.
 type Handler interface {
 	GetAlphabets(c *fiber.Ctx) error
 	GetWordsByAlphabet(c *fiber.Ctx) error
@@ -14,12 +14,10 @@ type Handler interface {
 	Search(c *fiber.Ctx) error
 }
 
-// handler as a class
 type handler struct {
 	service Service
 }
 
-// NewHandler is a function to instantiate new handler object
 func NewHandler(service Service) Handler {
 	return handler{service}
 }
@@ -80,6 +78,7 @@ func (h handler) GetWord(c *fiber.Ctx) error {
 	})
 }
 
+// GET /api/v1/entries?search=keyword
 func (h handler) Search(c *fiber.Ctx) error {
 	keyword := c.Query("search")
 	data, err := h.service.Search(keyword)

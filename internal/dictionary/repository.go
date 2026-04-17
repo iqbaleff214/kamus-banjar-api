@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
-// Repository contains method to interact with data source
+// Repository contains methods to interact with the data source.
 type Repository interface {
 	GetAlphabets() ([]Alphabet, error)
 	GetWordsByAlphabet(alphabet string) ([]Word, error)

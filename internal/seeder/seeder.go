@@ -1,28 +1,24 @@
-package main
+package seeder
 
 import (
 	"database/sql"
-	"embed"
 	"encoding/json"
 	"io/fs"
 	"log"
 
-	"github.com/iqbaleff214/kamus-banjar-api/domain/dictionary"
+	"github.com/iqbaleff214/kamus-banjar-api/internal/dictionary"
 )
 
-//go:embed data/*.json
-var seedData embed.FS
-
-var seedLetters = []string{
+var letters = []string{
 	"a", "b", "c", "d", "g", "h",
 	"i", "j", "k", "l", "m", "n",
 	"p", "r", "s", "t", "u", "w",
 	"y",
 }
 
-// seed populates the database from embedded JSON files on first startup.
+// Seed populates the database from the provided FS on first startup.
 // It is a no-op if the words table already has rows.
-func seed(db *sql.DB) {
+func Seed(db *sql.DB, data fs.FS) {
 	var count int
 	if err := db.QueryRow("SELECT COUNT(*) FROM words").Scan(&count); err != nil || count > 0 {
 		return
@@ -30,8 +26,8 @@ func seed(db *sql.DB) {
 
 	log.Println("seeding database from JSON data files...")
 
-	for _, letter := range seedLetters {
-		b, err := fs.ReadFile(seedData, "data/"+letter+".json")
+	for _, letter := range letters {
+		b, err := fs.ReadFile(data, "data/"+letter+".json")
 		if err != nil {
 			log.Printf("seed: skip letter '%s': %v", letter, err)
 			continue

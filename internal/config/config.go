@@ -1,13 +1,14 @@
-package main
+package config
 
 import (
 	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
-func openDB() *sql.DB {
+func OpenDB() *sql.DB {
 	dsn := os.Getenv("MYSQL_DSN")
 	if dsn == "" {
 		log.Fatal("MYSQL_DSN environment variable is required")

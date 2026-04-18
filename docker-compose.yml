@@ -31,11 +31,12 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./database/migrations/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
-      - ./database/seeds/002_seed.sql:/docker-entrypoint-initdb.d/002_seed.sql:ro
+      - ./database/migrations/002_users.sql:/docker-entrypoint-initdb.d/002_users.sql:ro
       - ./database/migrations/003_refresh_tokens.sql:/docker-entrypoint-initdb.d/003_refresh_tokens.sql:ro
       - ./database/migrations/004_word_source.sql:/docker-entrypoint-initdb.d/004_word_source.sql:ro
       - ./database/migrations/005_contributions.sql:/docker-entrypoint-initdb.d/005_contributions.sql:ro
       - ./database/migrations/006_community.sql:/docker-entrypoint-initdb.d/006_community.sql:ro
+      - ./database/seeds/002_seed.sql:/docker-entrypoint-initdb.d/007_seed.sql:ro
     networks:
       - backend_net
     healthcheck:

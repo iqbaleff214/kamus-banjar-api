@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-04-18
+
+### Changed
+- Bump Go version to 1.26
+
+### Fixed
+- Docker Compose migration/SQL schema volume mount
+- Add `.env*` files to `.gitignore`
+
+---
+
 ## [2.0.0] - 2026-04-18
 
 > **Breaking change:** MySQL is now the primary data backend. All endpoints below the dictionary read-only layer (`/alphabets`, `/entries`) require `MYSQL_DSN` and `JWT_SECRET` to be set. The embedded/FS dictionary still works without MySQL — those endpoints remain unchanged.

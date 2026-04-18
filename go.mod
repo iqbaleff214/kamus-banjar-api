@@ -1,6 +1,6 @@
 module github.com/iqbaleff214/kamus-banjar-api
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/go-sql-driver/mysql v1.9.0

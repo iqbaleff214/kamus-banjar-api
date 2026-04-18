@@ -1,3 +1,8 @@
 out
 .idea
 bin/*
+
+.env
+.env.dev
+.env.prod
+.env.production
